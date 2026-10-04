@@ -15,10 +15,6 @@
     if (theme[key]) root.style.setProperty(`--${key}`, theme[key]);
   });
 
-  const asset = name => `./assets/${name}`;
-  root.style.setProperty('--jesuit-seal', `url("./assets/jesuit-seal.jpg")`);
-  root.style.setProperty('--altar-art', `url("./assets/ordination-altar.jpg")`);
-
   document.body.classList.add(`theme-${data.theme}`, 'locked');
 
   const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({
@@ -39,6 +35,27 @@
   const validDate = !Number.isNaN(date.getTime());
 
   document.title = `Sacerdotal Ordination | ${data.couple.first} & ${data.couple.second}`;
+
+  const ord = data.ordinands || {};
+  const ordLeft = ord.left || {
+    name: data.couple.first,
+    title: data.couple.first,
+    subtitle: 'Society of Jesus · Darjeeling Province',
+    photoPrayer: './assets/ordinand-left-prayer.jpg',
+    photoMinistry: './assets/ordinand-left-monstrance.jpg',
+    prayerLabel: 'In Prayer',
+    ministryLabel: 'Adoration'
+  };
+  const ordRight = ord.right || {
+    name: data.couple.second,
+    title: data.couple.second,
+    subtitle: 'Society of Jesus · Darjeeling Province',
+    photoPrayer: './assets/ordinand-right-prayer.jpg',
+    photoMinistry: './assets/ordinand-right-censer.jpg',
+    prayerLabel: 'In Prayer',
+    ministryLabel: 'Liturgy'
+  };
+  const ordTogether = (ord.together && ord.together.photo) ? ord.together.photo : './assets/ordinands-together-designed.jpg';
 
   const app = document.querySelector('#app');
   app.innerHTML = `
@@ -124,6 +141,18 @@
           </p>
         </div>
 
+        <!-- Centerpiece Portrait of Both Ordinands Together -->
+        <div class="together-centerpiece-card reveal">
+          <div class="together-image-frame">
+            <img class="together-img" src="${ordTogether}" alt="Deacon Reuell Paul, SJ and Deacon Christ Rajan Minj, SJ" loading="lazy">
+            <div class="together-arch-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="together-badge">
+            <span class="together-title-names">${text(data.couple.first)} &amp; ${text(data.couple.second)}</span>
+            <small class="together-sub">Scholastics of the Society of Jesus · Darjeeling–Nepal</small>
+          </div>
+        </div>
+
         <div class="invitation-text-block reveal">
           <p class="hosts-text">
             The Darjeeling–Nepal Jesuits, together with the families of the ordinands,<br>
@@ -133,11 +162,11 @@
           <p class="of-label">of</p>
           <div class="ordinands-feature">
             <div class="ordinand-card">
-              <h4>DEACON REUELL PAUL, SJ</h4>
+              <h4>${text(data.couple.first)}</h4>
             </div>
             <span class="ordinand-conjunction">&amp;</span>
             <div class="ordinand-card">
-              <h4>DEACON CHRIST RAJAN MINJ, SJ</h4>
+              <h4>${text(data.couple.second)}</h4>
             </div>
           </div>
           <p class="priesthood-text">
@@ -162,6 +191,59 @@
             <strong class="plaque-value">ST. MARY’S HILL, KURSEONG</strong>
             <span class="plaque-sub">Former Jesuit Theologate · St. John Berchmans Parish</span>
           </div>
+        </div>
+      </section>
+
+      <!-- The Ordinands Individual Showcase (Left & Right Profiles) -->
+      <section class="paper-section ordinands-section" id="ordinands-profiles" aria-label="The Ordinands">
+        <span class="section-kicker reveal">Candidates for Priesthood</span>
+        <h2 class="script reveal">The Ordinands</h2>
+        <div class="rule" aria-hidden="true"></div>
+
+        <div class="ordinands-duo-grid">
+          
+          <!-- Left Side Ordinand Card -->
+          <article class="ordinand-profile-card reveal" id="card-left">
+            <div class="profile-photo-container">
+              <img class="profile-img active-img" id="img-left" src="${ordLeft.photoPrayer}" alt="${text(ordLeft.name)} - In Prayer" loading="lazy">
+              <div class="photo-switch-bar">
+                <button class="switch-btn active" data-target="img-left" data-src="${ordLeft.photoPrayer}" data-alt="${text(ordLeft.name)} - In Prayer">
+                  🕊️ Prayer
+                </button>
+                <button class="switch-btn" data-target="img-left" data-src="${ordLeft.photoMinistry}" data-alt="${text(ordLeft.name)} - Adoration">
+                  ☩ Adoration
+                </button>
+              </div>
+            </div>
+            <div class="profile-content">
+              <h3 class="profile-name">${text(ordLeft.name)}</h3>
+              <p class="profile-subtitle">${text(ordLeft.subtitle)}</p>
+              <div class="liturgical-divider" aria-hidden="true"><span>☩</span></div>
+              <p class="profile-caption">Faithfully discerning and answering the divine call to serve Christ in the Society of Jesus.</p>
+            </div>
+          </article>
+
+          <!-- Right Side Ordinand Card -->
+          <article class="ordinand-profile-card reveal" id="card-right">
+            <div class="profile-photo-container">
+              <img class="profile-img active-img" id="img-right" src="${ordRight.photoPrayer}" alt="${text(ordRight.name)} - In Prayer" loading="lazy">
+              <div class="photo-switch-bar">
+                <button class="switch-btn active" data-target="img-right" data-src="${ordRight.photoPrayer}" data-alt="${text(ordRight.name)} - In Prayer">
+                  🕊️ Prayer
+                </button>
+                <button class="switch-btn" data-target="img-right" data-src="${ordRight.photoMinistry}" data-alt="${text(ordRight.name)} - Sacred Liturgy">
+                  ☩ Liturgy
+                </button>
+              </div>
+            </div>
+            <div class="profile-content">
+              <h3 class="profile-name">${text(ordRight.name)}</h3>
+              <p class="profile-subtitle">${text(ordRight.subtitle)}</p>
+              <div class="liturgical-divider" aria-hidden="true"><span>☩</span></div>
+              <p class="profile-caption">Freely embraced and brought to sacramental fulfilment to minister as a Priest of Jesus Christ.</p>
+            </div>
+          </article>
+
         </div>
       </section>
 
@@ -387,6 +469,25 @@
   if (window.initWeddingRSVP) {
     window.initWeddingRSVP($('rsvp-form'), data.rsvp || {}, `${data.couple.first} & ${data.couple.second}`);
   }
+
+  // Interactive Photo Switching for Left & Right Ordinands
+  document.querySelectorAll('.photo-switch-bar button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.target;
+      const targetImg = document.getElementById(targetId);
+      if (!targetImg) return;
+      const parentBar = btn.closest('.photo-switch-bar');
+      parentBar.querySelectorAll('.switch-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      targetImg.style.opacity = '0.3';
+      setTimeout(() => {
+        targetImg.src = btn.dataset.src;
+        targetImg.alt = btn.dataset.alt || '';
+        targetImg.style.opacity = '1';
+      }, 180);
+    });
+  });
 
   function beginObservers() {
     if (observersStarted || !('IntersectionObserver' in window)) return;

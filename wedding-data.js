@@ -17,7 +17,30 @@ window.WEDDING_DATA = {
     "calling": "to the Priesthood of Jesus Christ, which will be solemnly conferred upon them by",
     "bishop": "THE MOST REV. STEPHEN LEPCHA",
     "bishopTitle": "Bishop of Darjeeling",
-    "preamble": "In the grace of a vocation,\nfaithfully discerned, freely embraced, and now brought to its sacramental fulfilment,"
+    "preamble": "In the grace of a vocation,\nfaithfully discerned, freely embraced, and now brought to its sacramental fulfilment,",
+    "together": {
+      "photo": "./assets/ordinands-together-designed.jpg",
+      "photoOriginal": "./assets/ordinands-together.jpg",
+      "caption": "Deacon Reuell Paul, SJ & Deacon Christ Rajan Minj, SJ"
+    },
+    "left": {
+      "name": "DEACON REUELL PAUL, SJ",
+      "title": "Deacon Reuell Paul, SJ",
+      "subtitle": "Society of Jesus · Darjeeling Province",
+      "photoPrayer": "./assets/ordinand-left-prayer.jpg",
+      "photoMinistry": "./assets/ordinand-left-monstrance.jpg",
+      "prayerLabel": "In Prayer",
+      "ministryLabel": "Eucharistic Adoration"
+    },
+    "right": {
+      "name": "DEACON CHRIST RAJAN MINJ, SJ",
+      "title": "Deacon Christ Rajan Minj, SJ",
+      "subtitle": "Society of Jesus · Darjeeling Province",
+      "photoPrayer": "./assets/ordinand-right-prayer.jpg",
+      "photoMinistry": "./assets/ordinand-right-censer.jpg",
+      "prayerLabel": "In Prayer",
+      "ministryLabel": "Liturgical Censer"
+    }
   },
   "wedding": {
     "dateLabel": "20 NOVEMBER 2026",
