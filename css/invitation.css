@@ -1,0 +1,1492 @@
+@import url("./typography.css");
+
+:root {
+  color-scheme: light;
+  --paper: #fbf8f3;
+  --paper-card: #ffffff;
+  --paper-trans: rgba(251, 248, 243, 0.92);
+  --ink: #241a17;
+  --ink-muted: #5e4d46;
+  --accent: #7c1a27;
+  --accent-dark: #520e17;
+  --accent-light: #9a2536;
+  --metal: #b58739;
+  --metal-light: #d8ab5d;
+  --metal-glow: rgba(181, 135, 57, 0.28);
+  --border-gold: rgba(181, 135, 57, 0.45);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #ede6dc;
+  color: var(--ink);
+  font: 18px/1.65 "Cormorant Garamond", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+button:focus-visible, a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+button:disabled { cursor: wait; opacity: 0.7; }
+[hidden] { display: none !important; }
+
+.invitation {
+  max-width: 580px;
+  margin: 0 auto;
+  background: var(--paper);
+  overflow: hidden;
+  box-shadow: 0 0 90px rgba(0, 0, 0, 0.16);
+  position: relative;
+}
+
+.locked { overflow: hidden; }
+
+/* ----------------------------------------------------
+   ENTRANCE SCREEN (Wax Seal Envelope Opening)
+---------------------------------------------------- */
+.entrance {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #6b1420 0%, #3a080f 85%, #240409 100%);
+  transition: opacity 0.85s ease, transform 0.85s ease;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.entrance.leaving {
+  opacity: 0;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
+.envelope-wrapper {
+  width: min(100%, 500px);
+  margin: auto;
+}
+
+.envelope-card-outer {
+  background: linear-gradient(145deg, #fdfaf5 0%, #f6ede1 100%);
+  border: 2px solid var(--metal);
+  outline: 1px solid var(--border-gold);
+  outline-offset: 6px;
+  border-radius: 6px;
+  padding: 42px 28px 36px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45), 0 0 40px var(--metal-glow);
+  position: relative;
+  transition: transform 0.6s ease;
+}
+
+.entrance.opening .envelope-card-outer {
+  animation: envelope-open-pulse 1.2s ease-in-out forwards;
+}
+
+@keyframes envelope-open-pulse {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.03); filter: brightness(1.1); }
+  100% { transform: scale(1.08); opacity: 0; }
+}
+
+.seal-container {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  padding: 5px;
+  background: radial-gradient(circle, #f9f0df 0%, #deb872 70%, #99702a 100%);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), 0 0 25px rgba(216, 171, 93, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jesuit-seal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.entrance-headers {
+  color: var(--ink);
+}
+
+.entrance-motto {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.entrance-invited {
+  font-size: 15px;
+  margin: 0 0 6px;
+  font-style: italic;
+  color: var(--ink-muted);
+}
+
+.entrance-title {
+  font-size: 24px;
+  letter-spacing: 0.14em;
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.entrance-of {
+  font-size: 14px;
+  font-style: italic;
+  margin: 0 0 10px;
+  color: var(--ink-muted);
+}
+
+.entrance-names {
+  font-size: 20px;
+  line-height: 1.35;
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.entrance-names strong {
+  color: var(--accent-dark);
+}
+
+.entrance-names .amp-symbol {
+  display: inline-block;
+  font-family: "Parisienne", cursive;
+  font-size: 26px;
+  color: var(--metal);
+  margin: 2px 0;
+}
+
+.liturgical-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 14px auto;
+  color: var(--metal);
+}
+.liturgical-divider:before, .liturgical-divider:after {
+  content: '';
+  width: 50px;
+  height: 1px;
+  background: var(--metal);
+  opacity: 0.6;
+}
+.liturgical-divider span {
+  font-size: 14px;
+}
+
+.entrance-date-venue {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  margin: 0 0 24px;
+  color: var(--ink);
+}
+
+.entrance-date-venue small {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+}
+
+.open-invitation {
+  background: linear-gradient(135deg, var(--accent) 0%, #570e17 100%);
+  border: 1px solid var(--metal-light);
+  color: #fff;
+  border-radius: 30px;
+  padding: 13px 32px;
+  box-shadow: 0 6px 20px rgba(124, 26, 39, 0.45);
+  transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
+}
+
+.open-invitation:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(124, 26, 39, 0.6);
+  filter: brightness(1.08);
+}
+
+.open-caption {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.open-caption small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  opacity: 0.85;
+  margin-top: 3px;
+  font-weight: 400;
+  text-transform: none;
+}
+
+/* ----------------------------------------------------
+   HERO SECTION
+---------------------------------------------------- */
+.sacred-hero {
+  position: relative;
+  min-height: 740px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px 70px;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-image-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.hero-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform: scale(1.02);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(251, 248, 243, 0.72) 0%,
+    rgba(251, 248, 243, 0.86) 30%,
+    rgba(251, 248, 243, 0.94) 75%,
+    var(--paper) 100%
+  );
+}
+
+.hero-copy {
+  max-width: 480px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.liturgical-cross {
+  font-size: 26px;
+  color: var(--metal);
+  margin-bottom: 4px;
+}
+
+.amdg-tag {
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.hero-copy .occasion {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin: 0 0 6px;
+}
+
+.hero-event-title {
+  font-size: clamp(24px, 6vw, 32px);
+  letter-spacing: 0.16em;
+  color: var(--accent-dark);
+  font-weight: 700;
+  margin: 0 0 6px;
+  line-height: 1.15;
+}
+
+.hero-of {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin: 0 0 14px;
+}
+
+.hero .names {
+  margin: 0 0 20px;
+  line-height: 1.18;
+}
+
+.ordinand-name {
+  display: block;
+  font-size: clamp(22px, 5.5vw, 29px);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.names-separator {
+  display: block;
+  font-family: "Parisienne", cursive;
+  font-size: 34px;
+  color: var(--metal);
+  margin: 2px 0;
+}
+
+.hero-conferral {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border-gold);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 18px auto 20px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.hero-calling {
+  font-size: 14.5px;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+
+.bishop-name {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent-dark);
+  margin: 0;
+}
+
+.bishop-title {
+  font-size: 14px;
+  color: var(--metal);
+  margin: 2px 0 0;
+  font-style: italic;
+}
+
+.hero-datetime {
+  margin: 18px 0 22px;
+}
+
+.hero-date {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin: 0 0 4px;
+}
+
+.hero-venue {
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+.hero-link {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--metal);
+  padding-bottom: 4px;
+  font-weight: 600;
+  transition: color 0.2s, border-color 0.2s;
+}
+.hero-link:hover {
+  color: var(--metal);
+  border-color: var(--accent);
+}
+
+/* ----------------------------------------------------
+   PAPER SECTIONS GENERAL
+---------------------------------------------------- */
+.paper-section {
+  position: relative;
+  padding: 70px 32px;
+  text-align: center;
+  background: var(--paper);
+}
+
+.section-kicker {
+  display: block;
+  font-size: 11.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--metal);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.script {
+  font-family: "Parisienne", cursive;
+  font-size: clamp(38px, 9vw, 50px);
+  color: var(--accent);
+  margin: 0 0 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.rule {
+  width: 70px;
+  height: 1px;
+  background: var(--metal);
+  margin: 20px auto 28px;
+  position: relative;
+}
+.rule:after {
+  content: '☩';
+  position: absolute;
+  left: 50%;
+  top: -9px;
+  transform: translateX(-50%);
+  background: var(--paper);
+  padding: 0 6px;
+  font-size: 13px;
+  color: var(--metal);
+}
+
+/* ----------------------------------------------------
+   SOLEMN INTRO / CALLING
+---------------------------------------------------- */
+.solemn-intro {
+  padding-top: 50px;
+  padding-bottom: 75px;
+}
+
+.seal-badge-wrap {
+  margin-bottom: 16px;
+}
+
+.badge-seal {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  padding: 3px;
+  background: radial-gradient(circle, #f9f0df 0%, #deb872 70%, #99702a 100%);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+}
+
+.amdg-heading {
+  font-size: clamp(34px, 8vw, 44px);
+  margin-bottom: 8px;
+}
+
+.vocation-verse {
+  max-width: 440px;
+  margin: 0 auto 30px;
+  padding: 20px 24px;
+  border-left: 2px solid var(--metal);
+  border-right: 2px solid var(--metal);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+}
+
+.quote-text {
+  font-size: 19px;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--ink);
+  margin: 0;
+}
+
+.invitation-text-block {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.hosts-text {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+
+.ordination-callout {
+  font-size: clamp(24px, 6vw, 30px);
+  letter-spacing: 0.15em;
+  color: var(--accent-dark);
+  font-weight: 700;
+  margin: 12px 0 6px;
+}
+
+.of-label {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin: 0 0 16px;
+}
+
+.ordinands-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  margin: 0 auto 20px;
+}
+
+.ordinand-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border: 1px solid var(--border-gold);
+  border-radius: 6px;
+  padding: 14px 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.ordinand-card h4 {
+  margin: 0;
+  font-size: 21px;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.ordinand-conjunction {
+  font-family: "Parisienne", cursive;
+  font-size: 28px;
+  color: var(--metal);
+  margin: -2px 0;
+}
+
+.priesthood-text {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink-muted);
+  margin: 16px 0 12px;
+}
+
+.bishop-highlight {
+  background: rgba(124, 26, 39, 0.05);
+  border: 1px solid var(--border-gold);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 14px auto 30px;
+  max-width: 420px;
+}
+
+.bishop-title-main {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--accent-dark);
+  margin: 0 0 4px;
+}
+
+.bishop-diocese {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--metal);
+  margin: 0;
+}
+
+.date-venue-plaque {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid var(--metal);
+  border-radius: 6px;
+  padding: 22px 20px;
+  margin: 30px auto 0;
+  max-width: 480px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+}
+
+.plaque-col {
+  flex: 1 1 200px;
+  padding: 8px 12px;
+}
+
+.plaque-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--metal);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.plaque-value {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.plaque-sub {
+  display: block;
+  font-size: 14px;
+  color: var(--ink-muted);
+  margin-top: 3px;
+}
+
+.plaque-divider {
+  width: 1px;
+  height: 50px;
+  background: var(--border-gold);
+}
+
+@media (max-width: 460px) {
+  .plaque-divider {
+    width: 80%;
+    height: 1px;
+    margin: 10px auto;
+  }
+}
+
+/* ----------------------------------------------------
+   COUNTDOWN TIMER
+---------------------------------------------------- */
+.torn:before, .torn:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 18px;
+  background: var(--paper);
+  clip-path: polygon(
+    0 45%, 3% 35%, 6% 60%, 9% 40%, 12% 70%, 16% 38%, 21% 65%, 24% 45%, 28% 62%,
+    31% 35%, 34% 50%, 38% 30%, 41% 57%, 44% 34%, 48% 56%, 52% 29%, 56% 50%,
+    60% 38%, 64% 62%, 69% 41%, 73% 55%, 77% 28%, 82% 56%, 86% 34%, 90% 62%,
+    94% 37%, 98% 56%, 100% 40%, 100% 100%, 0 100%
+  );
+  z-index: 2;
+}
+.torn:before { top: -17px; }
+.torn:after { bottom: -17px; transform: rotate(180deg); }
+
+.countdown-section {
+  padding: 60px 24px 65px;
+  background: #f4ede1;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 400px;
+  margin: 20px auto 14px;
+}
+
+.countdown div {
+  background: #ffffff;
+  border: 1px solid var(--border-gold);
+  border-radius: 6px;
+  padding: 12px 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.countdown strong {
+  display: block;
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--metal);
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+.countdown-note {
+  font-size: 15px;
+  color: var(--ink-muted);
+  margin: 14px 0 0;
+}
+
+/* ----------------------------------------------------
+   CEREMONIAL SEQUENCE (TIMELINE)
+---------------------------------------------------- */
+.schedule-section {
+  padding-top: 80px;
+  padding-bottom: 75px;
+}
+
+.liturgical-timeline {
+  list-style: none;
+  padding: 20px 0 0;
+  margin: 0 auto;
+  max-width: 440px;
+  position: relative;
+}
+
+.liturgical-timeline:before {
+  content: '';
+  position: absolute;
+  left: 28%;
+  top: 15px;
+  bottom: 25px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--metal) 0%, var(--accent) 50%, var(--metal) 100%);
+  opacity: 0.45;
+}
+
+.liturgical-timeline li {
+  display: grid;
+  grid-template-columns: 26% 8% 66%;
+  align-items: flex-start;
+  min-height: 90px;
+  text-align: left;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.liturgical-timeline time {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: right;
+  padding-right: 6px;
+  padding-top: 2px;
+  line-height: 1.3;
+}
+
+.liturgical-timeline .event-marker {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 3px var(--metal-glow);
+  margin: 4px auto 0;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.liturgical-timeline li.is-current .event-marker {
+  transform: scale(1.4);
+  background: var(--metal);
+  border-color: #ffffff;
+  box-shadow: 0 0 12px var(--metal);
+}
+
+.event-body {
+  padding-left: 14px;
+}
+
+.event-name {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.event-detail {
+  font-size: 15px;
+  color: var(--ink-muted);
+  margin: 4px 0 0;
+  line-height: 1.45;
+}
+
+.schedule-note {
+  font-size: 15.5px;
+  font-style: italic;
+  color: var(--ink-muted);
+  max-width: 400px;
+  margin: 28px auto 0;
+  line-height: 1.5;
+}
+
+/* ----------------------------------------------------
+   VENUE & SATELLITE SECTION
+---------------------------------------------------- */
+.venue-section {
+  padding: 70px 24px 65px;
+}
+
+.venue-subheading {
+  font-size: 16px;
+  color: var(--ink-muted);
+  font-style: italic;
+  margin: -8px 0 0;
+}
+
+.satellite-feature-card {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--metal);
+  outline: 1px solid var(--border-gold);
+  outline-offset: 4px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.satellite-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+  background: #231a17;
+}
+
+.satellite-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.satellite-feature-card:hover .satellite-img {
+  transform: scale(1.04);
+}
+
+.satellite-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(36, 26, 23, 0.85);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.venue-caption {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--ink-muted);
+  padding: 10px 16px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--paper);
+}
+
+.location-details-box {
+  padding: 24px 22px 28px;
+  text-align: center;
+}
+
+.venue-name {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin: 0 0 6px;
+}
+
+.venue-history {
+  font-size: 15px;
+  color: var(--metal);
+  font-style: italic;
+  margin: 0 0 10px;
+}
+
+.venue-address {
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--ink);
+  max-width: 360px;
+  margin: 0 auto 10px;
+}
+
+.venue-timing {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 20px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.action {
+  display: block;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(124, 26, 39, 0.25);
+}
+
+.action:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(124, 26, 39, 0.4);
+}
+
+.action.secondary {
+  background: #ffffff;
+  color: var(--accent);
+  border-color: var(--metal);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.action.secondary:hover {
+  background: #fbf6ee;
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+.travel-note {
+  font-size: 14.5px;
+  color: var(--ink-muted);
+  max-width: 400px;
+  margin: 24px auto 0;
+  font-style: italic;
+}
+
+/* ----------------------------------------------------
+   LIVE TELECAST & YOUTUBE SECTION
+---------------------------------------------------- */
+.live-stream-section {
+  padding: 60px 24px 65px;
+  background: linear-gradient(180deg, #fbf8f3 0%, #f7ede1 100%);
+}
+
+.live-stream-card {
+  max-width: 490px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 36px 24px;
+  box-shadow: 0 10px 35px rgba(124, 26, 39, 0.12);
+  text-align: center;
+}
+
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: #dc2626;
+  border-radius: 50%;
+  animation: pulse-red 1.8s infinite;
+}
+
+@keyframes pulse-red {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.4); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+.live-note {
+  font-size: 16.5px;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 420px;
+  margin: 0 auto 24px;
+}
+
+.qr-presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.qr-frame {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: inline-block;
+}
+
+.youtube-qr-img {
+  width: 200px;
+  height: 200px;
+  display: block;
+  border-radius: 4px;
+}
+
+.qr-caption {
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--metal);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.qr-companion {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.qr-alt-text {
+  font-size: 14.5px;
+  color: var(--ink-muted);
+  margin: 0 0 12px;
+}
+
+.youtube-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #cc0000;
+  border-color: #b00000;
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 13.5px;
+}
+
+.youtube-action:hover {
+  background: #e60000;
+  box-shadow: 0 6px 20px rgba(204, 0, 0, 0.4);
+}
+
+.yt-icon {
+  flex-shrink: 0;
+}
+
+.live-time-hint {
+  display: block;
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin-top: 10px;
+}
+
+/* ----------------------------------------------------
+   LITURGICAL NOTES & CONCELEBRATION
+---------------------------------------------------- */
+.etiquette-section {
+  padding: 65px 28px 70px;
+}
+
+.notes-grid {
+  max-width: 440px;
+  margin: auto;
+}
+
+.note-card {
+  padding: 12px 10px;
+}
+
+.note-icon {
+  font-size: 24px;
+  color: var(--metal);
+  margin-bottom: 6px;
+}
+
+.note-card .script {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.note-card p {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* ----------------------------------------------------
+   RSVP SECTION
+---------------------------------------------------- */
+.rsvp-section {
+  padding: 60px 24px 70px;
+  background: #f7ede1;
+}
+
+.rsvp-card {
+  border: 1px solid var(--metal);
+  outline: 1px solid var(--border-gold);
+  outline-offset: 6px;
+  padding: 40px 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.rsvp-kicker {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--metal);
+  font-weight: 600;
+}
+
+.seal-mini {
+  font-size: 20px;
+  color: var(--accent);
+  margin: 6px 0;
+}
+
+.rsvp-card p {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.rsvp-deadline {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--accent);
+  margin-top: 14px !important;
+}
+
+.rsvp-form {
+  margin-top: 24px;
+  text-align: left;
+}
+
+.rsvp-form label {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 16px 0 6px;
+  color: var(--ink);
+}
+
+.rsvp-form input, .rsvp-form select {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid rgba(124, 26, 39, 0.35);
+  border-radius: 6px;
+  background: #fdfaf6;
+  color: var(--ink);
+  font: 17px/1.5 "Cormorant Garamond", Georgia, serif;
+  padding: 10px 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.rsvp-form input:focus-visible, .rsvp-form select:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(124, 26, 39, 0.15);
+  outline: none;
+}
+
+.rsvp-form .rsvp-link {
+  margin-top: 22px;
+  width: 100%;
+}
+
+.rsvp-help {
+  font-size: 13px;
+  text-align: center;
+  color: var(--ink-muted);
+  margin-top: 14px;
+  line-height: 1.45;
+}
+
+/* ----------------------------------------------------
+   CLOSING FOOTER
+---------------------------------------------------- */
+.closing {
+  padding: 0;
+  background: var(--paper);
+  text-align: center;
+}
+
+.closing-scene {
+  position: relative;
+  min-height: 720px;
+  padding: 80px 24px 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.closing-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  z-index: -2;
+}
+
+.closing-scene:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    var(--paper) 0%,
+    rgba(251, 248, 243, 0.88) 25%,
+    rgba(251, 248, 243, 0.94) 70%,
+    var(--paper) 100%
+  );
+}
+
+.closing-copy {
+  max-width: 440px;
+  margin: auto;
+}
+
+.closing-seal-wrap {
+  margin-bottom: 18px;
+}
+
+.closing-seal-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 3px;
+  background: radial-gradient(circle, #f9f0df 0%, #deb872 70%, #99702a 100%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.closing-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--metal);
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.closing-title {
+  font-size: clamp(38px, 9vw, 54px);
+  color: var(--accent);
+  margin: 0;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.closing-title em {
+  font-family: "Parisienne", cursive;
+  font-weight: 400;
+}
+
+.closing-rule {
+  width: 50px;
+  height: 1px;
+  background: var(--metal);
+  margin: 18px auto 20px;
+}
+
+.closing-names {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent-dark);
+  line-height: 1.3;
+  margin: 0 0 10px;
+}
+
+.closing-amp {
+  font-family: "Parisienne", cursive;
+  font-size: 26px;
+  color: var(--metal);
+  display: inline-block;
+  margin: 2px 0;
+}
+
+.closing-date {
+  font-size: 13.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--metal);
+  margin: 0 0 16px;
+  font-weight: 600;
+}
+
+.closing-note {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+  font-style: italic;
+  margin: 0;
+}
+
+.closing-note small {
+  display: block;
+  font-size: 13.5px;
+  color: var(--metal);
+  margin-top: 4px;
+}
+
+.closing-caption {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  margin-top: 24px;
+}
+
+.closing-colophon {
+  padding: 30px 24px 90px;
+  background: var(--paper);
+}
+
+.reopen {
+  border: 1px solid var(--border-gold);
+  background: #ffffff;
+  color: var(--accent);
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  transition: background 0.2s, color 0.2s;
+}
+
+.reopen:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.jesuit-signature {
+  margin-top: 24px;
+}
+
+.jesuit-signature span {
+  display: block;
+  font-size: 15px;
+  letter-spacing: 0.24em;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.jesuit-signature small {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  margin-top: 4px;
+}
+
+.music-credit {
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 18px;
+}
+
+/* ----------------------------------------------------
+   FLOATING MEDIA CONTROLS & STATUS
+---------------------------------------------------- */
+.media-controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 90;
+  display: flex;
+  gap: 8px;
+}
+
+.media-button {
+  border: 1px solid var(--metal-light);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.media-button:hover {
+  transform: translateY(-2px);
+  background: var(--accent-light);
+}
+
+.status {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(36, 26, 23, 0.95);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 120;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ----------------------------------------------------
+   REVEAL ANIMATIONS
+---------------------------------------------------- */
+.reveal {
+  opacity: 1;
+}
+
+.reveal.arriving {
+  animation: solemn-rise 0.8s ease both;
+}
+
+@keyframes solemn-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 768px) {
+  .invitation {
+    margin: 30px auto;
+    border-radius: 8px;
+  }
+}
