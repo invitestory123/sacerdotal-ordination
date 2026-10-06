@@ -1,6 +1,6 @@
 // Sacerdotal Ordination Invitation Data
 // Deacon Christ Rajan Minj SJ & Deacon Reuell Paul SJ
-// St. Mary's Hill, Kurseong · 20 November 2026
+// St. Mary's Hill Kurseong · 20 November 2026
 
 window.WEDDING_DATA = {
   "theme": "jesuit-crimson",
@@ -8,16 +8,16 @@ window.WEDDING_DATA = {
     "first": "DEACON CHRIST RAJAN MINJ SJ",
     "second": "DEACON REUELL PAUL SJ",
     "heroNote": "The Darjeeling–Nepal Jesuits cordially invite you",
-    "subtitle": "AD MAJOREM DEI GLORIAM"
+    "subtitle": "|| Ad Majorem Dei Gloriam ||"
   },
   "ordinands": {
     "first": "DEACON CHRIST RAJAN MINJ SJ",
     "second": "DEACON REUELL PAUL SJ",
     "hosts": "The Darjeeling–Nepal Jesuits",
-    "calling": "to the Priesthood of Jesus Christ, which will be conferred upon them by",
-    "bishop": "THE MOST REV. STEPHEN LEPCHA",
+    "calling": "Anointing by",
+    "bishop": "Rt. Rev. Bishop Stephen Lepcha",
     "bishopTitle": "Bishop of Darjeeling",
-    "preamble": "In the grace of a vocation, faithfully discerned, freely embraced, and now brought to its sacramental fulfilment, the Darjeeling–Nepal Jesuits cordially invite you to the",
+    "preamble": "In the grace of a vocation faithfully discerned freely embraced and now brought to its sacramental fulfilment the Darjeeling–Nepal Jesuits cordially invite you to the",
     "together": {
       "photo": "./assets/ordinands-together.jpg",
       "photoOriginal": "./assets/ordinands-together.jpg",
@@ -47,18 +47,18 @@ window.WEDDING_DATA = {
   "wedding": {
     "dateLabel": "20 NOVEMBER 2026",
     "timeLabel": "10:30 AM",
-    "longDate": "Friday, 20 November 2026 · 10:30 AM",
+    "longDate": "Friday 20 November 2026 · 10:30 AM",
     "dateISO": "2026-11-20T10:30:00+05:30",
     "endISO": "2026-11-20T15:00:00+05:30",
-    "salutation": "Dear Reverend Fathers, Sisters, Benefactors, and Friends in Christ,",
-    "invitationNote": "In the grace of a vocation, faithfully discerned, freely embraced, and now brought to its sacramental fulfilment, the Darjeeling–Nepal Jesuits cordially invite you to the Sacerdotal Ordination to the Priesthood of Jesus Christ.",
-    "scheduleNote": "Ceremonial sequence at St. Mary’s Hill, Kurseong. All times are local (IST)."
+    "salutation": "Dear Reverend Fathers Sisters Benefactors and Friends in Christ",
+    "invitationNote": "In the grace of a vocation faithfully discerned freely embraced and now brought to its sacramental fulfilment the Darjeeling–Nepal Jesuits cordially invite you to the Sacerdotal Ordination to the Priesthood of Jesus Christ.",
+    "scheduleNote": "Ceremonial sequence at St. Mary’s Hill Kurseong. All times are local (IST)."
   },
   "schedule": [
     {
       "time": "9:00 a.m. onwards",
       "title": "Arrival & Gathering",
-      "detail": "Reception of bishops, clergy, religious, families, and faithful at the church premises"
+      "detail": "Reception of bishops clergy religious families and faithful at the church premises"
     },
     {
       "time": "10:30 a.m.",
@@ -78,8 +78,9 @@ window.WEDDING_DATA = {
     "mapsUrl": "https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw",
     "satelliteUrl": "https://maps.app.goo.gl/onmGYCHSL7iwgBrUA",
     "satelliteImage": "./assets/st-marys-satellite.jpg",
+    "watermarkImage": "./assets/st-marys-hill-historic.jpg",
     "timeLabel": "Friday, 20 November 2026 · 10:30 AM",
-    "sceneCaption": "Aerial satellite perspective of St. Mary's Hill, Kurseong nestled in the Darjeeling Himalayas",
+    "sceneCaption": "Satellite perspective of St. Mary's Hill, Kurseong featuring St. Mary's Grotto and surrounding Himalayan ridge",
     "note": "St. Mary’s Hill is the historic former Jesuit Theologate and St. John Berchmans Parish in Kurseong."
   },
   "liveStream": {
@@ -95,8 +96,11 @@ window.WEDDING_DATA = {
   },
   "rsvp": {
     "email": "",
+    "phone": "9789876513",
+    "whatsapp": "9789876513",
+    "whatsappUrl": "https://wa.me/919789876513?text=Peace%20be%20with%20you.%20I%20would%20like%20to%20send%20prayerful%20wishes%20and%20RSVP%20for%20the%20Sacerdotal%20Ordination%20at%20Kurseong.",
     "heading": "Prayerful Communion & Presence",
-    "note": "Kindly let us know of your presence or send your prayerful wishes to the ordinands.",
+    "note": "Kindly let us know of your presence or send your prayerful wishes to 9789876513 via WhatsApp.",
     "deadline": "10 November 2026"
   },
   "media": {
@@ -107,6 +111,7 @@ window.WEDDING_DATA = {
     "doorIhs": "./assets/door-ihs-button.png",
     "jesuitSeal": "./assets/jesuit-seal.jpg",
     "altarArt": "./assets/ordination-altar.jpg",
+    "venueWatermark": "./assets/st-marys-hill-historic.jpg",
     "music": "./media/music.mp3",
     "musicTitle": "Sacred Reverence (Heartwarming)",
     "musicSource": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100207"

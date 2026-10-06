@@ -59,11 +59,11 @@
 
   const app = document.querySelector('#app');
   app.innerHTML = `
-    <!-- Architectural Door Entrance Screen (Door 2) -->
+    <!-- Architectural Door Entrance Screen (Door 2 - No commas on intro) -->
     <div class="entrance door-entrance" id="entrance">
       <div class="door-scene-wrapper">
         <header class="door-header">
-          <span class="door-motto">Ad Majorem Dei Gloriam</span>
+          <span class="door-motto">|| <em>Ad Majorem Dei Gloriam</em> ||</span>
           <p class="door-invite-line">You are cordially invited to the</p>
           <h1 class="door-main-title">INVITATION TO PRIESTLY ORDINATION</h1>
           <p class="door-ordinands-line">
@@ -113,7 +113,7 @@
         <footer class="door-footer">
           <p class="door-date-venue">
             <strong>20 NOVEMBER 2026 · 10:30 AM</strong><br>
-            <small>St. Mary’s Hill, Kurseong · Darjeeling–Nepal Jesuits</small>
+            <small>St. Mary’s Hill Kurseong · Darjeeling–Nepal Jesuits</small>
           </p>
         </footer>
       </div>
@@ -122,7 +122,7 @@
     <!-- Main Invitation Stationery -->
     <main class="invitation" id="invitation" inert>
       
-      <!-- Hero Sacred Art & Announcement Banner (Cinematic Catholic Ordination Altar, Side-by-Side Ordinands 4 & 5) -->
+      <!-- Hero Sacred Art & Announcement Banner -->
       <section class="hero sacred-hero cinematic-hero" aria-label="Sacerdotal Ordination Announcement">
         <div class="hero-image-wrap">
           <img class="hero-art" src="./assets/ordination-altar-cinematic.jpg" alt="Cinematic Catholic Ordination Altar with Holy Eucharist Mass and Incense" fetchpriority="high" decoding="async">
@@ -130,7 +130,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-copy">
           <div class="liturgical-cross" aria-hidden="true">☩</div>
-          <p class="amdg-tag">AD MAJOREM DEI GLORIAM</p>
+          <p class="amdg-tag">|| <em>Ad Majorem Dei Gloriam</em> ||</p>
           <p class="occasion">You are cordially invited to the</p>
           <h2 class="hero-event-title">SACERDOTAL ORDINATION</h2>
           <p class="hero-of">of</p>
@@ -170,29 +170,29 @@
 
           </div>
 
-          <!-- Conferral by Bishop Stephen Lepcha -->
+          <!-- Anointing by Bishop Stephen Lepcha -->
           <div class="hero-conferral">
-            <p class="hero-calling">to the Priesthood of Jesus Christ, which will be conferred upon them by</p>
-            <p class="bishop-name">THE MOST REV. STEPHEN LEPCHA</p>
+            <p class="hero-calling">Anointing by</p>
+            <p class="bishop-name">Rt. Rev. Bishop Stephen Lepcha</p>
             <p class="bishop-title">Bishop of Darjeeling</p>
           </div>
 
-          <!-- Date & Venue -->
+          <!-- Date & Venue (No commas) -->
           <div class="hero-datetime">
             <p class="hero-date">20 NOVEMBER 2026 · 10:30 AM</p>
-            <p class="hero-venue">ST. MARY’S HILL, KURSEONG</p>
+            <p class="hero-venue">ST. MARY’S HILL KURSEONG</p>
           </div>
 
           <a class="hero-link" href="#sacramental-call">View Invitation &amp; Programme ↓</a>
         </div>
       </section>
 
-      <!-- Sacramental Preamble & Cordial Invitation Section -->
+      <!-- Sacramental Preamble & Cordial Invitation Section (Intro page - No commas) -->
       <section class="paper-section ordination-intro" id="sacramental-call" aria-label="Sacramental Calling">
         <div class="seal-badge-wrap reveal">
           <img class="badge-seal" src="./assets/jesuit-seal.jpg" alt="Darjeeling Nepal Jesuit Province" width="90" height="90">
         </div>
-        <h2 class="script amdg-heading reveal">Ad Majorem Dei Gloriam</h2>
+        <h2 class="script amdg-heading reveal">|| <em>Ad Majorem Dei Gloriam</em> ||</h2>
         <div class="rule" aria-hidden="true"></div>
 
         <!-- Centerpiece Portrait of Both Ordinands Together (Moved Upward) -->
@@ -207,10 +207,10 @@
           </div>
         </div>
 
-        <!-- Continuous Paragraph (Without "together with the families of the ordinands") -->
+        <!-- Continuous Paragraph (Without "together with the families of the ordinands", No commas on intro) -->
         <div class="invitation-text-block reveal">
           <p class="invitation-continuous-para">
-            In the grace of a vocation, faithfully discerned, freely embraced, and now brought to its sacramental fulfilment, the Darjeeling–Nepal Jesuits cordially invite you to the
+            In the grace of a vocation faithfully discerned freely embraced and now brought to its sacramental fulfilment the Darjeeling–Nepal Jesuits cordially invite you to the
           </p>
           <h3 class="ordination-callout">SACERDOTAL ORDINATION</h3>
           <p class="of-label">of</p>
@@ -223,17 +223,16 @@
               <h4>DEACON REUELL PAUL SJ</h4>
             </div>
           </div>
-          <p class="priesthood-text">
-            to the Priesthood of Jesus Christ,<br>
-            which will be conferred upon them by
-          </p>
+          <p class="priesthood-text">Anointing by</p>
           <div class="bishop-highlight">
-            <p class="bishop-title-main">THE MOST REV. STEPHEN LEPCHA</p>
+            <p class="bishop-title-main">Rt. Rev. Bishop Stephen Lepcha</p>
             <p class="bishop-diocese">Bishop of Darjeeling</p>
           </div>
         </div>
 
-        <div class="date-venue-plaque reveal">
+        <!-- Date & Venue Plaque with Image 3 Historic Watermark (No commas) -->
+        <div class="date-venue-plaque location-watermark-card reveal">
+          <div class="watermark-bg-overlay" aria-hidden="true"></div>
           <div class="plaque-col">
             <span class="plaque-label">Date &amp; Time</span>
             <strong class="plaque-value">20 NOVEMBER 2026</strong>
@@ -242,7 +241,7 @@
           <div class="plaque-divider"></div>
           <div class="plaque-col">
             <span class="plaque-label">Venue</span>
-            <strong class="plaque-value">ST. MARY’S HILL, KURSEONG</strong>
+            <strong class="plaque-value">ST. MARY’S HILL KURSEONG</strong>
             <span class="plaque-sub">Former Jesuit Theologate · St. John Berchmans Parish</span>
           </div>
         </div>
@@ -335,39 +334,42 @@
         </p>
       </section>
 
-      <!-- Venue & Satellite Location Section -->
+      <!-- Venue Section: Enhanced Satellite Image (2) and Watermark Background (3) -->
       <section class="paper-section venue-section" aria-labelledby="venue-title">
         <span class="section-kicker reveal">Ordination Venue</span>
         <h2 class="script reveal" id="venue-title">St. Mary’s Hill, Kurseong</h2>
         <p class="venue-subheading reveal">Former Jesuit Theologate · St. John Berchmans Parish</p>
         <div class="rule" aria-hidden="true"></div>
 
-        <!-- Satellite Picture & Live Map Feature -->
+        <!-- Satellite Picture (Image 2 Enhanced) & Watermark Location Box (Image 3) -->
         <div class="satellite-feature-card reveal">
           <div class="satellite-image-wrapper">
-            <img class="satellite-img" src="./assets/st-marys-satellite.jpg" alt="Aerial Satellite View of St. Mary's Hill Kurseong in the Darjeeling Himalayas" loading="lazy">
+            <img class="satellite-img" src="./assets/st-marys-satellite.jpg" alt="Enhanced Satellite perspective of St. Mary's Hill, Kurseong featuring St. Mary's Grotto" loading="lazy">
             <div class="satellite-badge">
-              <span class="badge-icon">🛰️</span> Satellite &amp; Aerial View
+              <span class="badge-icon">🛰️</span> Satellite Map View
             </div>
           </div>
           <p class="venue-caption">${text(data.venue.sceneCaption)}</p>
 
-          <div class="location-details-box">
-            <h3 class="venue-name">ST. MARY’S HILL, KURSEONG</h3>
-            <p class="venue-history">Historic Former Jesuit Theologate &amp; St. John Berchmans Parish</p>
-            <address class="venue-address">${text(data.venue.address)}</address>
-            <p class="venue-timing">${text(data.venue.timeLabel)}</p>
+          <div class="location-details-box location-watermark-card">
+            <div class="watermark-bg-overlay" aria-hidden="true"></div>
+            <div class="location-details-inner">
+              <h3 class="venue-name">ST. MARY’S HILL, KURSEONG</h3>
+              <p class="venue-history">Historic Former Jesuit Theologate &amp; St. John Berchmans Parish</p>
+              <address class="venue-address">${text(data.venue.address)}</address>
+              <p class="venue-timing">${text(data.venue.timeLabel)}</p>
 
-            <div class="actions map-actions">
-              <a class="action" id="maps" href="https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw" target="_blank" rel="noopener noreferrer">
-                <span>📍 Open in Google Maps</span>
-              </a>
-              <a class="action secondary" id="satellite-link" href="https://maps.app.goo.gl/onmGYCHSL7iwgBrUA" target="_blank" rel="noopener noreferrer">
-                <span>🛰️ View Satellite Link</span>
-              </a>
-              <button class="action secondary" id="calendar">
-                <span>📅 Add to Calendar</span>
-              </button>
+              <div class="actions map-actions">
+                <a class="action" id="maps" href="https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw" target="_blank" rel="noopener noreferrer">
+                  <span>📍 Open in Google Maps</span>
+                </a>
+                <a class="action secondary" id="satellite-link" href="https://maps.app.goo.gl/onmGYCHSL7iwgBrUA" target="_blank" rel="noopener noreferrer">
+                  <span>🛰️ View Satellite Link</span>
+                </a>
+                <button class="action secondary" id="calendar">
+                  <span>📅 Add to Calendar</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -421,13 +423,24 @@
         </div>
       </section>
 
-      <!-- RSVP & Prayerful Wishes -->
+      <!-- RSVP & Prayerful Wishes (With WhatsApp 9789876513) -->
       <section class="paper-section rsvp-section" aria-labelledby="rsvp-title">
         <div class="rsvp-card reveal">
           <span class="rsvp-kicker">Communion &amp; Presence</span>
           <div class="seal-mini">☩</div>
           <h2 class="script" id="rsvp-title">${text(data.rsvp?.heading || 'Prayerful Communion & Presence')}</h2>
-          <p>${text(data.rsvp?.note || 'Kindly let us know of your presence or send your prayerful wishes to the ordinands.')}</p>
+          <p>${text(data.rsvp?.note || 'Kindly let us know of your presence or send your prayerful wishes to 9789876513 via WhatsApp.')}</p>
+          
+          <!-- Direct WhatsApp RSVP Button -->
+          <div class="whatsapp-rsvp-wrap">
+            <a class="action whatsapp-btn" href="https://wa.me/919789876513?text=Peace%20be%20with%20you.%20I%20would%20like%20to%20send%20prayerful%20wishes%20and%20RSVP%20for%20the%20Sacerdotal%20Ordination%20at%20Kurseong." target="_blank" rel="noopener noreferrer">
+              <svg class="wa-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 0 1-1.23-4.29c0-4.43 3.61-8.04 8.04-8.04 2.15 0 4.17.84 5.69 2.35 1.52 1.52 2.36 3.54 2.36 5.69 0 4.44-3.61 8.05-8.07 8.05zm4.41-6.03c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.52.1.46-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.15-.06-.1-.22-.16-.46-.28z"/>
+              </svg>
+              <span>WhatsApp RSVP: 9789876513</span>
+            </a>
+          </div>
+
           ${data.rsvp?.deadline ? `<p class="rsvp-deadline">Kindly reply by ${text(data.rsvp.deadline)}</p>` : ''}
           <form class="rsvp-form" id="rsvp-form"></form>
         </div>
@@ -442,7 +455,7 @@
               <img src="./assets/jesuit-seal.jpg" alt="Society of Jesus Seal" width="110" height="110" class="closing-seal-img">
             </div>
             <p class="closing-eyebrow">Society of Jesus · Darjeeling–Nepal Province</p>
-            <h2 class="closing-title" id="closing-title">Ad Majorem<br><em>Dei Gloriam</em></h2>
+            <h2 class="closing-title" id="closing-title">|| <em>Ad Majorem Dei Gloriam</em> ||</h2>
             <div class="closing-rule" aria-hidden="true"></div>
             <p class="closing-names">
               <span>DEACON CHRIST RAJAN MINJ SJ</span><br>
@@ -701,7 +714,7 @@
         `DTEND:${stamp(end)}`,
         `SUMMARY:${icsEscape('Sacerdotal Ordination of Deacon Christ Rajan Minj SJ & Deacon Reuell Paul SJ')}`,
         `LOCATION:${icsEscape(data.venue.name + ', ' + data.venue.address)}`,
-        `DESCRIPTION:${icsEscape('Sacerdotal Ordination to the Priesthood of Jesus Christ, conferred by The Most Rev. Stephen Lepcha, Bishop of Darjeeling at St. Mary’s Hill, Kurseong.')}`,
+        `DESCRIPTION:${icsEscape('Sacerdotal Ordination to the Priesthood of Jesus Christ, conferred by Rt. Rev. Bishop Stephen Lepcha, Bishop of Darjeeling at St. Mary’s Hill, Kurseong.')}`,
         'END:VEVENT',
         'END:VCALENDAR'
       ];
