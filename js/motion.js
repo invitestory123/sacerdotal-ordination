@@ -8,7 +8,7 @@ window.initInvitationMotion = function ({ theme, reduced }) {
   scenes.forEach((scene, index) => {
     scene.classList.add('motion-scene');
     // Decorative layers never intercept gestures or enter the accessibility tree.
-    if (scene.matches('.hero,.intro,.venue-section,.etiquette,.closing')) {
+    if (scene.matches('.intro,.venue-section,.etiquette,.closing')) {
       const layer = document.createElement('div');
       layer.className = 'motion-decor';
       layer.setAttribute('aria-hidden', 'true');

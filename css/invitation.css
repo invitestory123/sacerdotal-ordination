@@ -49,7 +49,7 @@ button:disabled { cursor: wait; opacity: 0.7; }
 .locked { overflow: hidden; }
 
 /* ----------------------------------------------------
-   ENTRANCE SCREEN (Wax Seal Envelope Opening)
+   ENTRANCE SCREEN (Gothic Architectural Shrine Doors)
 ---------------------------------------------------- */
 .entrance {
   position: fixed;
@@ -58,200 +58,336 @@ button:disabled { cursor: wait; opacity: 0.7; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at center, #6b1420 0%, #3a080f 85%, #240409 100%);
+  background: radial-gradient(circle at center 40%, #520e17 0%, #2b0409 60%, #150104 100%);
   transition: opacity 0.85s ease, transform 0.85s ease;
   overflow-y: auto;
-  padding: 20px;
+  padding: 16px;
+  perspective: 1400px;
 }
 
 .entrance.leaving {
   opacity: 0;
-  transform: scale(1.04);
+  transform: scale(1.05);
   pointer-events: none;
 }
 
-.envelope-wrapper {
-  width: min(100%, 500px);
+.door-scene-wrapper {
+  width: min(100%, 480px);
   margin: auto;
-}
-
-.envelope-card-outer {
-  background: linear-gradient(145deg, #fdfaf5 0%, #f6ede1 100%);
-  border: 2px solid var(--metal);
-  outline: 1px solid var(--border-gold);
-  outline-offset: 6px;
-  border-radius: 6px;
-  padding: 42px 28px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45), 0 0 40px var(--metal-glow);
   position: relative;
-  transition: transform 0.6s ease;
+  z-index: 2;
 }
 
-.entrance.opening .envelope-card-outer {
-  animation: envelope-open-pulse 1.2s ease-in-out forwards;
+.door-header {
+  color: #fff;
+  margin-bottom: 14px;
 }
 
-@keyframes envelope-open-pulse {
-  0% { transform: scale(1); filter: brightness(1); }
-  50% { transform: scale(1.03); filter: brightness(1.1); }
-  100% { transform: scale(1.08); opacity: 0; }
+.door-motto {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--metal-light);
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
-.seal-container {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  padding: 5px;
-  background: radial-gradient(circle, #f9f0df 0%, #deb872 70%, #99702a 100%);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), 0 0 25px rgba(216, 171, 93, 0.5);
+.door-invite-line {
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 4px;
+}
+
+.door-main-title {
+  font-size: clamp(20px, 5.2vw, 26px);
+  letter-spacing: 0.14em;
+  line-height: 1.25;
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7), 0 0 20px rgba(216, 171, 93, 0.4);
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.door-ordinands-line {
+  font-size: 16px;
+  color: #f7e8d0;
+  margin: 0 0 6px;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.jesuit-seal-img {
+.door-ordinands-line .door-amp {
+  font-family: "Parisienne", cursive;
+  font-size: 22px;
+  color: var(--metal-light);
+}
+
+.door-cross-divider {
+  color: var(--metal-light);
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Shrine Stage & 3D Door Portal */
+.door-shrine-stage {
+  position: relative;
+  width: min(100%, 360px);
+  aspect-ratio: 682 / 1024;
+  margin: 0 auto 12px;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 30px rgba(181, 135, 57, 0.25));
+}
+
+.door-interior-glow {
+  position: absolute;
+  inset: 6% 8%;
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #ffd97d 0%, #d8ab5d 40%, #7c1a27 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+}
+
+.door-interior-art {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
+  opacity: 0.7;
+  filter: blur(1px) brightness(1.2);
+}
+
+.sanctuary-rays {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 45%, rgba(255, 240, 190, 0.9) 0%, rgba(216, 171, 93, 0.4) 45%, transparent 75%);
+  animation: altar-rays-pulse 3s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes altar-rays-pulse {
+  0% { transform: scale(0.96); opacity: 0.6; }
+  100% { transform: scale(1.06); opacity: 1; }
+}
+
+.door-panels-portal {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.door-panel {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1.25s cubic-bezier(0.25, 1, 0.5, 1), filter 1.25s ease;
+  will-change: transform;
+}
+
+.door-panel-left {
+  transform-origin: left center;
+}
+
+.door-panel-right {
+  transform-origin: right center;
+}
+
+.door-panel-leaf {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
   display: block;
 }
 
-.entrance-headers {
-  color: var(--ink);
+.door-panel-shadow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0.15) 100%);
+  pointer-events: none;
+  opacity: 0.4;
+  transition: opacity 1s ease;
 }
 
-.entrance-motto {
-  display: inline-block;
-  font-size: 11px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 600;
-  margin-bottom: 12px;
+.door-panel-right .door-panel-shadow {
+  background: linear-gradient(270deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0.15) 100%);
 }
 
-.entrance-invited {
-  font-size: 15px;
-  margin: 0 0 6px;
-  font-style: italic;
-  color: var(--ink-muted);
+/* Center Latch & IHS Logo Button */
+.door-latch-wrapper {
+  position: absolute;
+  top: 51.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.entrance-title {
-  font-size: 24px;
-  letter-spacing: 0.14em;
-  margin: 0 0 8px;
-  color: var(--accent);
-  font-weight: 700;
+.door-ihs-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  outline: none;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.35s ease;
 }
 
-.entrance-of {
-  font-size: 14px;
-  font-style: italic;
-  margin: 0 0 10px;
-  color: var(--ink-muted);
+.door-ihs-button:hover, .door-ihs-button:focus-visible {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 25px rgba(235, 192, 107, 0.9));
 }
 
-.entrance-names {
-  font-size: 20px;
-  line-height: 1.35;
-  margin: 0 0 16px;
-  color: var(--ink);
-  font-weight: 600;
-}
-
-.entrance-names strong {
-  color: var(--accent-dark);
-}
-
-.entrance-names .amp-symbol {
-  display: inline-block;
-  font-family: "Parisienne", cursive;
-  font-size: 26px;
-  color: var(--metal);
-  margin: 2px 0;
-}
-
-.liturgical-divider {
+.ihs-emblem-core {
+  position: relative;
+  width: 114px;
+  height: 114px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  margin: 14px auto;
-  color: var(--metal);
-}
-.liturgical-divider:before, .liturgical-divider:after {
-  content: '';
-  width: 50px;
-  height: 1px;
-  background: var(--metal);
-  opacity: 0.6;
-}
-.liturgical-divider span {
-  font-size: 14px;
 }
 
-.entrance-date-venue {
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  line-height: 1.4;
-  margin: 0 0 24px;
-  color: var(--ink);
+.ihs-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.6));
+  border-radius: 50%;
 }
 
-.entrance-date-venue small {
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  color: var(--ink-muted);
+.ihs-halo-pulse {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid var(--metal-light);
+  box-shadow: 0 0 20px rgba(216, 171, 93, 0.8), inset 0 0 15px rgba(216, 171, 93, 0.5);
+  animation: ihs-pulse-anim 2.2s infinite ease-in-out;
+  pointer-events: none;
 }
 
-.open-invitation {
-  background: linear-gradient(135deg, var(--accent) 0%, #570e17 100%);
+.ihs-halo-rays {
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 230, 160, 0.35) 0%, rgba(216, 171, 93, 0.1) 60%, transparent 75%);
+  animation: ihs-rays-rotate 10s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes ihs-pulse-anim {
+  0% { transform: scale(0.94); opacity: 0.6; }
+  50% { transform: scale(1.08); opacity: 1; box-shadow: 0 0 30px rgba(255, 215, 120, 0.95); }
+  100% { transform: scale(0.94); opacity: 0.6; }
+}
+
+@keyframes ihs-rays-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.door-tap-pill {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(124, 26, 39, 0.92) 0%, rgba(60, 8, 14, 0.95) 100%);
   border: 1px solid var(--metal-light);
   color: #fff;
-  border-radius: 30px;
-  padding: 13px 32px;
-  box-shadow: 0 6px 20px rgba(124, 26, 39, 0.45);
-  transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
-}
-
-.open-invitation:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(124, 26, 39, 0.6);
-  filter: brightness(1.08);
-}
-
-.open-caption {
-  display: block;
-  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 12px rgba(216, 171, 93, 0.4);
+  font-size: 11px;
   letter-spacing: 0.16em;
+  font-weight: 700;
   text-transform: uppercase;
-  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+  pointer-events: none;
 }
 
-.open-caption small {
-  display: block;
-  font-size: 10px;
+.door-tap-icon {
+  color: var(--metal-light);
+  font-size: 12px;
+}
+
+/* Door Opening Animation State */
+.door-opening .door-panel-left {
+  transform: rotateY(-110deg);
+  filter: brightness(0.9) drop-shadow(-10px 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.door-opening .door-panel-right {
+  transform: rotateY(110deg);
+  filter: brightness(0.9) drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.door-opening .door-panel-shadow {
+  opacity: 0.7;
+}
+
+.door-opening .door-ihs-button {
+  transform: scale(1.3);
+  opacity: 0;
+  filter: brightness(1.8) drop-shadow(0 0 40px #ffd97d);
+  transition: transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
+  pointer-events: none;
+}
+
+.door-footer {
+  color: #eedcc3;
+  margin-top: 6px;
+}
+
+.door-date-venue {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.door-date-venue strong {
+  color: #fff;
   letter-spacing: 0.12em;
+}
+
+.door-date-venue small {
   opacity: 0.85;
-  margin-top: 3px;
-  font-weight: 400;
-  text-transform: none;
+  font-size: 12px;
 }
 
 /* ----------------------------------------------------
-   HERO SECTION
+   HERO SECTION (Cinematic Catholic Ordination Altar)
 ---------------------------------------------------- */
-.sacred-hero {
+.sacred-hero.cinematic-hero {
   position: relative;
-  min-height: 740px;
+  min-height: 780px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 24px 70px;
+  padding: 44px 20px 60px;
   text-align: center;
   overflow: hidden;
   isolation: isolate;
@@ -267,8 +403,9 @@ button:disabled { cursor: wait; opacity: 0.7; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 25%;
   transform: scale(1.02);
+  filter: brightness(0.92) contrast(1.05);
 }
 
 .hero-overlay {
@@ -277,100 +414,171 @@ button:disabled { cursor: wait; opacity: 0.7; }
   z-index: -1;
   background: linear-gradient(
     180deg,
-    rgba(251, 248, 243, 0.72) 0%,
-    rgba(251, 248, 243, 0.86) 30%,
-    rgba(251, 248, 243, 0.94) 75%,
+    rgba(25, 4, 7, 0.40) 0%,
+    rgba(251, 248, 243, 0.80) 22%,
+    rgba(251, 248, 243, 0.92) 65%,
     var(--paper) 100%
   );
 }
 
 .hero-copy {
-  max-width: 480px;
+  max-width: 520px;
   margin: auto;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .liturgical-cross {
   font-size: 26px;
   color: var(--metal);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .amdg-tag {
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--accent);
   font-weight: 700;
-  margin: 0 0 10px;
+  margin: 0 0 8px;
 }
 
 .hero-copy .occasion {
-  font-size: 16px;
+  font-size: 15px;
   font-style: italic;
   color: var(--ink-muted);
-  margin: 0 0 6px;
+  margin: 0 0 4px;
 }
 
 .hero-event-title {
-  font-size: clamp(24px, 6vw, 32px);
-  letter-spacing: 0.16em;
+  font-size: clamp(22px, 5.8vw, 30px);
+  letter-spacing: 0.14em;
   color: var(--accent-dark);
   font-weight: 700;
-  margin: 0 0 6px;
-  line-height: 1.15;
+  margin: 0 0 4px;
+  line-height: 1.18;
 }
 
 .hero-of {
-  font-size: 15px;
+  font-size: 14px;
   font-style: italic;
   color: var(--ink-muted);
   margin: 0 0 14px;
 }
 
-.hero .names {
-  margin: 0 0 20px;
-  line-height: 1.18;
+/* Side-by-Side Ordinands Duo (Images 4 & 5) */
+.hero-ordinands-duo {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 18px;
+  outline: none;
 }
 
-.ordinand-name {
+.hero-ordinand-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-portrait-arch {
+  position: relative;
+  width: 100%;
+  max-width: 175px;
+  aspect-ratio: 3 / 4.4;
+  border-radius: 90px 90px 10px 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18), 0 0 0 2px var(--metal-light);
+  background: #fdfaf5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-portrait-arch:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24), 0 0 0 2px var(--metal);
+}
+
+.hero-portrait-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
   display: block;
-  font-size: clamp(22px, 5.5vw, 29px);
+}
+
+.hero-portrait-border {
+  position: absolute;
+  inset: 4px;
+  border-radius: 86px 86px 6px 6px;
+  border: 1px solid rgba(216, 171, 93, 0.6);
+  pointer-events: none;
+}
+
+.hero-ordinand-meta {
+  margin-top: 10px;
+}
+
+.hero-ordinand-name {
+  font-size: clamp(13px, 3.5vw, 16px);
   font-weight: 700;
   letter-spacing: 0.05em;
   color: var(--accent);
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+  margin: 0 0 2px;
+  line-height: 1.25;
 }
 
-.names-separator {
-  display: block;
-  font-family: "Parisienne", cursive;
-  font-size: 34px;
+.hero-ordinand-sub {
+  font-size: 11px;
+  color: var(--ink-muted);
+  letter-spacing: 0.03em;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.hero-duo-separator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.hero-duo-separator .duo-cross {
+  font-size: 16px;
   color: var(--metal);
-  margin: 2px 0;
+}
+
+.hero-duo-separator .duo-amp {
+  font-family: "Parisienne", cursive;
+  font-size: 32px;
+  color: var(--metal);
+  line-height: 1;
 }
 
 .hero-conferral {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.82);
   border: 1px solid var(--border-gold);
-  border-radius: 6px;
-  padding: 16px 20px;
-  margin: 18px auto 20px;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 14px auto 16px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
 }
 
 .hero-calling {
-  font-size: 14.5px;
+  font-size: 13.5px;
   font-style: italic;
   color: var(--ink-muted);
-  margin: 0 0 6px;
+  margin: 0 0 5px;
   line-height: 1.4;
 }
 
 .bishop-name {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.06em;
   color: var(--accent-dark);
@@ -378,46 +586,49 @@ button:disabled { cursor: wait; opacity: 0.7; }
 }
 
 .bishop-title {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--metal);
   margin: 2px 0 0;
   font-style: italic;
 }
 
 .hero-datetime {
-  margin: 18px 0 22px;
+  margin: 14px 0 18px;
 }
 
 .hero-date {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--accent);
-  margin: 0 0 4px;
+  margin: 0 0 3px;
 }
 
 .hero-venue {
-  font-size: 15px;
-  letter-spacing: 0.06em;
-  color: var(--ink-muted);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  font-weight: 600;
   margin: 0;
 }
 
 .hero-link {
   display: inline-block;
-  font-size: 12px;
-  letter-spacing: 0.16em;
+  font-size: 13px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
-  border-bottom: 1px solid var(--metal);
-  padding-bottom: 4px;
   font-weight: 600;
+  border-bottom: 1px solid var(--metal-light);
+  padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
+
 .hero-link:hover {
   color: var(--metal);
   border-color: var(--accent);
 }
+
 
 /* ----------------------------------------------------
    PAPER SECTIONS GENERAL

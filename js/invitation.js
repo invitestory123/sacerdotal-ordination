@@ -59,68 +59,130 @@
 
   const app = document.querySelector('#app');
   app.innerHTML = `
-    <!-- Envelope Entrance Screen -->
-    <div class="entrance" id="entrance">
-      <div class="envelope-wrapper">
-        <div class="envelope-card-outer">
-          <div class="seal-container">
-            <img class="jesuit-seal-img" src="./assets/jesuit-seal.jpg" alt="Society of Jesus Darjeeling Nepal Jesuit Province Seal" width="180" height="180">
+    <!-- Architectural Door Entrance Screen (Door 2) -->
+    <div class="entrance door-entrance" id="entrance">
+      <div class="door-scene-wrapper">
+        <header class="door-header">
+          <span class="door-motto">Ad Majorem Dei Gloriam</span>
+          <p class="door-invite-line">You are cordially invited to the</p>
+          <h1 class="door-main-title">INVITATION TO PRIESTLY ORDINATION</h1>
+          <p class="door-ordinands-line">
+            <span>Deacon Reuell Paul, SJ</span>
+            <span class="door-amp">&amp;</span>
+            <span>Deacon Christ Rajan Minj, SJ</span>
+          </p>
+          <div class="door-cross-divider" aria-hidden="true"><span>☩</span></div>
+        </header>
+
+        <!-- Gothic Architectural Double Door Shrine (Door 2) -->
+        <div class="door-shrine-stage" id="doorStage">
+          <!-- Sanctuary Golden Glow revealed behind parting doors -->
+          <div class="door-interior-glow" aria-hidden="true">
+            <div class="sanctuary-rays"></div>
+            <img class="door-interior-art" src="./assets/ordination-altar-cinematic.jpg" alt="" loading="eager">
           </div>
-          <div class="entrance-headers">
-            <span class="entrance-motto">Ad Majorem Dei Gloriam</span>
-            <p class="entrance-invited">You are cordially invited to the</p>
-            <h1 class="entrance-title">SACERDOTAL ORDINATION</h1>
-            <p class="entrance-of">of</p>
-            <p class="entrance-names">
-              <strong>${text(data.couple.first)}</strong><br>
-              <span class="amp-symbol">&amp;</span><br>
-              <strong>${text(data.couple.second)}</strong>
-            </p>
-            <div class="liturgical-divider" aria-hidden="true"><span>☩</span></div>
-            <p class="entrance-date-venue">
-              <span>20 NOVEMBER 2026 · 10:30 AM</span><br>
-              <small>St. Mary’s Hill, Kurseong</small>
-            </p>
+
+          <!-- Double Door Panels Splitting From Center -->
+          <div class="door-panels-portal">
+            <div class="door-panel door-panel-left" id="doorLeft" aria-hidden="true">
+              <img class="door-panel-leaf" src="./assets/door-panel-left.jpg" alt="Sanctuary Door Left Leaf">
+              <div class="door-panel-shadow" aria-hidden="true"></div>
+            </div>
+            <div class="door-panel door-panel-right" id="doorRight" aria-hidden="true">
+              <img class="door-panel-leaf" src="./assets/door-panel-right.jpg" alt="Sanctuary Door Right Leaf">
+              <div class="door-panel-shadow" aria-hidden="true"></div>
+            </div>
           </div>
-          <button class="open-invitation" id="open" aria-label="Open the Sacerdotal Ordination Invitation">
-            <span class="open-caption">
-              Open Invitation
-              <small>Society of Jesus · Darjeeling–Nepal</small>
-            </span>
-          </button>
+
+          <!-- Center Tap to Open Button: IHS Logo from Image (2) -->
+          <div class="door-latch-wrapper">
+            <button class="door-ihs-button" id="open" aria-label="Tap the IHS Logo to open the Priestly Ordination invitation">
+              <div class="ihs-emblem-core">
+                <img class="ihs-logo-img" src="./assets/door-ihs-button.png" alt="IHS Holy Eucharist Logo" width="138" height="138">
+                <span class="ihs-halo-pulse" aria-hidden="true"></span>
+                <span class="ihs-halo-rays" aria-hidden="true"></span>
+              </div>
+              <span class="door-tap-pill">
+                <span class="door-tap-icon">☩</span>
+                <span class="door-tap-text">TAP TO OPEN</span>
+              </span>
+            </button>
+          </div>
         </div>
+
+        <footer class="door-footer">
+          <p class="door-date-venue">
+            <strong>20 NOVEMBER 2026 · 10:30 AM</strong><br>
+            <small>St. Mary’s Hill, Kurseong · Darjeeling–Nepal Jesuits</small>
+          </p>
+        </footer>
       </div>
     </div>
 
     <!-- Main Invitation Stationery -->
     <main class="invitation" id="invitation" inert>
       
-      <!-- Hero Sacred Art & Announcement Banner -->
-      <section class="hero sacred-hero" aria-label="Sacerdotal Ordination Announcement">
+      <!-- Hero Sacred Art & Announcement Banner (Cinematic Catholic Ordination Altar, Side-by-Side Ordinands 4 & 5, No Flowers) -->
+      <section class="hero sacred-hero cinematic-hero" aria-label="Sacerdotal Ordination Announcement">
         <div class="hero-image-wrap">
-          <img class="hero-art" src="./assets/ordination-altar.jpg" alt="Sacerdotal Ordination Altar Triptych" fetchpriority="high" decoding="async">
+          <img class="hero-art" src="./assets/ordination-altar-cinematic.jpg" alt="Cinematic Catholic Ordination Altar with Holy Eucharist Mass and Incense" fetchpriority="high" decoding="async">
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-copy">
           <div class="liturgical-cross" aria-hidden="true">☩</div>
           <p class="amdg-tag">AD MAJOREM DEI GLORIAM</p>
-          <p class="occasion">You are invited to the</p>
+          <p class="occasion">You are cordially invited to the</p>
           <h2 class="hero-event-title">SACERDOTAL ORDINATION</h2>
           <p class="hero-of">of</p>
-          <h1 class="names" id="names" tabindex="-1">
-            <span class="ordinand-name">${text(data.couple.first)}</span>
-            <span class="names-separator">&amp;</span>
-            <span class="ordinand-name">${text(data.couple.second)}</span>
-          </h1>
+          
+          <!-- Side-by-Side Ordinands 4 & 5 -->
+          <div class="hero-ordinands-duo" id="names" tabindex="-1">
+            
+            <!-- Deacon Reuell Paul, SJ (Image 4) -->
+            <article class="hero-ordinand-profile">
+              <div class="hero-portrait-arch">
+                <img class="hero-portrait-photo" src="./assets/ordinand-reuell-paul.jpg" alt="DEACON REUELL PAUL, SJ" fetchpriority="high">
+                <div class="hero-portrait-border" aria-hidden="true"></div>
+              </div>
+              <div class="hero-ordinand-meta">
+                <h3 class="hero-ordinand-name">DEACON REUELL PAUL, SJ</h3>
+                <p class="hero-ordinand-sub">Society of Jesus · Darjeeling Province</p>
+              </div>
+            </article>
+
+            <!-- Center Liturgical Monogram & Separator -->
+            <div class="hero-duo-separator" aria-hidden="true">
+              <span class="duo-cross">☩</span>
+              <span class="duo-amp">&amp;</span>
+            </div>
+
+            <!-- Deacon Christ Rajan Minj, SJ (Image 5) -->
+            <article class="hero-ordinand-profile">
+              <div class="hero-portrait-arch">
+                <img class="hero-portrait-photo" src="./assets/ordinand-christ-rajan.jpg" alt="DEACON CHRIST RAJAN MINJ, SJ" fetchpriority="high">
+                <div class="hero-portrait-border" aria-hidden="true"></div>
+              </div>
+              <div class="hero-ordinand-meta">
+                <h3 class="hero-ordinand-name">DEACON CHRIST RAJAN MINJ, SJ</h3>
+                <p class="hero-ordinand-sub">Society of Jesus · Darjeeling Province</p>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Solemn Conferral by Bishop Stephen Lepcha -->
           <div class="hero-conferral">
             <p class="hero-calling">to the Priesthood of Jesus Christ, which will be solemnly conferred upon them by</p>
             <p class="bishop-name">THE MOST REV. STEPHEN LEPCHA</p>
             <p class="bishop-title">Bishop of Darjeeling</p>
           </div>
+
+          <!-- Date & Venue -->
           <div class="hero-datetime">
             <p class="hero-date">20 NOVEMBER 2026 · 10:30 AM</p>
             <p class="hero-venue">ST. MARY’S HILL, KURSEONG</p>
           </div>
+
           <a class="hero-link" href="#sacramental-call">View Invitation &amp; Programme ↓</a>
         </div>
       </section>
@@ -549,8 +611,8 @@
     if (reduced.matches) {
       finishOpening();
     } else {
-      $('entrance').classList.add('opening');
-      openingTimer = setTimeout(finishOpening, 1200);
+      $('entrance').classList.add('door-opening');
+      openingTimer = setTimeout(finishOpening, 1400);
     }
   }
 
@@ -563,7 +625,7 @@
     opened = false;
     if (ambience && ambience.setPaused) ambience.setPaused(true);
     $('entrance').hidden = false;
-    $('entrance').classList.remove('leaving', 'opening');
+    $('entrance').classList.remove('leaving', 'opening', 'door-opening');
     $('open').disabled = false;
     $('invitation').inert = true;
     $('media-controls').hidden = true;
