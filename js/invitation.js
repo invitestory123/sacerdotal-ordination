@@ -3,9 +3,9 @@
 
   const data = window.WEDDING_DATA;
   const theme = (window.INVITATION_THEMES && window.INVITATION_THEMES[data.theme]) || {
-    paper: '#fbf8f3',
-    ink: '#231a17',
-    accent: '#7c1a27',
+    paper: '#ffffff',
+    ink: '#2b1114',
+    accent: '#6b101c',
     metal: '#b58739',
     name: 'Sacred Jesuit Crimson & Gold'
   };
@@ -34,28 +34,28 @@
   const date = new Date(data.wedding.dateISO);
   const validDate = !Number.isNaN(date.getTime());
 
-  document.title = `Sacerdotal Ordination | ${data.couple.first} & ${data.couple.second}`;
+  document.title = `Sacerdotal Ordination | Deacon Christ Rajan Minj SJ & Deacon Reuell Paul SJ`;
 
   const ord = data.ordinands || {};
   const ordLeft = ord.left || {
-    name: data.couple.first,
-    title: data.couple.first,
+    name: 'DEACON CHRIST RAJAN MINJ SJ',
+    title: 'Deacon Christ Rajan Minj SJ',
     subtitle: 'Society of Jesus · Darjeeling Province',
-    photoPrayer: './assets/ordinand-left-prayer.jpg',
-    photoMinistry: './assets/ordinand-left-monstrance.jpg',
-    prayerLabel: 'In Prayer',
-    ministryLabel: 'Adoration'
+    photoPrayer: './assets/ordinand-rajan-monstrance.png',
+    photoMinistry: './assets/ordinand-christ-rajan.jpg',
+    prayerLabel: 'Adoration',
+    ministryLabel: 'In Prayer'
   };
   const ordRight = ord.right || {
-    name: data.couple.second,
-    title: data.couple.second,
+    name: 'DEACON REUELL PAUL SJ',
+    title: 'Deacon Reuell Paul SJ',
     subtitle: 'Society of Jesus · Darjeeling Province',
-    photoPrayer: './assets/ordinand-right-prayer.jpg',
-    photoMinistry: './assets/ordinand-right-censer.jpg',
-    prayerLabel: 'In Prayer',
-    ministryLabel: 'Liturgy'
+    photoPrayer: './assets/ordinand-reuell-censer.png',
+    photoMinistry: './assets/ordinand-reuell-paul.jpg',
+    prayerLabel: 'Incensation',
+    ministryLabel: 'In Prayer'
   };
-  const ordTogether = (ord.together && ord.together.photo) ? ord.together.photo : './assets/ordinands-together-designed.jpg';
+  const ordTogether = (ord.together && ord.together.photo) ? ord.together.photo : './assets/ordinands-together.jpg';
 
   const app = document.querySelector('#app');
   app.innerHTML = `
@@ -67,9 +67,9 @@
           <p class="door-invite-line">You are cordially invited to the</p>
           <h1 class="door-main-title">INVITATION TO PRIESTLY ORDINATION</h1>
           <p class="door-ordinands-line">
-            <span>Deacon Reuell Paul, SJ</span>
+            <span>Deacon Christ Rajan Minj SJ</span>
             <span class="door-amp">&amp;</span>
-            <span>Deacon Christ Rajan Minj, SJ</span>
+            <span>Deacon Reuell Paul SJ</span>
           </p>
           <div class="door-cross-divider" aria-hidden="true"><span>☩</span></div>
         </header>
@@ -122,7 +122,7 @@
     <!-- Main Invitation Stationery -->
     <main class="invitation" id="invitation" inert>
       
-      <!-- Hero Sacred Art & Announcement Banner (Cinematic Catholic Ordination Altar, Side-by-Side Ordinands 4 & 5, No Flowers) -->
+      <!-- Hero Sacred Art & Announcement Banner (Cinematic Catholic Ordination Altar, Side-by-Side Ordinands 4 & 5) -->
       <section class="hero sacred-hero cinematic-hero" aria-label="Sacerdotal Ordination Announcement">
         <div class="hero-image-wrap">
           <img class="hero-art" src="./assets/ordination-altar-cinematic.jpg" alt="Cinematic Catholic Ordination Altar with Holy Eucharist Mass and Incense" fetchpriority="high" decoding="async">
@@ -135,17 +135,17 @@
           <h2 class="hero-event-title">SACERDOTAL ORDINATION</h2>
           <p class="hero-of">of</p>
           
-          <!-- Side-by-Side Ordinands 4 & 5 -->
+          <!-- Side-by-Side Ordinands 4 & 5 (Left: Rajan 4, Right: Reuell 5) -->
           <div class="hero-ordinands-duo" id="names" tabindex="-1">
             
-            <!-- Deacon Reuell Paul, SJ (Image 4) -->
+            <!-- Deacon Christ Rajan Minj SJ (Image 4) -->
             <article class="hero-ordinand-profile">
               <div class="hero-portrait-arch">
-                <img class="hero-portrait-photo" src="./assets/ordinand-reuell-paul.jpg" alt="DEACON REUELL PAUL, SJ" fetchpriority="high">
+                <img class="hero-portrait-photo" src="./assets/ordinand-christ-rajan.jpg" alt="DEACON CHRIST RAJAN MINJ SJ" fetchpriority="high">
                 <div class="hero-portrait-border" aria-hidden="true"></div>
               </div>
               <div class="hero-ordinand-meta">
-                <h3 class="hero-ordinand-name">DEACON REUELL PAUL, SJ</h3>
+                <h3 class="hero-ordinand-name">DEACON CHRIST RAJAN MINJ SJ</h3>
                 <p class="hero-ordinand-sub">Society of Jesus · Darjeeling Province</p>
               </div>
             </article>
@@ -156,23 +156,23 @@
               <span class="duo-amp">&amp;</span>
             </div>
 
-            <!-- Deacon Christ Rajan Minj, SJ (Image 5) -->
+            <!-- Deacon Reuell Paul SJ (Image 5) -->
             <article class="hero-ordinand-profile">
               <div class="hero-portrait-arch">
-                <img class="hero-portrait-photo" src="./assets/ordinand-christ-rajan.jpg" alt="DEACON CHRIST RAJAN MINJ, SJ" fetchpriority="high">
+                <img class="hero-portrait-photo" src="./assets/ordinand-reuell-paul.jpg" alt="DEACON REUELL PAUL SJ" fetchpriority="high">
                 <div class="hero-portrait-border" aria-hidden="true"></div>
               </div>
               <div class="hero-ordinand-meta">
-                <h3 class="hero-ordinand-name">DEACON CHRIST RAJAN MINJ, SJ</h3>
+                <h3 class="hero-ordinand-name">DEACON REUELL PAUL SJ</h3>
                 <p class="hero-ordinand-sub">Society of Jesus · Darjeeling Province</p>
               </div>
             </article>
 
           </div>
 
-          <!-- Solemn Conferral by Bishop Stephen Lepcha -->
+          <!-- Conferral by Bishop Stephen Lepcha -->
           <div class="hero-conferral">
-            <p class="hero-calling">to the Priesthood of Jesus Christ, which will be solemnly conferred upon them by</p>
+            <p class="hero-calling">to the Priesthood of Jesus Christ, which will be conferred upon them by</p>
             <p class="bishop-name">THE MOST REV. STEPHEN LEPCHA</p>
             <p class="bishop-title">Bishop of Darjeeling</p>
           </div>
@@ -188,52 +188,44 @@
       </section>
 
       <!-- Sacramental Preamble & Cordial Invitation Section -->
-      <section class="paper-section solemn-intro" id="sacramental-call" aria-label="Sacramental Calling">
+      <section class="paper-section ordination-intro" id="sacramental-call" aria-label="Sacramental Calling">
         <div class="seal-badge-wrap reveal">
           <img class="badge-seal" src="./assets/jesuit-seal.jpg" alt="Darjeeling Nepal Jesuit Province" width="90" height="90">
         </div>
         <h2 class="script amdg-heading reveal">Ad Majorem Dei Gloriam</h2>
         <div class="rule" aria-hidden="true"></div>
-        
-        <div class="vocation-verse reveal">
-          <p class="quote-text">
-            “In the grace of a vocation,<br>
-            faithfully discerned, freely embraced,<br>
-            and now brought to its sacramental fulfilment,”
-          </p>
-        </div>
 
-        <!-- Centerpiece Portrait of Both Ordinands Together -->
+        <!-- Centerpiece Portrait of Both Ordinands Together (Moved Upward) -->
         <div class="together-centerpiece-card reveal">
           <div class="together-image-frame">
-            <img class="together-img" src="${ordTogether}" alt="Deacon Reuell Paul, SJ and Deacon Christ Rajan Minj, SJ" loading="lazy">
+            <img class="together-img" src="${ordTogether}" alt="Deacon Christ Rajan Minj SJ and Deacon Reuell Paul SJ" loading="lazy">
             <div class="together-arch-overlay" aria-hidden="true"></div>
           </div>
           <div class="together-badge">
-            <span class="together-title-names">${text(data.couple.first)} &amp; ${text(data.couple.second)}</span>
-            <small class="together-sub">Scholastics of the Society of Jesus · Darjeeling–Nepal</small>
+            <span class="together-title-names">DEACON CHRIST RAJAN MINJ SJ &amp; DEACON REUELL PAUL SJ</span>
+            <small class="together-sub">Society of Jesus · Darjeeling–Nepal Province</small>
           </div>
         </div>
 
+        <!-- Continuous Paragraph (Without "together with the families of the ordinands") -->
         <div class="invitation-text-block reveal">
-          <p class="hosts-text">
-            The Darjeeling–Nepal Jesuits, together with the families of the ordinands,<br>
-            cordially invite you to the
+          <p class="invitation-continuous-para">
+            In the grace of a vocation, faithfully discerned, freely embraced, and now brought to its sacramental fulfilment, the Darjeeling–Nepal Jesuits cordially invite you to the
           </p>
           <h3 class="ordination-callout">SACERDOTAL ORDINATION</h3>
           <p class="of-label">of</p>
           <div class="ordinands-feature">
             <div class="ordinand-card">
-              <h4>${text(data.couple.first)}</h4>
+              <h4>DEACON CHRIST RAJAN MINJ SJ</h4>
             </div>
             <span class="ordinand-conjunction">&amp;</span>
             <div class="ordinand-card">
-              <h4>${text(data.couple.second)}</h4>
+              <h4>DEACON REUELL PAUL SJ</h4>
             </div>
           </div>
           <p class="priesthood-text">
             to the Priesthood of Jesus Christ,<br>
-            which will be solemnly conferred upon them by
+            which will be conferred upon them by
           </p>
           <div class="bishop-highlight">
             <p class="bishop-title-main">THE MOST REV. STEPHEN LEPCHA</p>
@@ -245,11 +237,11 @@
           <div class="plaque-col">
             <span class="plaque-label">Date &amp; Time</span>
             <strong class="plaque-value">20 NOVEMBER 2026</strong>
-            <span class="plaque-sub">10:30 a.m. IST</span>
+            <span class="plaque-sub">10:30 A.M. IST</span>
           </div>
           <div class="plaque-divider"></div>
           <div class="plaque-col">
-            <span class="plaque-label">Solemn Venue</span>
+            <span class="plaque-label">Venue</span>
             <strong class="plaque-value">ST. MARY’S HILL, KURSEONG</strong>
             <span class="plaque-sub">Former Jesuit Theologate · St. John Berchmans Parish</span>
           </div>
@@ -264,16 +256,16 @@
 
         <div class="ordinands-duo-grid">
           
-          <!-- Left Side Ordinand Card -->
+          <!-- Left Side Ordinand Card: DEACON CHRIST RAJAN MINJ SJ (Image 4) -->
           <article class="ordinand-profile-card reveal" id="card-left">
             <div class="profile-photo-container">
-              <img class="profile-img active-img" id="img-left" src="${ordLeft.photoPrayer}" alt="${text(ordLeft.name)} - In Prayer" loading="lazy">
+              <img class="profile-img active-img" id="img-left" src="${ordLeft.photoPrayer}" alt="DEACON CHRIST RAJAN MINJ SJ" loading="lazy">
               <div class="photo-switch-bar">
-                <button class="switch-btn active" data-target="img-left" data-src="${ordLeft.photoPrayer}" data-alt="${text(ordLeft.name)} - In Prayer">
-                  🕊️ Prayer
-                </button>
-                <button class="switch-btn" data-target="img-left" data-src="${ordLeft.photoMinistry}" data-alt="${text(ordLeft.name)} - Adoration">
+                <button class="switch-btn active" data-target="img-left" data-src="${ordLeft.photoPrayer}" data-alt="DEACON CHRIST RAJAN MINJ SJ - Holy Monstrance Adoration">
                   ☩ Adoration
+                </button>
+                <button class="switch-btn" data-target="img-left" data-src="${ordLeft.photoMinistry}" data-alt="DEACON CHRIST RAJAN MINJ SJ - In Prayer">
+                  🕊️ In Prayer
                 </button>
               </div>
             </div>
@@ -281,20 +273,20 @@
               <h3 class="profile-name">${text(ordLeft.name)}</h3>
               <p class="profile-subtitle">${text(ordLeft.subtitle)}</p>
               <div class="liturgical-divider" aria-hidden="true"><span>☩</span></div>
-              <p class="profile-caption">Faithfully discerning and answering the divine call to serve Christ in the Society of Jesus.</p>
+              <p class="profile-caption thanksgiving-caption">Thanksgiving Mass</p>
             </div>
           </article>
 
-          <!-- Right Side Ordinand Card -->
+          <!-- Right Side Ordinand Card: DEACON REUELL PAUL SJ (Image 5) -->
           <article class="ordinand-profile-card reveal" id="card-right">
             <div class="profile-photo-container">
-              <img class="profile-img active-img" id="img-right" src="${ordRight.photoPrayer}" alt="${text(ordRight.name)} - In Prayer" loading="lazy">
+              <img class="profile-img active-img" id="img-right" src="${ordRight.photoPrayer}" alt="DEACON REUELL PAUL SJ" loading="lazy">
               <div class="photo-switch-bar">
-                <button class="switch-btn active" data-target="img-right" data-src="${ordRight.photoPrayer}" data-alt="${text(ordRight.name)} - In Prayer">
-                  🕊️ Prayer
+                <button class="switch-btn active" data-target="img-right" data-src="${ordRight.photoPrayer}" data-alt="DEACON REUELL PAUL SJ - Incense Censer">
+                  ☩ Incensation
                 </button>
-                <button class="switch-btn" data-target="img-right" data-src="${ordRight.photoMinistry}" data-alt="${text(ordRight.name)} - Sacred Liturgy">
-                  ☩ Liturgy
+                <button class="switch-btn" data-target="img-right" data-src="${ordRight.photoMinistry}" data-alt="DEACON REUELL PAUL SJ - In Prayer">
+                  🕊️ In Prayer
                 </button>
               </div>
             </div>
@@ -302,7 +294,7 @@
               <h3 class="profile-name">${text(ordRight.name)}</h3>
               <p class="profile-subtitle">${text(ordRight.subtitle)}</p>
               <div class="liturgical-divider" aria-hidden="true"><span>☩</span></div>
-              <p class="profile-caption">Freely embraced and brought to sacramental fulfilment to minister as a Priest of Jesus Christ.</p>
+              <p class="profile-caption thanksgiving-caption">Thanksgiving Mass</p>
             </div>
           </article>
 
@@ -310,7 +302,7 @@
       </section>
 
       <!-- Countdown to Sacred Ordination -->
-      <section class="paper-section countdown-section torn" aria-labelledby="countdown-title">
+      <section class="paper-section countdown-section" aria-labelledby="countdown-title">
         <h2 class="script" id="countdown-title">Until the Sacred Ordination</h2>
         <div class="countdown" id="countdown" role="timer" aria-label="Time until the Sacerdotal Ordination">
           <div><strong data-count="days">00</strong><span>Days</span></div>
@@ -344,8 +336,8 @@
       </section>
 
       <!-- Venue & Satellite Location Section -->
-      <section class="paper-section venue-section torn" aria-labelledby="venue-title">
-        <span class="section-kicker reveal">Solemn Venue</span>
+      <section class="paper-section venue-section" aria-labelledby="venue-title">
+        <span class="section-kicker reveal">Ordination Venue</span>
         <h2 class="script reveal" id="venue-title">St. Mary’s Hill, Kurseong</h2>
         <p class="venue-subheading reveal">Former Jesuit Theologate · St. John Berchmans Parish</p>
         <div class="rule" aria-hidden="true"></div>
@@ -382,15 +374,15 @@
         <p class="travel-note reveal">${text(data.venue.note)}</p>
       </section>
 
-      <!-- Live Telecast Section with YouTube QR and Link -->
+      <!-- Live Telecast Section with YouTube QR and Link (Live from 10:00 AM onwards) -->
       <section class="paper-section live-stream-section" aria-labelledby="live-title">
         <div class="live-stream-card reveal">
           <div class="live-indicator">
-            <span class="live-dot"></span> LIVE TELECAST
+            <span class="live-dot"></span> LIVE FROM 10:00 AM ONWARDS
           </div>
           <h2 class="script" id="live-title">Live Stream on YouTube</h2>
           <p class="live-note">
-            For family, Jesuit brethren, friends, and faithful worldwide who cannot be physically present at St. Mary’s Hill, the Eucharistic celebration and Rite of Ordination will be broadcast live.
+            For family, Jesuit brethren, friends, and faithful worldwide who cannot be physically present at St. Mary’s Hill, the Eucharistic celebration and Rite of Ordination will be broadcast live from 10:00 AM onwards.
           </p>
 
           <div class="qr-presentation">
@@ -406,7 +398,7 @@
                 </svg>
                 <span>Watch Live Telecast on YouTube</span>
               </a>
-              <small class="live-time-hint">Live coverage commences Friday, 20 November 2026 at 10:30 AM IST</small>
+              <small class="live-time-hint">Live coverage commences Friday, 20 November 2026 from 10:00 AM onwards (IST)</small>
             </div>
           </div>
         </div>
@@ -453,9 +445,9 @@
             <h2 class="closing-title" id="closing-title">Ad Majorem<br><em>Dei Gloriam</em></h2>
             <div class="closing-rule" aria-hidden="true"></div>
             <p class="closing-names">
-              <span>${text(data.couple.first)}</span><br>
+              <span>DEACON CHRIST RAJAN MINJ SJ</span><br>
               <i class="closing-amp">&amp;</i><br>
-              <span>${text(data.couple.second)}</span>
+              <span>DEACON REUELL PAUL SJ</span>
             </p>
             <p class="closing-date">20 NOVEMBER 2026 · KURSEONG</p>
             <p class="closing-note">
@@ -529,7 +521,7 @@
   });
 
   if (window.initWeddingRSVP) {
-    window.initWeddingRSVP($('rsvp-form'), data.rsvp || {}, `${data.couple.first} & ${data.couple.second}`);
+    window.initWeddingRSVP($('rsvp-form'), data.rsvp || {}, `Deacon Christ Rajan Minj SJ & Deacon Reuell Paul SJ`);
   }
 
   // Interactive Photo Switching for Left & Right Ordinands
@@ -707,7 +699,7 @@
         `DTSTAMP:${stamp(new Date())}`,
         `DTSTART:${stamp(date)}`,
         `DTEND:${stamp(end)}`,
-        `SUMMARY:${icsEscape('Sacerdotal Ordination of Deacon Reuell Paul, SJ & Deacon Christ Rajan Minj, SJ')}`,
+        `SUMMARY:${icsEscape('Sacerdotal Ordination of Deacon Christ Rajan Minj SJ & Deacon Reuell Paul SJ')}`,
         `LOCATION:${icsEscape(data.venue.name + ', ' + data.venue.address)}`,
         `DESCRIPTION:${icsEscape('Sacerdotal Ordination to the Priesthood of Jesus Christ, conferred by The Most Rev. Stephen Lepcha, Bishop of Darjeeling at St. Mary’s Hill, Kurseong.')}`,
         'END:VEVENT',

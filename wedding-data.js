@@ -1,12 +1,12 @@
 // Sacerdotal Ordination Invitation Data
-// Deacon Reuell Paul, SJ & Deacon Christ Rajan Minj, SJ
+// Deacon Christ Rajan Minj SJ & Deacon Reuell Paul SJ
 // St. Mary's Hill, Kurseong · 20 November 2026
 
 window.WEDDING_DATA = {
   "theme": "jesuit-crimson",
   "couple": {
-    "first": "Deacon Christ Rajan Minj SJ",
-    "second": "Deacon Reuell Paul SJ",
+    "first": "DEACON CHRIST RAJAN MINJ SJ",
+    "second": "DEACON REUELL PAUL SJ",
     "heroNote": "The Darjeeling–Nepal Jesuits cordially invite you",
     "subtitle": "AD MAJOREM DEI GLORIAM"
   },

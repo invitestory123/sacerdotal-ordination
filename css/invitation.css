@@ -2,14 +2,14 @@
 
 :root {
   color-scheme: light;
-  --paper: #fbf8f3;
-  --paper-card: #ffffff;
-  --paper-trans: rgba(251, 248, 243, 0.92);
-  --ink: #241a17;
-  --ink-muted: #5e4d46;
-  --accent: #7c1a27;
-  --accent-dark: #520e17;
-  --accent-light: #9a2536;
+  --paper: #ffffff;
+  --paper-card: #fdfcf9;
+  --paper-trans: rgba(255, 255, 255, 0.95);
+  --ink: #2b1114;
+  --ink-muted: #5e3b3f;
+  --accent: #6b101c;
+  --accent-dark: #4a0711;
+  --accent-light: #8d1c2b;
   --metal: #b58739;
   --metal-light: #d8ab5d;
   --metal-glow: rgba(181, 135, 57, 0.28);
@@ -21,7 +21,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: #ede6dc;
+  background: #f7f4ef;
   color: var(--ink);
   font: 18px/1.65 "Cormorant Garamond", Georgia, serif;
   -webkit-font-smoothing: antialiased;
@@ -597,18 +597,19 @@ button:disabled { cursor: wait; opacity: 0.7; }
 }
 
 .hero-date {
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: clamp(20px, 5.2vw, 25px);
+  font-weight: 800;
+  letter-spacing: 0.14em;
   color: var(--accent);
-  margin: 0 0 3px;
+  margin: 0 0 4px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 .hero-venue {
-  font-size: 14px;
-  letter-spacing: 0.08em;
+  font-size: 15px;
+  letter-spacing: 0.1em;
   color: var(--ink);
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
 }
 
@@ -660,28 +661,30 @@ button:disabled { cursor: wait; opacity: 0.7; }
 }
 
 .rule {
-  width: 70px;
+  width: min(85%, 260px);
   height: 1px;
-  background: var(--metal);
-  margin: 20px auto 28px;
+  background: linear-gradient(90deg, transparent, rgba(216, 171, 93, 0.35) 15%, #b58739 50%, rgba(216, 171, 93, 0.35) 85%, transparent);
+  margin: 22px auto 28px;
   position: relative;
+  border: none;
 }
 .rule:after {
   content: '☩';
   position: absolute;
   left: 50%;
-  top: -9px;
+  top: -10px;
   transform: translateX(-50%);
   background: var(--paper);
-  padding: 0 6px;
-  font-size: 13px;
+  padding: 0 10px;
+  font-size: 15px;
   color: var(--metal);
+  text-shadow: 0 0 10px rgba(216, 171, 93, 0.4);
 }
 
 /* ----------------------------------------------------
-   SOLEMN INTRO / CALLING
+   ORDINATION INTRO / PREAMBLE
 ---------------------------------------------------- */
-.solemn-intro {
+.solemn-intro, .ordination-intro {
   padding-top: 50px;
   padding-bottom: 75px;
 }
@@ -701,30 +704,25 @@ button:disabled { cursor: wait; opacity: 0.7; }
 }
 
 .amdg-heading {
-  font-size: clamp(34px, 8vw, 44px);
+  font-size: clamp(25px, 6.2vw, 40px);
   margin-bottom: 8px;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 
-.vocation-verse {
-  max-width: 440px;
-  margin: 0 auto 30px;
-  padding: 20px 24px;
-  border-left: 2px solid var(--metal);
-  border-right: 2px solid var(--metal);
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 4px;
-}
-
-.quote-text {
-  font-size: 19px;
-  line-height: 1.6;
-  font-style: italic;
+.invitation-continuous-para {
+  font-size: clamp(17px, 4.4vw, 19.5px);
+  line-height: 1.7;
   color: var(--ink);
-  margin: 0;
+  max-width: 470px;
+  margin: 22px auto 14px;
+  text-align: center;
+  font-style: italic;
+  padding: 0 12px;
 }
 
 .invitation-text-block {
-  max-width: 460px;
+  max-width: 470px;
   margin: 0 auto;
 }
 
@@ -819,13 +817,13 @@ button:disabled { cursor: wait; opacity: 0.7; }
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
-  border: 1px solid var(--metal);
-  border-radius: 6px;
-  padding: 22px 20px;
-  margin: 30px auto 0;
-  max-width: 480px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(180deg, #ffffff 0%, #fdfbf8 100%);
+  border: 1px solid rgba(216, 171, 93, 0.55);
+  border-radius: 12px;
+  padding: 24px 20px;
+  margin: 32px auto 0;
+  max-width: 490px;
+  box-shadow: 0 10px 30px rgba(107, 16, 28, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.8) inset, 0 2px 14px rgba(181, 135, 57, 0.16);
 }
 
 .plaque-col {
@@ -836,33 +834,35 @@ button:disabled { cursor: wait; opacity: 0.7; }
 .plaque-label {
   display: block;
   font-size: 11px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--metal);
-  font-weight: 600;
-  margin-bottom: 4px;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 
 .plaque-value {
   display: block;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 21px;
+  font-weight: 800;
   color: var(--accent);
-  letter-spacing: 0.04em;
-  line-height: 1.3;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
 }
 
 .plaque-sub {
   display: block;
-  font-size: 14px;
-  color: var(--ink-muted);
-  margin-top: 3px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-light);
+  margin-top: 4px;
+  letter-spacing: 0.04em;
 }
 
 .plaque-divider {
   width: 1px;
   height: 50px;
-  background: var(--border-gold);
+  background: linear-gradient(180deg, transparent, rgba(216, 171, 93, 0.7), transparent);
 }
 
 @media (max-width: 460px) {
@@ -1700,14 +1700,12 @@ button:disabled { cursor: wait; opacity: 0.7; }
 ---------------------------------------------------- */
 .together-centerpiece-card {
   max-width: 490px;
-  margin: 25px auto 35px;
+  margin: 20px auto 30px;
   background: #ffffff;
-  border: 1px solid var(--metal);
-  outline: 1px solid var(--border-gold);
-  outline-offset: 4px;
-  border-radius: 12px;
+  border: 1px solid rgba(216, 171, 93, 0.55);
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 0 25px var(--metal-glow);
+  box-shadow: 0 12px 36px rgba(107, 16, 28, 0.07), 0 0 0 1px rgba(255, 255, 255, 0.8) inset, 0 2px 18px rgba(181, 135, 57, 0.2);
   position: relative;
 }
 
@@ -1735,21 +1733,21 @@ button:disabled { cursor: wait; opacity: 0.7; }
 .together-arch-overlay {
   position: absolute;
   inset: 0;
-  border-radius: 8px 8px 0 0;
+  border-radius: 12px 12px 0 0;
   box-shadow: inset 0 0 25px rgba(36, 26, 23, 0.45);
   pointer-events: none;
 }
 
 .together-badge {
   padding: 14px 18px 16px;
-  background: linear-gradient(180deg, #ffffff 0%, #fbf8f3 100%);
-  border-top: 1px solid var(--border-gold);
+  background: linear-gradient(180deg, #ffffff 0%, #fdfbf8 100%);
+  border-top: 1px solid rgba(216, 171, 93, 0.35);
   text-align: center;
 }
 
 .together-title-names {
   display: block;
-  font-size: 19px;
+  font-size: clamp(15px, 3.8vw, 18px);
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 0.04em;
@@ -1768,25 +1766,23 @@ button:disabled { cursor: wait; opacity: 0.7; }
 ---------------------------------------------------- */
 .ordinands-section {
   padding: 65px 24px 75px;
-  background: linear-gradient(180deg, #fbf8f3 0%, #f6eee2 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #fdfbf8 50%, #ffffff 100%);
 }
 
 .ordinands-duo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 22px;
   max-width: 520px;
   margin: 30px auto 0;
 }
 
 .ordinand-profile-card {
   background: #ffffff;
-  border: 1px solid var(--metal);
-  outline: 1px solid var(--border-gold);
-  outline-offset: 4px;
-  border-radius: 12px;
+  border: 1px solid rgba(216, 171, 93, 0.55);
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(107, 16, 28, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.8) inset, 0 2px 14px rgba(181, 135, 57, 0.16);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1794,7 +1790,7 @@ button:disabled { cursor: wait; opacity: 0.7; }
 
 .ordinand-profile-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(124, 26, 39, 0.12);
+  box-shadow: 0 14px 36px rgba(107, 16, 28, 0.14), 0 0 22px rgba(181, 135, 57, 0.3);
 }
 
 .profile-photo-container {
@@ -1868,7 +1864,7 @@ button:disabled { cursor: wait; opacity: 0.7; }
 }
 
 .profile-name {
-  font-size: 18px;
+  font-size: 17.5px;
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 0.04em;
@@ -1877,10 +1873,32 @@ button:disabled { cursor: wait; opacity: 0.7; }
 }
 
 .profile-subtitle {
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--metal);
   font-style: italic;
-  margin: 0 0 10px;
+  margin: 0 0 8px;
+}
+
+.liturgical-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 140px;
+  margin: 8px auto 6px;
+}
+
+.liturgical-divider:before, .liturgical-divider:after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(216, 171, 93, 0.7), transparent);
+}
+
+.liturgical-divider span {
+  padding: 0 8px;
+  color: var(--metal);
+  font-size: 14px;
 }
 
 .profile-caption {
@@ -1888,6 +1906,16 @@ button:disabled { cursor: wait; opacity: 0.7; }
   color: var(--ink-muted);
   line-height: 1.45;
   margin: 0;
+}
+
+.thanksgiving-caption {
+  font-family: "Parisienne", "Imperial Script", cursive;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1.25;
+  margin: 4px 0 0;
+  text-shadow: 0 1px 2px rgba(181, 135, 57, 0.18);
 }
 
 @media (min-width: 768px) {
