@@ -41,19 +41,13 @@
     name: 'DEACON CHRIST RAJAN MINJ SJ',
     title: 'Deacon Christ Rajan Minj SJ',
     subtitle: 'Society of Jesus · Darjeeling Province',
-    photoPrayer: './assets/ordinand-rajan-monstrance.png',
-    photoMinistry: './assets/ordinand-christ-rajan.jpg',
-    prayerLabel: 'Adoration',
-    ministryLabel: 'In Prayer'
+    photoPrayer: './assets/ordinand-rajan-monstrance.png'
   };
   const ordRight = ord.right || {
     name: 'DEACON REUELL PAUL SJ',
     title: 'Deacon Reuell Paul SJ',
     subtitle: 'Society of Jesus · Darjeeling Province',
-    photoPrayer: './assets/ordinand-reuell-censer.png',
-    photoMinistry: './assets/ordinand-reuell-paul.jpg',
-    prayerLabel: 'Incensation',
-    ministryLabel: 'In Prayer'
+    photoPrayer: './assets/ordinand-reuell-censer.png'
   };
   const ordTogether = (ord.together && ord.together.photo) ? ord.together.photo : './assets/ordinands-together.jpg';
 
@@ -61,6 +55,19 @@
   app.innerHTML = `
     <!-- Architectural Door Entrance Screen (Door 2 - No commas on intro) -->
     <div class="entrance door-entrance" id="entrance">
+      <!-- Animated Sanctuary Background: slow zoom + drifting light motes -->
+      <div class="entrance-bg" aria-hidden="true">
+        <img class="entrance-bg-img" src="./assets/ordination-altar-cinematic.jpg" alt="" decoding="async">
+        <div class="entrance-bg-veil"></div>
+        <span class="entrance-mote"></span>
+        <span class="entrance-mote"></span>
+        <span class="entrance-mote"></span>
+        <span class="entrance-mote"></span>
+        <span class="entrance-mote"></span>
+        <span class="entrance-mote"></span>
+        <span class="entrance-mote"></span>
+        <span class="entrance-mote"></span>
+      </div>
       <div class="door-scene-wrapper">
         <header class="door-header">
           <span class="door-motto">|| <em>Ad Majorem Dei Gloriam</em> ||</span>
@@ -242,7 +249,7 @@
           <div class="plaque-col">
             <span class="plaque-label">Venue</span>
             <strong class="plaque-value">ST. MARY’S HILL KURSEONG</strong>
-            <span class="plaque-sub">Former Jesuit Theologate · St. John Berchmans Parish</span>
+            <span class="plaque-sub">Former Jesuit Theologate · St. John Berchmen's Parish</span>
           </div>
         </div>
       </section>
@@ -259,14 +266,6 @@
           <article class="ordinand-profile-card reveal" id="card-left">
             <div class="profile-photo-container">
               <img class="profile-img active-img" id="img-left" src="${ordLeft.photoPrayer}" alt="DEACON CHRIST RAJAN MINJ SJ" loading="lazy">
-              <div class="photo-switch-bar">
-                <button class="switch-btn active" data-target="img-left" data-src="${ordLeft.photoPrayer}" data-alt="DEACON CHRIST RAJAN MINJ SJ - Holy Monstrance Adoration">
-                  ☩ Adoration
-                </button>
-                <button class="switch-btn" data-target="img-left" data-src="${ordLeft.photoMinistry}" data-alt="DEACON CHRIST RAJAN MINJ SJ - In Prayer">
-                  🕊️ In Prayer
-                </button>
-              </div>
             </div>
             <div class="profile-content">
               <h3 class="profile-name">${text(ordLeft.name)}</h3>
@@ -280,14 +279,6 @@
           <article class="ordinand-profile-card reveal" id="card-right">
             <div class="profile-photo-container">
               <img class="profile-img active-img" id="img-right" src="${ordRight.photoPrayer}" alt="DEACON REUELL PAUL SJ" loading="lazy">
-              <div class="photo-switch-bar">
-                <button class="switch-btn active" data-target="img-right" data-src="${ordRight.photoPrayer}" data-alt="DEACON REUELL PAUL SJ - Incense Censer">
-                  ☩ Incensation
-                </button>
-                <button class="switch-btn" data-target="img-right" data-src="${ordRight.photoMinistry}" data-alt="DEACON REUELL PAUL SJ - In Prayer">
-                  🕊️ In Prayer
-                </button>
-              </div>
             </div>
             <div class="profile-content">
               <h3 class="profile-name">${text(ordRight.name)}</h3>
@@ -338,7 +329,7 @@
       <section class="paper-section venue-section" aria-labelledby="venue-title">
         <span class="section-kicker reveal">Ordination Venue</span>
         <h2 class="script reveal" id="venue-title">St. Mary’s Hill Kurseong</h2>
-        <p class="venue-subheading reveal">Former Jesuit Theologate · St. John Berchmans Parish</p>
+        <p class="venue-subheading reveal">Former Jesuit Theologate · St. John Berchmen's Parish</p>
         <div class="rule" aria-hidden="true"></div>
 
         <!-- Satellite Picture (Image 2 Enhanced) & Watermark Location Box (Image 3) -->
@@ -355,7 +346,7 @@
             <div class="watermark-bg-overlay" aria-hidden="true"></div>
             <div class="location-details-inner">
               <h3 class="venue-name">ST. MARY’S HILL KURSEONG</h3>
-              <p class="venue-history">Historic Former Jesuit Theologate &amp; St. John Berchmans Parish</p>
+              <p class="venue-history">Historic Former Jesuit Theologate &amp; St. John Berchmen's Parish</p>
               <address class="venue-address">${text(data.venue.address)}</address>
               <p class="venue-timing">${text(data.venue.timeLabel)}</p>
 
@@ -373,7 +364,6 @@
             </div>
           </div>
         </div>
-        <p class="travel-note reveal">${text(data.venue.note)}</p>
       </section>
 
       <!-- Live Telecast Section with YouTube QR and Link (Live from 10:00 AM onwards) -->
@@ -430,8 +420,10 @@
           <div class="seal-mini">☩</div>
           <h2 class="script" id="rsvp-title">${text(data.rsvp?.heading || 'Prayerful Communion & Presence')}</h2>
           <p>${text(data.rsvp?.note || 'Kindly let us know of your presence or send your prayerful wishes to 9789876513 via WhatsApp.')}</p>
-          
-          <!-- Direct WhatsApp RSVP Button -->
+
+          ${data.rsvp?.deadline ? `<p class="rsvp-deadline">Kindly reply by ${text(data.rsvp.deadline)}</p>` : ''}
+
+          <!-- Direct WhatsApp RSVP Button (replaces email RSVP) -->
           <div class="whatsapp-rsvp-wrap">
             <a class="action whatsapp-btn" href="https://wa.me/919789876513?text=Peace%20be%20with%20you.%20I%20would%20like%20to%20send%20prayerful%20wishes%20and%20RSVP%20for%20the%20Sacerdotal%20Ordination%20at%20Kurseong." target="_blank" rel="noopener noreferrer">
               <svg class="wa-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
@@ -440,9 +432,6 @@
               <span>WhatsApp RSVP: 9789876513</span>
             </a>
           </div>
-
-          ${data.rsvp?.deadline ? `<p class="rsvp-deadline">Kindly reply by ${text(data.rsvp.deadline)}</p>` : ''}
-          <form class="rsvp-form" id="rsvp-form"></form>
         </div>
       </section>
 
@@ -533,28 +522,9 @@
     if (opened) notify('Audio accompaniment could not be loaded.');
   });
 
-  if (window.initWeddingRSVP) {
-    window.initWeddingRSVP($('rsvp-form'), data.rsvp || {}, `Deacon Christ Rajan Minj SJ & Deacon Reuell Paul SJ`);
-  }
+  // Email RSVP removed; WhatsApp RSVP button is rendered directly in the RSVP section.
 
-  // Interactive Photo Switching for Left & Right Ordinands
-  document.querySelectorAll('.photo-switch-bar button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.dataset.target;
-      const targetImg = document.getElementById(targetId);
-      if (!targetImg) return;
-      const parentBar = btn.closest('.photo-switch-bar');
-      parentBar.querySelectorAll('.switch-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      targetImg.style.opacity = '0.3';
-      setTimeout(() => {
-        targetImg.src = btn.dataset.src;
-        targetImg.alt = btn.dataset.alt || '';
-        targetImg.style.opacity = '1';
-      }, 180);
-    });
-  });
+  // Interactive Photo Switching removed per design review (static portraits)
 
   function beginObservers() {
     if (observersStarted || !('IntersectionObserver' in window)) return;
@@ -585,6 +555,7 @@
     clearTimeout(openingTimer);
     $('entrance').classList.add('leaving');
     $('invitation').inert = false;
+    $('invitation').classList.add('is-open');
     document.body.classList.remove('locked');
     $('media-controls').hidden = false;
     syncMotion();
@@ -633,6 +604,7 @@
     $('entrance').classList.remove('leaving', 'opening', 'door-opening');
     $('open').disabled = false;
     $('invitation').inert = true;
+    $('invitation').classList.remove('is-open');
     $('media-controls').hidden = true;
     document.body.classList.add('locked');
     $('open').focus();

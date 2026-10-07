@@ -5,24 +5,27 @@ window.initInvitationMotion = function ({ theme, reduced }) {
   const depth = { 'aubergine-magnolia': 30, 'petrol-dahlia': 24, 'cobalt-iris': 36, 'cinnamon-camellia': 26 }[theme] || 26;
   let paused = true, frame = 0;
 
-  scenes.forEach((scene, index) => {
+  scenes.forEach((scene) => {
     scene.classList.add('motion-scene');
+    // Church-based falling watermark: faint gold crosses drifting down like petals.
     // Decorative layers never intercept gestures or enter the accessibility tree.
-    if (scene.matches('.intro,.venue-section,.etiquette,.closing')) {
+    if (scene.matches('.paper-section,.closing')) {
       const layer = document.createElement('div');
       layer.className = 'motion-decor';
       layer.setAttribute('aria-hidden', 'true');
-      const sprig = document.createElement('span');
-      sprig.className = `botanical-drift ${index % 2 ? 'drift-right' : 'drift-left'}`;
-      const image = document.createElement('img');
-      image.src = `./assets/motion-sprig.png`;
-      image.alt = '';
-      image.width = 320;
-      image.height = 480;
-      image.decoding = 'async';
-      image.loading = scene.matches('.hero') ? 'eager' : 'lazy';
-      sprig.append(image);
-      layer.append(sprig);
+      const count = 14;
+      for (let i = 0; i < count; i++) {
+        const cross = document.createElement('span');
+        cross.className = 'falling-cross';
+        cross.style.setProperty('--size', `${9 + Math.round(Math.random() * 12)}px`);
+        cross.style.setProperty('--x', `${Math.round(Math.random() * 100)}%`);
+        cross.style.setProperty('--dur', `${17 + Math.round(Math.random() * 20)}s`);
+        cross.style.setProperty('--delay', `${-Math.round(Math.random() * 34)}s`);
+        cross.style.setProperty('--drift', `${Math.round(Math.random() * 80 - 40)}px`);
+        cross.style.setProperty('--op', (0.07 + Math.random() * 0.11).toFixed(2));
+        cross.style.setProperty('--spin', `${Math.round(Math.random() * 360)}deg`);
+        layer.append(cross);
+      }
       scene.append(layer);
     }
   });

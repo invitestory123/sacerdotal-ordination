@@ -28,9 +28,6 @@ window.WEDDING_DATA = {
       "title": "Deacon Christ Rajan Minj SJ",
       "subtitle": "Society of Jesus · Darjeeling Province",
       "photoPrayer": "./assets/ordinand-rajan-monstrance.png",
-      "photoMinistry": "./assets/ordinand-christ-rajan.jpg",
-      "prayerLabel": "Adoration",
-      "ministryLabel": "In Prayer",
       "thanksgiving": "Thanksgiving Mass"
     },
     "right": {
@@ -38,9 +35,6 @@ window.WEDDING_DATA = {
       "title": "Deacon Reuell Paul SJ",
       "subtitle": "Society of Jesus · Darjeeling Province",
       "photoPrayer": "./assets/ordinand-reuell-censer.png",
-      "photoMinistry": "./assets/ordinand-reuell-paul.jpg",
-      "prayerLabel": "Incensation",
-      "ministryLabel": "In Prayer",
       "thanksgiving": "Thanksgiving Mass"
     }
   },
@@ -73,15 +67,14 @@ window.WEDDING_DATA = {
   ],
   "venue": {
     "name": "ST. MARY’S HILL KURSEONG",
-    "subname": "Former Jesuit Theologate · St. John Berchmans Parish",
+    "subname": "Former Jesuit Theologate · St. John Berchmen's Parish",
     "address": "St. Mary's Hill Kurseong Darjeeling District West Bengal 734220",
     "mapsUrl": "https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw",
     "satelliteUrl": "https://maps.app.goo.gl/onmGYCHSL7iwgBrUA",
     "satelliteImage": "./assets/st-marys-satellite-map.jpg",
     "watermarkImage": "./assets/st-marys-hill-historic.jpg",
     "timeLabel": "Friday 20 November 2026 · 10:30 AM",
-    "sceneCaption": "Satellite perspective of St. Mary's Hill Kurseong featuring St. Mary's Grotto and surrounding Himalayan ridge",
-    "note": "St. Mary’s Hill is the historic former Jesuit Theologate and St. John Berchmans Parish in Kurseong."
+    "sceneCaption": "Satellite perspective of St. Mary's Hill Kurseong featuring St. Mary's Grotto and surrounding Himalayan ridge"
   },
   "liveStream": {
     "title": "Live Telecast on YouTube",
@@ -91,7 +84,7 @@ window.WEDDING_DATA = {
     "note": "For those unable to be physically present at Kurseong, the Holy Eucharist and the Sacred Rite of Ordination will be broadcast live from 10:00 AM onwards."
   },
   "details": {
-    "dressCode": "Liturgical / Formal Attire. Priests are requested to bring alb and white stole for concelebration.",
+    "dressCode": "Liturgical. Priests are requested to bring an alb for the mass.",
     "giftPreference": "Your presence, blessings, and prayerful communion are our greatest joy."
   },
   "rsvp": {
