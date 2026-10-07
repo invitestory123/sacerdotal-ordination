@@ -23,10 +23,11 @@ All event details, timings, location, and streaming links are configured in:
 - `schedule`: Array of ceremonial steps (Arrival & Gathering, Holy Eucharist & Rite of Ordination, Agape Meal & Felicitation).
 
 ### 4. Venue & Satellite Map Links
-- `venue.name`: St. Mary's Hill, Kurseong (Former Jesuit Theologate · St. John Berchmans Parish)
+- `venue.name`: ST. MARY'S HILL KURSEONG (Former Jesuit Theologate · St. John Berchmans Parish)
 - `venue.mapsUrl`: Google Maps navigation link (`https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw`)
 - `venue.satelliteUrl`: Google Maps satellite view link (`https://maps.app.goo.gl/onmGYCHSL7iwgBrUA`)
-- `venue.satelliteImage`: Aerial satellite photography of St. Mary's Hill (`./assets/st-marys-satellite.jpg`)
+- `venue.satelliteImage`: Enhanced aerial satellite photography of St. Mary's Hill (`./assets/st-marys-satellite-map.jpg`, upscaled 2× and sharpened before insertion)
+- `venue.watermarkImage`: Image 3 historic St. Mary's Hill photograph used as the location watermark background (`./assets/st-marys-hill-historic.jpg`, applied via `.watermark-bg-overlay` in `css/invitation.css`)
 
 ### 5. Live Telecast on YouTube
 - `liveStream.url`: YouTube live broadcast link (`https://www.youtube.com/live/illwWKDujck?si=X8uv-ORdfTfyP-pA`)

@@ -337,14 +337,14 @@
       <!-- Venue Section: Enhanced Satellite Image (2) and Watermark Background (3) -->
       <section class="paper-section venue-section" aria-labelledby="venue-title">
         <span class="section-kicker reveal">Ordination Venue</span>
-        <h2 class="script reveal" id="venue-title">St. Mary’s Hill, Kurseong</h2>
+        <h2 class="script reveal" id="venue-title">St. Mary’s Hill Kurseong</h2>
         <p class="venue-subheading reveal">Former Jesuit Theologate · St. John Berchmans Parish</p>
         <div class="rule" aria-hidden="true"></div>
 
         <!-- Satellite Picture (Image 2 Enhanced) & Watermark Location Box (Image 3) -->
         <div class="satellite-feature-card reveal">
           <div class="satellite-image-wrapper">
-            <img class="satellite-img" src="./assets/st-marys-satellite.jpg" alt="Enhanced Satellite perspective of St. Mary's Hill, Kurseong featuring St. Mary's Grotto" loading="lazy">
+            <img class="satellite-img" src="${text(data.venue.satelliteImage || './assets/st-marys-satellite-map.jpg')}" alt="Enhanced Satellite perspective of St. Mary's Hill, Kurseong featuring St. Mary's Grotto" loading="lazy">
             <div class="satellite-badge">
               <span class="badge-icon">🛰️</span> Satellite Map View
             </div>
@@ -354,7 +354,7 @@
           <div class="location-details-box location-watermark-card">
             <div class="watermark-bg-overlay" aria-hidden="true"></div>
             <div class="location-details-inner">
-              <h3 class="venue-name">ST. MARY’S HILL, KURSEONG</h3>
+              <h3 class="venue-name">ST. MARY’S HILL KURSEONG</h3>
               <p class="venue-history">Historic Former Jesuit Theologate &amp; St. John Berchmans Parish</p>
               <address class="venue-address">${text(data.venue.address)}</address>
               <p class="venue-timing">${text(data.venue.timeLabel)}</p>

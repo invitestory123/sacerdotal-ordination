@@ -72,15 +72,15 @@ window.WEDDING_DATA = {
     }
   ],
   "venue": {
-    "name": "ST. MARY’S HILL, KURSEONG",
+    "name": "ST. MARY’S HILL KURSEONG",
     "subname": "Former Jesuit Theologate · St. John Berchmans Parish",
-    "address": "St. Mary's Hill, Kurseong, Darjeeling District, West Bengal 734220",
+    "address": "St. Mary's Hill Kurseong Darjeeling District West Bengal 734220",
     "mapsUrl": "https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw",
     "satelliteUrl": "https://maps.app.goo.gl/onmGYCHSL7iwgBrUA",
-    "satelliteImage": "./assets/st-marys-satellite.jpg",
+    "satelliteImage": "./assets/st-marys-satellite-map.jpg",
     "watermarkImage": "./assets/st-marys-hill-historic.jpg",
-    "timeLabel": "Friday, 20 November 2026 · 10:30 AM",
-    "sceneCaption": "Satellite perspective of St. Mary's Hill, Kurseong featuring St. Mary's Grotto and surrounding Himalayan ridge",
+    "timeLabel": "Friday 20 November 2026 · 10:30 AM",
+    "sceneCaption": "Satellite perspective of St. Mary's Hill Kurseong featuring St. Mary's Grotto and surrounding Himalayan ridge",
     "note": "St. Mary’s Hill is the historic former Jesuit Theologate and St. John Berchmans Parish in Kurseong."
   },
   "liveStream": {
