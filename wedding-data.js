@@ -14,10 +14,10 @@ window.WEDDING_DATA = {
     "first": "DEACON REUELL PAUL SJ",
     "second": "DEACON CHRIST RAJAN MINJ SJ",
     "hosts": "The Darjeeling–Nepal Jesuits",
-    "calling": "Anointing by",
-    "bishop": "Rt. Rev. Bishop Stephen Lepcha",
+    "calling": "Which will be solemnly conferred upon them by",
+    "bishop": "THE MOST REV. STEPHEN LEPCHA",
     "bishopTitle": "Bishop of Darjeeling",
-    "preamble": "In the grace of a vocation faithfully discerned freely embraced and now brought to its sacramental fulfilment the Darjeeling–Nepal Jesuits cordially invite you to the",
+    "preamble": "With the blessings of the Almighty and in the grace of a vocation, faithfully discerned, freely embraced, and now brought to its sacramental fulfilment,",
     "together": {
       "photo": "./assets/ordinands-together.jpg",
       "photoOriginal": "./assets/ordinands-together.jpg",
@@ -27,6 +27,10 @@ window.WEDDING_DATA = {
       "name": "DEACON CHRIST RAJAN MINJ SJ",
       "title": "Deacon Christ Rajan Minj SJ",
       "subtitle": "Society of Jesus · Darjeeling Province",
+      "parents": "S/O Mr. Cyprian Minj and Mrs. Sarita Beck",
+      "massPlace": "St Ignatius Church, Goomgooma",
+      "massDate": "21st November 2026",
+      "massTime": "10:30 am",
       "photoPrayer": "./assets/ordinand-rajan-monstrance.png",
       "thanksgiving": "Thanksgiving Mass"
     },
@@ -34,6 +38,10 @@ window.WEDDING_DATA = {
       "name": "DEACON REUELL PAUL SJ",
       "title": "Deacon Reuell Paul SJ",
       "subtitle": "Society of Jesus · Darjeeling Province",
+      "parents": "S/O Lt. Mr. Hilarius Paul and Mrs. Lily Paul",
+      "massPlace": "St. John Berchman's Parish",
+      "massDate": "21st November 2026",
+      "massTime": "10:30 am",
       "photoPrayer": "./assets/ordinand-reuell-censer.png",
       "thanksgiving": "Thanksgiving Mass"
     }
@@ -67,7 +75,7 @@ window.WEDDING_DATA = {
   ],
   "venue": {
     "name": "ST. MARY’S HILL KURSEONG",
-    "subname": "Former Jesuit Theologate · St. John Berchmen's Parish",
+    "subname": "Former Jesuit Theologate · St. John Berchman's Parish",
     "address": "St. Mary's Hill Kurseong Darjeeling District West Bengal 734220",
     "mapsUrl": "https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw",
     "satelliteUrl": "https://maps.app.goo.gl/onmGYCHSL7iwgBrUA",
@@ -81,11 +89,11 @@ window.WEDDING_DATA = {
     "url": "https://www.youtube.com/live/illwWKDujck?si=X8uv-ORdfTfyP-pA",
     "qrImage": "./assets/youtube-live-qr.jpg",
     "timeNotice": "Live coverage commences from 10:00 AM onwards (Friday, 20 November 2026)",
-    "note": "For those unable to be physically present at Kurseong, the Holy Eucharist and the Sacred Rite of Ordination will be broadcast live from 10:00 AM onwards."
+    "note": "For family members Jesuit brethren, friends, alumni and the faithful who are unable to be present at St. Mary’s Hill, the Eucharistic celebration and Rite of Ordination will be broadcast live from 10:00 AM onwards."
   },
   "details": {
-    "dressCode": "Liturgical. Priests are requested to bring an alb for the mass.",
-    "giftPreference": "Your presence, blessings, and prayerful communion are our greatest joy."
+    "dressCode": "Priests are requested to bring an alb and cincture for the mass. Stole/ chausible will be provided",
+    "prayerForPriests": "Almighty God, pour out Your grace on the priests You have chosen for yourself. Strengthen them with the gifts of the Holy Spirit, and help them to serve your people. Through them, may Your Word be truly proclaimed, and may Your Sacraments, especially the Eucharist, be faithfully administered and devoutly received. Through Christ the Eternal High Priest. Amen."
   },
   "rsvp": {
     "email": "",

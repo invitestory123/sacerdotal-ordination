@@ -23,7 +23,7 @@ All event details, timings, location, and streaming links are configured in:
 - `schedule`: Array of ceremonial steps (Arrival & Gathering, Holy Eucharist & Rite of Ordination, Agape Meal & Felicitation).
 
 ### 4. Venue & Satellite Map Links
-- `venue.name`: ST. MARY'S HILL KURSEONG (Former Jesuit Theologate · St. John Berchmen's Parish)
+- `venue.name`: ST. MARY'S HILL KURSEONG (St. John Berchman's Parish)
 - `venue.mapsUrl`: Google Maps navigation link (`https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw`)
 - `venue.satelliteUrl`: Google Maps satellite view link (`https://maps.app.goo.gl/onmGYCHSL7iwgBrUA`)
 - `venue.satelliteImage`: Enhanced aerial satellite photography of St. Mary's Hill (`./assets/st-marys-satellite-map.jpg`, upscaled 2× and sharpened before insertion)
@@ -37,7 +37,7 @@ All event details, timings, location, and streaming links are configured in:
 - `rsvp.note` / button label / `rsvp.whatsappUrl`: RSVP happens through the **WhatsApp button at the end of the RSVP section** (9789876513). The email RSVP form has been removed (`js/rsvp.js` is no longer loaded).
 
 ### 7. Attire Note
-- `details.dressCode`: "Liturgical. Priests are requested to bring an alb for the mass."
+- `details.dressCode`: "Priests are requested to bring an alb and cincture for the mass. Stole/ chausible will be provided"
 
 ---
 
@@ -46,7 +46,7 @@ All event details, timings, location, and streaming links are configured in:
 - **Dividers**: `.rule` / `.closing-rule` are ornamental gold medallion dividers (not plain lines); every `.paper-section` gets a soft blended gold hairline border.
 - **Watermark**: faint gold crosses drift down through each section (`js/motion.js` → `.falling-cross` in `css/invitation.css`). Flower/petal sprigs were removed entirely.
 - **Entrance**: door only, filling the page (panel images cropped from the original 341×1024 door art to 341×755 — **the full design including the roof apex and the base is kept**; stage width `min(100%, 470px, (100svh − 318px) × 682/755)`) with titles above and below; animated sanctuary background behind it (slow zoom + rising light motes).
-- **Cover copy**: `|| Ad Majorem Dei Gloriam ||` is upright (never italic), the "You are cordially invited to the" line was removed, the title reads **Invitation to the / Priestly Ordination / Of**, and the names run **Reuell first, Christ second** (photos keep Christ on the left). Venue line: *St. Mary’s Hill, St. John Berchman’s Parish*.
+- **Cover copy**: `|| Ad Majorem Dei Gloriam ||` is upright (never italic) on the door, the "You are cordially invited to the" line was removed, the title reads **Invitation to the / Priestly Ordination / Of**, and the names run **Reuell first, Christ second** (photos keep Christ on the left). Venue line: *St. Mary’s Hill, St. John Berchman’s Parish*. First page after the doors: seal, **Ad Majorem Dei Gloriam** (plain, upright, no `||`), invitation copy, and the date plaque — the hero announcement now follows it.
 - **Tap circle**: the IHS button (`.door-latch-wrapper`, `top: 49.27%`) is concentric with the sunburst painted on the door art — the medallion centre was measured at pixel (340, 527) of the 682×1024 source, cropped from y = 155. Re-measure before moving it.
 - **Door opening**: 2.4 s weighted swing (`cubic-bezier(0.42, 0.02, 0.24, 1)`, 0.12 s latch delay), sanctuary glow blooms behind, entrance fades after 2.65 s. A latch **click, wooden knock, hinge creak and closing thud** are synthesised with the Web Audio API in `js/invitation.js` → `playDoorSound()` (no audio file needed; skipped for reduced motion).
 - **Global backdrop**: `body::before` in `css/invitation.css` fixes `../assets/ordination-altar-cinematic.jpg` (dark veil + `site-bg-zoom` loop) behind the whole invitation — all sections are translucent paper sheets over it (`color-mix(... 92%, transparent)` overrides at the end of the file). The intro/hero has **no image of its own**; its scrim gradient fades into the shared backdrop, which keeps zooming while the hero copy pops up in sequence.

@@ -89,7 +89,6 @@
           <!-- Sanctuary Golden Glow revealed behind parting doors -->
           <div class="door-interior-glow" aria-hidden="true">
             <div class="sanctuary-rays"></div>
-            <img class="door-interior-art" src="./assets/ordination-altar-cinematic.jpg" alt="" loading="eager">
           </div>
 
           <!-- Double Door Panels Splitting From Center -->
@@ -131,8 +130,73 @@
 
     <!-- Main Invitation Stationery -->
     <main class="invitation" id="invitation" inert>
-      
-      <!-- Hero Sacred Art & Announcement Banner (no own bg — global sanctuary backdrop shows through) -->
+
+      <!-- First page after the doors open: seal, Ad Majorem, invitation copy -->
+      <section class="paper-section ordination-intro" id="sacramental-call" aria-label="Sacramental Calling">
+        <div class="seal-badge-wrap reveal">
+          <img class="badge-seal" src="./assets/jesuit-seal.jpg" alt="Darjeeling Nepal Jesuit Province" width="90" height="90">
+        </div>
+        <h2 class="amdg-heading reveal">Ad Majorem Dei Gloriam</h2>
+        <div class="rule" aria-hidden="true"></div>
+
+        <!-- Centerpiece Portrait of Both Ordinands Together (Moved Upward) -->
+        <div class="together-centerpiece-card reveal">
+          <div class="together-image-frame">
+            <img class="together-img" src="${ordTogether}" alt="Deacon Christ Rajan Minj SJ and Deacon Reuell Paul SJ" loading="lazy">
+            <div class="together-arch-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="together-badge">
+            <span class="together-title-names">DEACON CHRIST RAJAN MINJ SJ &amp; DEACON REUELL PAUL SJ</span>
+            <small class="together-sub">Society of Jesus · Darjeeling–Nepal Province</small>
+          </div>
+        </div>
+
+        <!-- Continuous Paragraph (With the blessings of the Almighty — no commas removed, exact client copy) -->
+        <div class="invitation-text-block reveal">
+          <p class="invitation-continuous-para">
+            With the blessings of the Almighty and in the grace of a vocation,<br>
+            faithfully discerned, freely embraced, and now brought to its sacramental fulfilment,
+          </p>
+          <p class="invitation-continuous-para invitation-para-follow">
+            The Darjeeling–Nepal Jesuits, together with the families of the ordinands,<br>
+            cordially invite you to the
+          </p>
+          <h3 class="ordination-callout">SACERDOTAL ORDINATION</h3>
+          <p class="of-label">of</p>
+          <div class="ordinands-feature">
+            <div class="ordinand-card">
+              <h4>DEACON REUELL PAUL, SJ</h4>
+            </div>
+            <span class="ordinand-conjunction">&amp;</span>
+            <div class="ordinand-card">
+              <h4>DEACON CHRIST RAJAN MINJ, SJ</h4>
+            </div>
+          </div>
+          <p class="priesthood-text">Which will be solemnly conferred upon them by</p>
+          <div class="bishop-highlight">
+            <p class="bishop-title-main">THE MOST REV. STEPHEN LEPCHA</p>
+            <p class="bishop-diocese">Bishop of Darjeeling</p>
+          </div>
+        </div>
+
+        <!-- Date & Venue Plaque with Image 3 Historic Watermark (On / at) -->
+        <div class="date-venue-plaque location-watermark-card reveal">
+          <div class="watermark-bg-overlay" aria-hidden="true"></div>
+          <div class="plaque-col">
+            <span class="plaque-label">On</span>
+            <strong class="plaque-value">20 NOVEMBER 2026</strong>
+            <span class="plaque-sub">10.30 am</span>
+          </div>
+          <div class="plaque-divider"></div>
+          <div class="plaque-col">
+            <span class="plaque-label">at</span>
+            <strong class="plaque-value">ST. MARY’S HILL, KURSEONG</strong>
+            <span class="plaque-sub plaque-venue-sub">Former Jesuit Theologate · St. John Berchman’s Parish</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hero Announcement Banner (second screen: portraits, conferral, date & venue) -->
       <section class="hero sacred-hero cinematic-hero" aria-label="Sacerdotal Ordination Announcement">
         <div class="hero-overlay"></div>
         <div class="hero-copy">
@@ -140,14 +204,14 @@
           <p class="amdg-tag">|| Ad Majorem Dei Gloriam ||</p>
           <h2 class="hero-event-title">SACERDOTAL ORDINATION</h2>
           <p class="hero-of">of</p>
-          
+
           <!-- Side-by-Side Ordinands 4 & 5 (Left: Rajan 4, Right: Reuell 5) -->
           <div class="hero-ordinands-duo" id="names" tabindex="-1">
-            
+
             <!-- Deacon Christ Rajan Minj SJ (Image 4) -->
             <article class="hero-ordinand-profile">
               <div class="hero-portrait-arch">
-                <img class="hero-portrait-photo" src="./assets/ordinand-christ-rajan.jpg" alt="DEACON CHRIST RAJAN MINJ SJ" fetchpriority="high">
+                <img class="hero-portrait-photo hero-portrait-photo--left" src="./assets/ordinand-christ-rajan.jpg" alt="DEACON CHRIST RAJAN MINJ SJ" fetchpriority="high">
                 <div class="hero-portrait-border" aria-hidden="true"></div>
               </div>
               <div class="hero-ordinand-meta">
@@ -176,86 +240,29 @@
 
           </div>
 
-          <!-- Anointing by Bishop Stephen Lepcha -->
+          <!-- Conferral of Holy Orders (solemnly conferred — client copy) -->
           <div class="hero-conferral">
-            <p class="hero-calling">Anointing by</p>
-            <p class="bishop-name">Rt. Rev. Bishop Stephen Lepcha</p>
+            <p class="hero-calling">Which will be solemnly conferred upon them by</p>
+            <p class="bishop-name">THE MOST REV. STEPHEN LEPCHA</p>
             <p class="bishop-title">Bishop of Darjeeling</p>
           </div>
 
-          <!-- Date & Venue (No commas) -->
+          <!-- Date & Venue (On / at) -->
           <div class="hero-datetime">
-            <p class="hero-date">20 NOVEMBER 2026 · 10:30 AM</p>
-            <p class="hero-venue">ST. MARY’S HILL KURSEONG</p>
+            <p class="hero-lead">On</p>
+            <p class="hero-date">20 NOVEMBER 2026</p>
+            <p class="hero-time">10.30 am</p>
+            <p class="hero-lead">at</p>
+            <p class="hero-venue">ST. MARY’S HILL, KURSEONG</p>
+            <p class="hero-venue-sub">Former Jesuit Theologate · St. John Berchman’s Parish</p>
           </div>
 
-          <a class="hero-link" href="#sacramental-call">View Invitation &amp; Programme ↓</a>
-        </div>
-      </section>
-
-      <!-- Sacramental Preamble & Cordial Invitation Section (Intro page - No commas) -->
-      <section class="paper-section ordination-intro" id="sacramental-call" aria-label="Sacramental Calling">
-        <div class="seal-badge-wrap reveal">
-          <img class="badge-seal" src="./assets/jesuit-seal.jpg" alt="Darjeeling Nepal Jesuit Province" width="90" height="90">
-        </div>
-        <h2 class="script amdg-heading reveal">|| Ad Majorem Dei Gloriam ||</h2>
-        <div class="rule" aria-hidden="true"></div>
-
-        <!-- Centerpiece Portrait of Both Ordinands Together (Moved Upward) -->
-        <div class="together-centerpiece-card reveal">
-          <div class="together-image-frame">
-            <img class="together-img" src="${ordTogether}" alt="Deacon Christ Rajan Minj SJ and Deacon Reuell Paul SJ" loading="lazy">
-            <div class="together-arch-overlay" aria-hidden="true"></div>
-          </div>
-          <div class="together-badge">
-            <span class="together-title-names">DEACON CHRIST RAJAN MINJ SJ &amp; DEACON REUELL PAUL SJ</span>
-            <small class="together-sub">Society of Jesus · Darjeeling–Nepal Province</small>
-          </div>
-        </div>
-
-        <!-- Continuous Paragraph (Without "together with the families of the ordinands", No commas on intro) -->
-        <div class="invitation-text-block reveal">
-          <p class="invitation-continuous-para">
-            In the grace of a vocation faithfully discerned freely embraced and now brought to its sacramental fulfilment the Darjeeling–Nepal Jesuits cordially invite you to the
-          </p>
-          <h3 class="ordination-callout">SACERDOTAL ORDINATION</h3>
-          <p class="of-label">of</p>
-          <div class="ordinands-feature">
-            <div class="ordinand-card">
-              <h4>DEACON REUELL PAUL SJ</h4>
-            </div>
-            <span class="ordinand-conjunction">&amp;</span>
-            <div class="ordinand-card">
-              <h4>DEACON CHRIST RAJAN MINJ SJ</h4>
-            </div>
-          </div>
-          <p class="priesthood-text">Anointing by</p>
-          <div class="bishop-highlight">
-            <p class="bishop-title-main">Rt. Rev. Bishop Stephen Lepcha</p>
-            <p class="bishop-diocese">Bishop of Darjeeling</p>
-          </div>
-        </div>
-
-        <!-- Date & Venue Plaque with Image 3 Historic Watermark (No commas) -->
-        <div class="date-venue-plaque location-watermark-card reveal">
-          <div class="watermark-bg-overlay" aria-hidden="true"></div>
-          <div class="plaque-col">
-            <span class="plaque-label">Date &amp; Time</span>
-            <strong class="plaque-value">20 NOVEMBER 2026</strong>
-            <span class="plaque-sub">10:30 A.M. IST</span>
-          </div>
-          <div class="plaque-divider"></div>
-          <div class="plaque-col">
-            <span class="plaque-label">Venue</span>
-            <strong class="plaque-value">ST. MARY’S HILL KURSEONG</strong>
-            <span class="plaque-sub">Former Jesuit Theologate · St. John Berchmen's Parish</span>
-          </div>
+          <a class="hero-link" href="#schedule-title">View Programme ↓</a>
         </div>
       </section>
 
       <!-- The Ordinands Individual Showcase (Left & Right Profiles) -->
       <section class="paper-section ordinands-section" id="ordinands-profiles" aria-label="The Ordinands">
-        <span class="section-kicker reveal">Candidates for Priesthood</span>
         <h2 class="script reveal">The Ordinands</h2>
         <div class="rule" aria-hidden="true"></div>
 
@@ -268,9 +275,12 @@
             </div>
             <div class="profile-content">
               <h3 class="profile-name">${text(ordLeft.name)}</h3>
+              <p class="profile-parents">${text(ordLeft.parents)}</p>
               <p class="profile-subtitle">${text(ordLeft.subtitle)}</p>
               <div class="liturgical-divider" aria-hidden="true"><span>☩</span></div>
               <p class="profile-caption thanksgiving-caption">Thanksgiving Mass</p>
+              <p class="profile-mass-place">${text(ordLeft.massPlace)}</p>
+              <p class="profile-mass-time">${text(ordLeft.massDate)} · ${text(ordLeft.massTime)}</p>
             </div>
           </article>
 
@@ -281,9 +291,12 @@
             </div>
             <div class="profile-content">
               <h3 class="profile-name">${text(ordRight.name)}</h3>
+              <p class="profile-parents">${text(ordRight.parents)}</p>
               <p class="profile-subtitle">${text(ordRight.subtitle)}</p>
               <div class="liturgical-divider" aria-hidden="true"><span>☩</span></div>
               <p class="profile-caption thanksgiving-caption">Thanksgiving Mass</p>
+              <p class="profile-mass-place">${text(ordRight.massPlace)}</p>
+              <p class="profile-mass-time">${text(ordRight.massDate)} · ${text(ordRight.massTime)}</p>
             </div>
           </article>
 
@@ -328,7 +341,7 @@
       <section class="paper-section venue-section" aria-labelledby="venue-title">
         <span class="section-kicker reveal">Ordination Venue</span>
         <h2 class="script reveal" id="venue-title">St. Mary’s Hill Kurseong</h2>
-        <p class="venue-subheading reveal">Former Jesuit Theologate · St. John Berchmen's Parish</p>
+        <p class="venue-subheading reveal">St. John Berchman’s Parish</p>
         <div class="rule" aria-hidden="true"></div>
 
         <!-- Satellite Picture (Image 2 Enhanced) & Watermark Location Box (Image 3) -->
@@ -345,7 +358,7 @@
             <div class="watermark-bg-overlay" aria-hidden="true"></div>
             <div class="location-details-inner">
               <h3 class="venue-name">ST. MARY’S HILL KURSEONG</h3>
-              <p class="venue-history">Historic Former Jesuit Theologate &amp; St. John Berchmen's Parish</p>
+              <p class="venue-history">St. John Berchman’s Parish</p>
               <address class="venue-address">${text(data.venue.address)}</address>
               <p class="venue-timing">${text(data.venue.timeLabel)}</p>
 
@@ -373,7 +386,7 @@
           </div>
           <h2 class="script" id="live-title">Live Stream on YouTube</h2>
           <p class="live-note">
-            For family, Jesuit brethren, friends, and faithful worldwide who cannot be physically present at St. Mary’s Hill, the Eucharistic celebration and Rite of Ordination will be broadcast live from 10:00 AM onwards.
+            For family members Jesuit brethren, friends, alumni and the faithful who are unable to be present at St. Mary’s Hill, the Eucharistic celebration and Rite of Ordination will be broadcast live from 10:00 AM onwards.
           </p>
 
           <div class="qr-presentation">
@@ -396,7 +409,7 @@
       </section>
 
       <!-- Liturgical Notes & Concelebration -->
-      <section class="paper-section etiquette-section" aria-label="Liturgical Information">
+      <section class="paper-section etiquette-section" id="liturgical-notes" aria-label="Liturgical Information">
         <div class="notes-grid">
           <article class="reveal note-card">
             <div class="note-icon">✝</div>
@@ -406,8 +419,8 @@
           <div class="rule" aria-hidden="true"></div>
           <article class="reveal note-card">
             <div class="note-icon">🕊️</div>
-            <h3 class="script">Prayer &amp; Communion</h3>
-            <p>${text(data.details.giftPreference)}</p>
+            <h3 class="script">Prayer for Priests</h3>
+            <p class="prayer-text">${text(data.details.prayerForPriests)}</p>
           </article>
         </div>
       </section>
@@ -779,5 +792,22 @@
       setTimeout(() => URL.revokeObjectURL(url), 1000);
       notify('Calendar invitation has been downloaded.');
     });
+  }
+
+  // Preview / QA aid: index.html?open renders the invitation with the doors
+  // already open (add #section-id to jump straight to a section).
+  if (new URLSearchParams(location.search).has('open')) {
+    finishOpening();
+    const jump = () => {
+      const id = location.hash.slice(1);
+      const target = id && document.getElementById(id);
+      if (target) {
+        document.documentElement.style.scrollBehavior = 'auto';
+        target.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
+    };
+    jump();
+    setTimeout(jump, 300);
+    setTimeout(jump, 1200);
   }
 })();
