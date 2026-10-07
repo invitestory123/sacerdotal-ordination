@@ -131,7 +131,75 @@
     <!-- Main Invitation Stationery -->
     <main class="invitation" id="invitation" inert>
 
-      <!-- First page after the doors open: seal, Ad Majorem, invitation copy -->
+      <!-- Hero Announcement Banner (First page after the doors open: portraits, conferral, date & venue) -->
+      <section class="hero sacred-hero cinematic-hero" aria-label="Sacerdotal Ordination Announcement">
+        <div class="hero-overlay"></div>
+        <div class="hero-copy">
+          <div class="liturgical-cross" aria-hidden="true">☩</div>
+          <p class="amdg-tag">Ad Majorem Dei Gloriam</p>
+          <h2 class="hero-event-title">SACERDOTAL ORDINATION</h2>
+          <p class="hero-of">of</p>
+
+          <!-- Side-by-Side Ordinands Duo (Left: Rajan, Right: Reuell) -->
+          <div class="hero-ordinands-duo" id="names" tabindex="-1">
+
+            <!-- Deacon Christ Rajan Minj SJ (Left) -->
+            <article class="hero-ordinand-profile">
+              <div class="hero-portrait-arch">
+                <img class="hero-portrait-photo hero-portrait-photo--left" src="./assets/ordinand-christ-rajan.jpg" alt="DEACON CHRIST RAJAN MINJ SJ" fetchpriority="high">
+                <div class="hero-portrait-border" aria-hidden="true"></div>
+              </div>
+              <div class="hero-ordinand-meta">
+                <h3 class="hero-ordinand-name">DEACON CHRIST RAJAN MINJ SJ</h3>
+                <p class="hero-ordinand-sub">Society of Jesus · Darjeeling Province</p>
+              </div>
+            </article>
+
+            <!-- Center Liturgical Monogram & Separator -->
+            <div class="hero-duo-separator" aria-hidden="true">
+              <span class="duo-cross">☩</span>
+              <span class="duo-amp">&amp;</span>
+            </div>
+
+            <!-- Deacon Reuell Paul SJ (Right) -->
+            <article class="hero-ordinand-profile">
+              <div class="hero-portrait-arch">
+                <img class="hero-portrait-photo" src="./assets/ordinand-reuell-paul.jpg" alt="DEACON REUELL PAUL SJ" fetchpriority="high">
+                <div class="hero-portrait-border" aria-hidden="true"></div>
+              </div>
+              <div class="hero-ordinand-meta">
+                <h3 class="hero-ordinand-name">DEACON REUELL PAUL SJ</h3>
+                <p class="hero-ordinand-sub">Society of Jesus · Darjeeling Province</p>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Conferral of Holy Orders (solemnly conferred — client copy) -->
+          <div class="hero-conferral">
+            <p class="hero-calling">Which will be solemnly conferred upon them by</p>
+            <p class="bishop-name">THE MOST REV. STEPHEN LEPCHA</p>
+            <p class="bishop-title">Bishop of Darjeeling</p>
+          </div>
+
+          <!-- Date & Venue (On / at) -->
+          <div class="hero-datetime">
+            <p class="hero-lead">On</p>
+            <p class="hero-date">20 NOVEMBER 2026</p>
+            <p class="hero-time">10.30 am</p>
+            <p class="hero-lead">at</p>
+            <p class="hero-venue">ST. MARY’S HILL, KURSEONG</p>
+            <p class="hero-venue-sub">
+              <span class="theologate-line">Former Jesuit Theologate</span>
+              <span class="parish-line">St. John Berchman’s Parish</span>
+            </p>
+          </div>
+
+          <a class="hero-link" href="#schedule-title">View Programme ↓</a>
+        </div>
+      </section>
+
+      <!-- Second page: seal, Ad Majorem, solemn invitation copy and plaque -->
       <section class="paper-section ordination-intro" id="sacramental-call" aria-label="Sacramental Calling">
         <div class="seal-badge-wrap reveal">
           <img class="badge-seal" src="./assets/jesuit-seal.jpg" alt="Darjeeling Nepal Jesuit Province" width="90" height="90">
@@ -139,19 +207,7 @@
         <h2 class="amdg-heading reveal">Ad Majorem Dei Gloriam</h2>
         <div class="rule" aria-hidden="true"></div>
 
-        <!-- Centerpiece Portrait of Both Ordinands Together (Moved Upward) -->
-        <div class="together-centerpiece-card reveal">
-          <div class="together-image-frame">
-            <img class="together-img" src="${ordTogether}" alt="Deacon Christ Rajan Minj SJ and Deacon Reuell Paul SJ" loading="lazy">
-            <div class="together-arch-overlay" aria-hidden="true"></div>
-          </div>
-          <div class="together-badge">
-            <span class="together-title-names">DEACON CHRIST RAJAN MINJ SJ &amp; DEACON REUELL PAUL SJ</span>
-            <small class="together-sub">Society of Jesus · Darjeeling–Nepal Province</small>
-          </div>
-        </div>
-
-        <!-- Continuous Paragraph (With the blessings of the Almighty — no commas removed, exact client copy) -->
+        <!-- Continuous Paragraph (With the blessings of the Almighty — exact client copy) -->
         <div class="invitation-text-block reveal">
           <p class="invitation-continuous-para">
             With the blessings of the Almighty and in the grace of a vocation,<br>
@@ -191,73 +247,11 @@
           <div class="plaque-col">
             <span class="plaque-label">at</span>
             <strong class="plaque-value">ST. MARY’S HILL, KURSEONG</strong>
-            <span class="plaque-sub plaque-venue-sub">Former Jesuit Theologate · St. John Berchman’s Parish</span>
+            <span class="plaque-sub plaque-venue-sub">
+              <span class="theologate-line">Former Jesuit Theologate</span>
+              <span class="parish-line">St. John Berchman’s Parish</span>
+            </span>
           </div>
-        </div>
-      </section>
-
-      <!-- Hero Announcement Banner (second screen: portraits, conferral, date & venue) -->
-      <section class="hero sacred-hero cinematic-hero" aria-label="Sacerdotal Ordination Announcement">
-        <div class="hero-overlay"></div>
-        <div class="hero-copy">
-          <div class="liturgical-cross" aria-hidden="true">☩</div>
-          <p class="amdg-tag">|| Ad Majorem Dei Gloriam ||</p>
-          <h2 class="hero-event-title">SACERDOTAL ORDINATION</h2>
-          <p class="hero-of">of</p>
-
-          <!-- Side-by-Side Ordinands 4 & 5 (Left: Rajan 4, Right: Reuell 5) -->
-          <div class="hero-ordinands-duo" id="names" tabindex="-1">
-
-            <!-- Deacon Christ Rajan Minj SJ (Image 4) -->
-            <article class="hero-ordinand-profile">
-              <div class="hero-portrait-arch">
-                <img class="hero-portrait-photo hero-portrait-photo--left" src="./assets/ordinand-christ-rajan.jpg" alt="DEACON CHRIST RAJAN MINJ SJ" fetchpriority="high">
-                <div class="hero-portrait-border" aria-hidden="true"></div>
-              </div>
-              <div class="hero-ordinand-meta">
-                <h3 class="hero-ordinand-name">DEACON CHRIST RAJAN MINJ SJ</h3>
-                <p class="hero-ordinand-sub">Society of Jesus · Darjeeling Province</p>
-              </div>
-            </article>
-
-            <!-- Center Liturgical Monogram & Separator -->
-            <div class="hero-duo-separator" aria-hidden="true">
-              <span class="duo-cross">☩</span>
-              <span class="duo-amp">&amp;</span>
-            </div>
-
-            <!-- Deacon Reuell Paul SJ (Image 5) -->
-            <article class="hero-ordinand-profile">
-              <div class="hero-portrait-arch">
-                <img class="hero-portrait-photo" src="./assets/ordinand-reuell-paul.jpg" alt="DEACON REUELL PAUL SJ" fetchpriority="high">
-                <div class="hero-portrait-border" aria-hidden="true"></div>
-              </div>
-              <div class="hero-ordinand-meta">
-                <h3 class="hero-ordinand-name">DEACON REUELL PAUL SJ</h3>
-                <p class="hero-ordinand-sub">Society of Jesus · Darjeeling Province</p>
-              </div>
-            </article>
-
-          </div>
-
-          <!-- Conferral of Holy Orders (solemnly conferred — client copy) -->
-          <div class="hero-conferral">
-            <p class="hero-calling">Which will be solemnly conferred upon them by</p>
-            <p class="bishop-name">THE MOST REV. STEPHEN LEPCHA</p>
-            <p class="bishop-title">Bishop of Darjeeling</p>
-          </div>
-
-          <!-- Date & Venue (On / at) -->
-          <div class="hero-datetime">
-            <p class="hero-lead">On</p>
-            <p class="hero-date">20 NOVEMBER 2026</p>
-            <p class="hero-time">10.30 am</p>
-            <p class="hero-lead">at</p>
-            <p class="hero-venue">ST. MARY’S HILL, KURSEONG</p>
-            <p class="hero-venue-sub">Former Jesuit Theologate · St. John Berchman’s Parish</p>
-          </div>
-
-          <a class="hero-link" href="#schedule-title">View Programme ↓</a>
         </div>
       </section>
 
@@ -280,7 +274,8 @@
               <div class="liturgical-divider" aria-hidden="true"><span>☩</span></div>
               <p class="profile-caption thanksgiving-caption">Thanksgiving Mass</p>
               <p class="profile-mass-place">${text(ordLeft.massPlace)}</p>
-              <p class="profile-mass-time">${text(ordLeft.massDate)} · ${text(ordLeft.massTime)}</p>
+              <p class="profile-mass-date">${text(ordLeft.massDate)}</p>
+              <p class="profile-mass-time">${text(ordLeft.massTime)}</p>
             </div>
           </article>
 
@@ -296,7 +291,8 @@
               <div class="liturgical-divider" aria-hidden="true"><span>☩</span></div>
               <p class="profile-caption thanksgiving-caption">Thanksgiving Mass</p>
               <p class="profile-mass-place">${text(ordRight.massPlace)}</p>
-              <p class="profile-mass-time">${text(ordRight.massDate)} · ${text(ordRight.massTime)}</p>
+              <p class="profile-mass-date">${text(ordRight.massDate)}</p>
+              <p class="profile-mass-time">${text(ordRight.massTime)}</p>
             </div>
           </article>
 
@@ -363,10 +359,10 @@
               <p class="venue-timing">${text(data.venue.timeLabel)}</p>
 
               <div class="actions map-actions">
-                <a class="action" id="maps" href="https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw" target="_blank" rel="noopener noreferrer">
+                <a class="action" id="maps" href="${safeURL(data.venue.mapsUrl || 'https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw')}" target="_blank" rel="noopener noreferrer">
                   <span>📍 Open in Google Maps</span>
                 </a>
-                <a class="action secondary" id="satellite-link" href="https://maps.app.goo.gl/onmGYCHSL7iwgBrUA" target="_blank" rel="noopener noreferrer">
+                <a class="action secondary" id="satellite-link" href="${safeURL(data.venue.satelliteUrl || 'https://www.google.com/maps/place/St.+Mary\'s+Hill+Church,+Kurseong/@26.8837,88.2762,700m/data=!3m1!1e3')}" target="_blank" rel="noopener noreferrer">
                   <span>🛰️ View Satellite Link</span>
                 </a>
                 <button class="action secondary" id="calendar">
@@ -425,7 +421,7 @@
         </div>
       </section>
 
-      <!-- RSVP & Prayerful Wishes (With WhatsApp 9789876513) -->
+      <!-- RSVP & Prayerful Wishes (With Two Input Boxes & WhatsApp RSVP) -->
       <section class="paper-section rsvp-section" aria-labelledby="rsvp-title">
         <div class="rsvp-card reveal">
           <span class="rsvp-kicker">Communion &amp; Presence</span>
@@ -435,15 +431,31 @@
 
           ${data.rsvp?.deadline ? `<p class="rsvp-deadline">Kindly reply by ${text(data.rsvp.deadline)}</p>` : ''}
 
-          <!-- Direct WhatsApp RSVP Button (replaces email RSVP) -->
-          <div class="whatsapp-rsvp-wrap">
-            <a class="action whatsapp-btn" href="https://wa.me/919789876513?text=Peace%20be%20with%20you.%20I%20would%20like%20to%20send%20prayerful%20wishes%20and%20RSVP%20for%20the%20Sacerdotal%20Ordination%20at%20Kurseong." target="_blank" rel="noopener noreferrer">
-              <svg class="wa-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
-                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 0 1-1.23-4.29c0-4.43 3.61-8.04 8.04-8.04 2.15 0 4.17.84 5.69 2.35 1.52 1.52 2.36 3.54 2.36 5.69 0 4.44-3.61 8.05-8.07 8.05zm4.41-6.03c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.52.1.46-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.15-.06-.1-.22-.16-.46-.28z"/>
-              </svg>
-              <span>WhatsApp RSVP: 9789876513</span>
-            </a>
-          </div>
+          <!-- Two RSVP Input Boxes (Name & Attendance) -->
+          <form class="rsvp-form" id="rsvp-form" onsubmit="return false;">
+            <div class="rsvp-field">
+              <label for="rsvp-name">Your full name</label>
+              <input id="rsvp-name" name="guestName" autocomplete="name" maxlength="120" placeholder="First and last name">
+            </div>
+            <div class="rsvp-field">
+              <label for="rsvp-attendance">Will you be joining us?</label>
+              <select id="rsvp-attendance" name="attendance">
+                <option value="">Please select your response</option>
+                <option value="yes">Joyfully accepts</option>
+                <option value="no">Regretfully declines</option>
+              </select>
+            </div>
+
+            <!-- WhatsApp RSVP Button -->
+            <div class="whatsapp-rsvp-wrap">
+              <a class="action whatsapp-btn" id="whatsapp-rsvp-btn" href="${safeURL(data.rsvp?.whatsappUrl || 'https://wa.me/919789876513?text=Peace%20be%20with%20you.%20I%20would%20like%20to%20send%20prayerful%20wishes%20and%20RSVP%20for%20the%20Sacerdotal%20Ordination%20at%20Kurseong.')}" target="_blank" rel="noopener noreferrer">
+                <svg class="wa-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 0 1-1.23-4.29c0-4.43 3.61-8.04 8.04-8.04 2.15 0 4.17.84 5.69 2.35 1.52 1.52 2.36 3.54 2.36 5.69 0 4.44-3.61 8.05-8.07 8.05zm4.41-6.03c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.52.1.46-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.15-.06-.1-.22-.16-.46-.28z"/>
+                </svg>
+                <span>WhatsApp RSVP: 9789876513</span>
+              </a>
+            </div>
+          </form>
         </div>
       </section>
 
@@ -456,20 +468,18 @@
               <img src="./assets/jesuit-seal.jpg" alt="Society of Jesus Seal" width="110" height="110" class="closing-seal-img">
             </div>
             <p class="closing-eyebrow">Society of Jesus · Darjeeling–Nepal Province</p>
-            <h2 class="closing-title" id="closing-title">|| Ad Majorem Dei Gloriam ||</h2>
+            <h2 class="closing-title script" id="closing-title">${text(data.compliments?.title || 'With Best compliments from')}</h2>
             <div class="closing-rule" aria-hidden="true"></div>
-            <p class="closing-names">
-              <span>DEACON REUELL PAUL SJ</span><br>
-              <i class="closing-amp">&amp;</i><br>
-              <span>DEACON CHRIST RAJAN MINJ SJ</span>
-            </p>
-            <p class="closing-date">20 NOVEMBER 2026 · KURSEONG</p>
-            <p class="closing-note">
-              “Go forth and set the world on fire.”<br>
-              <small>— St. Ignatius of Loyola</small>
-            </p>
+            
+            <div class="compliments-container">
+              <ul class="compliments-list">
+                ${(data.compliments?.items && data.compliments.items.length ? data.compliments.items : ['- - - - -', '- - - - -']).map(item => `<li>${text(item)}</li>`).join('')}
+              </ul>
+            </div>
+
+            <div class="closing-rule" aria-hidden="true"></div>
+            <p class="closing-caption">${text(data.compliments?.endingLine || 'Sacerdotal Ordination to the Priesthood of Jesus Christ')}</p>
           </div>
-          <p class="closing-caption">Sacerdotal Ordination to the Priesthood of Jesus Christ</p>
         </div>
         <div class="closing-colophon">
           <button class="reopen" id="reopen">Open invitation again <span aria-hidden="true">↺</span></button>
@@ -534,9 +544,49 @@
     if (opened) notify('Audio accompaniment could not be loaded.');
   });
 
-  // Email RSVP removed; WhatsApp RSVP button is rendered directly in the RSVP section.
+  // RSVP Two Input Boxes (Name & Attendance) + WhatsApp RSVP Sync
+  const rsvpName = $('rsvp-name');
+  const rsvpAttendance = $('rsvp-attendance');
+  const waBtn = $('whatsapp-rsvp-btn');
+  const basePhone = String(data.rsvp?.whatsapp || '9789876513').replace(/\D/g, '');
 
-  // Interactive Photo Switching removed per design review (static portraits)
+  function buildWhatsAppRSVPUrl() {
+    const guestName = rsvpName ? rsvpName.value.trim() : '';
+    const attValue = rsvpAttendance ? rsvpAttendance.value : '';
+    let msg = '';
+    if (guestName && attValue) {
+      const statusText = attValue === 'yes' ? 'Joyfully accepts' : 'Regretfully declines';
+      msg = `Peace be with you. RSVP from ${guestName}: ${statusText} for the Sacerdotal Ordination of Deacon Reuell Paul SJ & Deacon Christ Rajan Minj SJ at Kurseong.`;
+    } else if (guestName) {
+      msg = `Peace be with you. This is ${guestName} sending prayerful wishes and RSVP for the Sacerdotal Ordination at Kurseong.`;
+    } else if (attValue) {
+      const statusText = attValue === 'yes' ? 'Joyfully accepts' : 'Regretfully declines';
+      msg = `Peace be with you. I would like to RSVP: ${statusText} for the Sacerdotal Ordination at Kurseong.`;
+    } else {
+      msg = 'Peace be with you. I would like to send prayerful wishes and RSVP for the Sacerdotal Ordination at Kurseong.';
+    }
+    return `https://wa.me/91${basePhone}?text=${encodeURIComponent(msg)}`;
+  }
+
+  function syncWhatsAppRSVP() {
+    if (waBtn) waBtn.href = buildWhatsAppRSVPUrl();
+  }
+
+  if (rsvpName) rsvpName.addEventListener('input', syncWhatsAppRSVP);
+  if (rsvpAttendance) rsvpAttendance.addEventListener('change', syncWhatsAppRSVP);
+  if (waBtn) {
+    waBtn.addEventListener('click', () => {
+      syncWhatsAppRSVP();
+    });
+  }
+  const rsvpForm = $('rsvp-form');
+  if (rsvpForm) {
+    rsvpForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      syncWhatsAppRSVP();
+      if (waBtn) waBtn.click();
+    });
+  }
 
   function beginObservers() {
     if (observersStarted || !('IntersectionObserver' in window)) return;

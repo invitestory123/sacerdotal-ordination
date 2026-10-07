@@ -8,7 +8,7 @@ window.WEDDING_DATA = {
     "first": "DEACON REUELL PAUL SJ",
     "second": "DEACON CHRIST RAJAN MINJ SJ",
     "heroNote": "The Darjeeling–Nepal Jesuits cordially invite you",
-    "subtitle": "|| Ad Majorem Dei Gloriam ||"
+    "subtitle": "Ad Majorem Dei Gloriam"
   },
   "ordinands": {
     "first": "DEACON REUELL PAUL SJ",
@@ -75,10 +75,10 @@ window.WEDDING_DATA = {
   ],
   "venue": {
     "name": "ST. MARY’S HILL KURSEONG",
-    "subname": "Former Jesuit Theologate · St. John Berchman's Parish",
+    "subname": "St. John Berchman's Parish",
     "address": "St. Mary's Hill Kurseong Darjeeling District West Bengal 734220",
     "mapsUrl": "https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw",
-    "satelliteUrl": "https://maps.app.goo.gl/onmGYCHSL7iwgBrUA",
+    "satelliteUrl": "https://www.google.com/maps/place/St.+Mary's+Hill+Church,+Kurseong/@26.8837,88.2762,700m/data=!3m1!1e3",
     "satelliteImage": "./assets/st-marys-satellite-map.jpg",
     "watermarkImage": "./assets/st-marys-hill-historic.jpg",
     "timeLabel": "Friday 20 November 2026 · 10:30 AM",
@@ -102,7 +102,15 @@ window.WEDDING_DATA = {
     "whatsappUrl": "https://wa.me/919789876513?text=Peace%20be%20with%20you.%20I%20would%20like%20to%20send%20prayerful%20wishes%20and%20RSVP%20for%20the%20Sacerdotal%20Ordination%20at%20Kurseong.",
     "heading": "Prayerful Communion & Presence",
     "note": "Kindly let us know of your presence or send your prayerful wishes to 9789876513 via WhatsApp.",
-    "deadline": "10 November 2026"
+    "deadline": "30th October 2026"
+  },
+  "compliments": {
+    "title": "With Best compliments from",
+    "items": [
+      "- - - - -",
+      "- - - - -"
+    ],
+    "endingLine": "Sacerdotal Ordination to the Priesthood of Jesus Christ"
   },
   "media": {
     "openingPoster": "./assets/ordination-altar.jpg",
