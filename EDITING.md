@@ -47,6 +47,7 @@ All event details, timings, location, and streaming links are configured in:
 - **Watermark**: faint gold crosses drift down through each section (`js/motion.js` → `.falling-cross` in `css/invitation.css`). Flower/petal sprigs were removed entirely.
 - **Entrance**: door only, filling the page (panel images pre-cropped to 341×755; stage width `min(100%, 470px, (100svh − 305px) × 682/755)`) with titles above and below; animated sanctuary background behind it (slow zoom + rising light motes).
 - **Global backdrop**: `body::before` in `css/invitation.css` fixes `../assets/ordination-altar-cinematic.jpg` (dark veil + `site-bg-zoom` loop) behind the whole invitation — all sections are translucent paper sheets over it (`color-mix(... 92%, transparent)` overrides at the end of the file). The intro/hero has **no image of its own**; its scrim gradient fades into the shared backdrop, which keeps zooming while the hero copy pops up in sequence.
+- **Share thumbnail (OG image)**: `assets/og-thumbnail.jpg` (1200×630) — title, both names **on one line**, date/venue, AMDG — referenced by the `og:image` / `twitter:image` meta tags in `index.html` (absolute URL). Regenerate after content changes with `python tools/make-og-thumbnail.py` (needs Pillow); fonts and text fit are automatic.
 
 ---
 
