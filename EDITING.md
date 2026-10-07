@@ -45,7 +45,8 @@ All event details, timings, location, and streaming links are configured in:
 - **Fonts**: script headings use **Great Vibes** (`fonts/GreatVibes.woff`); bishop names and the "Thanksgiving Mass" captions use **Kaushan Script** (`fonts/KaushanScript.woff`) — both embedded locally, faces declared in `css/typography.css`.
 - **Dividers**: `.rule` / `.closing-rule` are ornamental gold medallion dividers (not plain lines); every `.paper-section` gets a soft blended gold hairline border.
 - **Watermark**: faint gold crosses drift down through each section (`js/motion.js` → `.falling-cross` in `css/invitation.css`). Flower/petal sprigs were removed entirely.
-- **Entrance**: the first page has an animated sanctuary background (slow zoom + rising light motes); after the doors open the hero keeps zooming/fading while the copy pops up in sequence.
+- **Entrance**: door only, filling the page (panel images pre-cropped to 341×755; stage width `min(100%, 470px, (100svh − 305px) × 682/755)`) with titles above and below; animated sanctuary background behind it (slow zoom + rising light motes).
+- **Global backdrop**: `body::before` in `css/invitation.css` fixes `../assets/ordination-altar-cinematic.jpg` (dark veil + `site-bg-zoom` loop) behind the whole invitation — all sections are translucent paper sheets over it (`color-mix(... 92%, transparent)` overrides at the end of the file). The intro/hero has **no image of its own**; its scrim gradient fades into the shared backdrop, which keeps zooming while the hero copy pops up in sequence.
 
 ---
 

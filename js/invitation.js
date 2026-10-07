@@ -129,11 +129,8 @@
     <!-- Main Invitation Stationery -->
     <main class="invitation" id="invitation" inert>
       
-      <!-- Hero Sacred Art & Announcement Banner -->
+      <!-- Hero Sacred Art & Announcement Banner (no own bg — global sanctuary backdrop shows through) -->
       <section class="hero sacred-hero cinematic-hero" aria-label="Sacerdotal Ordination Announcement">
-        <div class="hero-image-wrap">
-          <img class="hero-art" src="./assets/ordination-altar-cinematic.jpg" alt="Cinematic Catholic Ordination Altar with Holy Eucharist Mass and Incense" fetchpriority="high" decoding="async">
-        </div>
         <div class="hero-overlay"></div>
         <div class="hero-copy">
           <div class="liturgical-cross" aria-hidden="true">☩</div>

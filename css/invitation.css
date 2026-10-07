@@ -21,10 +21,29 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: #f7f4ef;
+  background: #170205;
   color: var(--ink);
   font: 18px/1.65 "Cormorant Garamond", Georgia, serif;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Fixed sanctuary backdrop — the entrance image, carried behind every page */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(82, 14, 23, 0.55) 0%, rgba(21, 1, 4, 0.82) 60%, rgba(21, 1, 4, 0.92) 100%),
+    url('../assets/ordination-altar-cinematic.jpg') center / cover no-repeat;
+  animation: site-bg-zoom 26s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes site-bg-zoom {
+  0% { transform: scale(1); opacity: 0.96; }
+  50% { transform: scale(1.12); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 0.96; }
 }
 
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -40,7 +59,7 @@ button:disabled { cursor: wait; opacity: 0.7; }
 .invitation {
   max-width: 580px;
   margin: 0 auto;
-  background: var(--paper);
+  background: transparent;
   overflow: hidden;
   box-shadow: 0 0 90px rgba(0, 0, 0, 0.16);
   position: relative;
@@ -139,11 +158,12 @@ button:disabled { cursor: wait; opacity: 0.7; }
   opacity: 0.8;
 }
 
-/* Shrine Stage & 3D Door Portal */
+/* Shrine Stage & 3D Door Portal — door fills the page, titles fit above and below */
 .door-shrine-stage {
   position: relative;
-  width: min(100%, 360px);
-  aspect-ratio: 682 / 1024;
+  width: min(100%, 470px);
+  width: min(100%, 470px, calc((100svh - 305px) * 682 / 755));
+  aspect-ratio: 682 / 755;
   margin: 0 auto 12px;
   perspective: 1400px;
   transform-style: preserve-3d;
@@ -420,7 +440,7 @@ button:disabled { cursor: wait; opacity: 0.7; }
     rgba(25, 4, 7, 0.40) 0%,
     rgba(251, 248, 243, 0.80) 22%,
     rgba(251, 248, 243, 0.92) 65%,
-    var(--paper) 100%
+    color-mix(in srgb, var(--paper) 92%, transparent) 100%
   );
 }
 
@@ -1798,18 +1818,8 @@ button:disabled { cursor: wait; opacity: 0.7; }
 }
 
 /* ----------------------------------------------------
-   HERO: CONTINUOUS ZOOM & FADE, CONTENT POPS UP AFTER OPENING
+   HERO: THE GLOBAL SANCTUARY KEEPS ZOOMING, CONTENT POPS UP AFTER OPENING
 ---------------------------------------------------- */
-#invitation.is-open .hero-art {
-  animation: hero-zoom-fade 20s ease-in-out infinite;
-}
-
-@keyframes hero-zoom-fade {
-  0% { transform: scale(1.02); opacity: 0.95; }
-  50% { transform: scale(1.13); opacity: 0.82; }
-  100% { transform: scale(1.02); opacity: 0.95; }
-}
-
 #invitation.is-open .hero-copy > * {
   animation: content-pop 0.7s cubic-bezier(0.22, 0.9, 0.32, 1.28) backwards;
 }
@@ -1880,11 +1890,11 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
 
 /* Respect reduced-motion: keep the art, drop the movement */
 @media (prefers-reduced-motion: reduce) {
+  body::before { animation: none; opacity: 1; }
   .entrance-bg-img { animation: none; opacity: 0.5; }
   .entrance-mote { animation: none; display: none; }
   .falling-cross { animation: none; }
   .motion-decor { display: none; }
-  #invitation.is-open .hero-art { animation: none; }
   #invitation.is-open .hero-copy > * { animation: none; }
 }
 
@@ -2076,5 +2086,45 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
     margin: 30px auto;
     border-radius: 8px;
   }
+}
+
+/* ----------------------------------------------------
+   GLOBAL BACKDROP SHOWN THROUGH EVERY PAGE
+   (church sanctuary image fixed behind the invitation;
+   every section becomes a translucent sheet of paper)
+---------------------------------------------------- */
+.invitation { background: transparent; }
+
+.paper-section {
+  background: var(--paper);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+}
+
+.countdown-section {
+  background: #f4ede1;
+  background: color-mix(in srgb, #f4ede1 92%, transparent);
+}
+
+.ordinands-section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.93) 0%, rgba(253, 251, 248, 0.93) 50%, rgba(255, 255, 255, 0.93) 100%);
+}
+
+.live-stream-section {
+  background: linear-gradient(180deg, rgba(251, 248, 243, 0.93) 0%, rgba(247, 237, 225, 0.93) 100%);
+}
+
+.rsvp-section {
+  background: #f7ede1;
+  background: color-mix(in srgb, #f7ede1 93%, transparent);
+}
+
+.closing {
+  background: var(--paper);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+}
+
+.closing-colophon {
+  background: var(--paper);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
 }
 
