@@ -34,7 +34,7 @@
   const date = new Date(data.wedding.dateISO);
   const validDate = !Number.isNaN(date.getTime());
 
-  document.title = `Sacerdotal Ordination | Deacon Christ Rajan Minj SJ & Deacon Reuell Paul SJ`;
+  document.title = `Sacerdotal Ordination | Deacon Reuell Paul SJ & Deacon Christ Rajan Minj SJ`;
 
   const ord = data.ordinands || {};
   const ordLeft = ord.left || {
@@ -70,13 +70,16 @@
       </div>
       <div class="door-scene-wrapper">
         <header class="door-header">
-          <span class="door-motto">|| <em>Ad Majorem Dei Gloriam</em> ||</span>
-          <p class="door-invite-line">You are cordially invited to the</p>
-          <h1 class="door-main-title">INVITATION TO PRIESTLY ORDINATION</h1>
+          <span class="door-motto">|| Ad Majorem Dei Gloriam ||</span>
+          <h1 class="door-main-title">
+            <span>Invitation to the</span>
+            <span>Priestly Ordination</span>
+          </h1>
+          <p class="door-of-line">Of</p>
           <p class="door-ordinands-line">
-            <span>Deacon Christ Rajan Minj SJ</span>
-            <span class="door-amp">&amp;</span>
             <span>Deacon Reuell Paul SJ</span>
+            <span class="door-amp">&amp;</span>
+            <span>Deacon Christ Rajan Minj SJ</span>
           </p>
           <div class="door-cross-divider" aria-hidden="true"><span>☩</span></div>
         </header>
@@ -120,7 +123,7 @@
         <footer class="door-footer">
           <p class="door-date-venue">
             <strong>20 NOVEMBER 2026 · 10:30 AM</strong><br>
-            <small>St. Mary’s Hill Kurseong · Darjeeling–Nepal Jesuits</small>
+            <small>St. Mary’s Hill, St. John Berchman’s Parish</small>
           </p>
         </footer>
       </div>
@@ -134,8 +137,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-copy">
           <div class="liturgical-cross" aria-hidden="true">☩</div>
-          <p class="amdg-tag">|| <em>Ad Majorem Dei Gloriam</em> ||</p>
-          <p class="occasion">You are cordially invited to the</p>
+          <p class="amdg-tag">|| Ad Majorem Dei Gloriam ||</p>
           <h2 class="hero-event-title">SACERDOTAL ORDINATION</h2>
           <p class="hero-of">of</p>
           
@@ -196,7 +198,7 @@
         <div class="seal-badge-wrap reveal">
           <img class="badge-seal" src="./assets/jesuit-seal.jpg" alt="Darjeeling Nepal Jesuit Province" width="90" height="90">
         </div>
-        <h2 class="script amdg-heading reveal">|| <em>Ad Majorem Dei Gloriam</em> ||</h2>
+        <h2 class="script amdg-heading reveal">|| Ad Majorem Dei Gloriam ||</h2>
         <div class="rule" aria-hidden="true"></div>
 
         <!-- Centerpiece Portrait of Both Ordinands Together (Moved Upward) -->
@@ -220,11 +222,11 @@
           <p class="of-label">of</p>
           <div class="ordinands-feature">
             <div class="ordinand-card">
-              <h4>DEACON CHRIST RAJAN MINJ SJ</h4>
+              <h4>DEACON REUELL PAUL SJ</h4>
             </div>
             <span class="ordinand-conjunction">&amp;</span>
             <div class="ordinand-card">
-              <h4>DEACON REUELL PAUL SJ</h4>
+              <h4>DEACON CHRIST RAJAN MINJ SJ</h4>
             </div>
           </div>
           <p class="priesthood-text">Anointing by</p>
@@ -441,12 +443,12 @@
               <img src="./assets/jesuit-seal.jpg" alt="Society of Jesus Seal" width="110" height="110" class="closing-seal-img">
             </div>
             <p class="closing-eyebrow">Society of Jesus · Darjeeling–Nepal Province</p>
-            <h2 class="closing-title" id="closing-title">|| <em>Ad Majorem Dei Gloriam</em> ||</h2>
+            <h2 class="closing-title" id="closing-title">|| Ad Majorem Dei Gloriam ||</h2>
             <div class="closing-rule" aria-hidden="true"></div>
             <p class="closing-names">
-              <span>DEACON CHRIST RAJAN MINJ SJ</span><br>
+              <span>DEACON REUELL PAUL SJ</span><br>
               <i class="closing-amp">&amp;</i><br>
-              <span>DEACON REUELL PAUL SJ</span>
+              <span>DEACON CHRIST RAJAN MINJ SJ</span>
             </p>
             <p class="closing-date">20 NOVEMBER 2026 · KURSEONG</p>
             <p class="closing-note">
@@ -561,13 +563,95 @@
     $('names').focus({ preventScroll: true });
     fadeTimer = setTimeout(() => {
       $('entrance').hidden = true;
-    }, reduced.matches ? 0 : 850);
+    }, reduced.matches ? 0 : 1150);
+  }
+
+  // --- Door latch click + hinge creak, synthesised so no extra asset is needed ---
+  let doorAudioCtx = null;
+  function playDoorSound() {
+    if (reduced.matches) return;
+    try {
+      const Ctx = window.AudioContext || window.webkitAudioContext;
+      if (!Ctx) return;
+      doorAudioCtx = doorAudioCtx || new Ctx();
+      const ctx = doorAudioCtx;
+      if (ctx.state === 'suspended') ctx.resume();
+      const t0 = ctx.currentTime;
+
+      // 1. Dry wooden latch click
+      const noiseLen = Math.floor(ctx.sampleRate * 0.09);
+      const noiseBuf = ctx.createBuffer(1, noiseLen, ctx.sampleRate);
+      const nd = noiseBuf.getChannelData(0);
+      for (let i = 0; i < noiseLen; i++) nd[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / noiseLen, 7);
+      const click = ctx.createBufferSource();
+      click.buffer = noiseBuf;
+      const band = ctx.createBiquadFilter();
+      band.type = 'bandpass';
+      band.frequency.value = 1750;
+      band.Q.value = 1.1;
+      const clickGain = ctx.createGain();
+      clickGain.gain.value = 0.42;
+      click.connect(band).connect(clickGain).connect(ctx.destination);
+      click.start(t0);
+
+      // 2. Soft wooden knock
+      const knock = ctx.createOscillator();
+      knock.type = 'sine';
+      knock.frequency.setValueAtTime(180, t0);
+      knock.frequency.exponentialRampToValueAtTime(58, t0 + 0.22);
+      const knockGain = ctx.createGain();
+      knockGain.gain.setValueAtTime(0.0001, t0);
+      knockGain.gain.exponentialRampToValueAtTime(0.34, t0 + 0.012);
+      knockGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.42);
+      knock.connect(knockGain).connect(ctx.destination);
+      knock.start(t0);
+      knock.stop(t0 + 0.45);
+
+      // 3. Long low hinge creak while the leaves swing open
+      const creakLen = Math.floor(ctx.sampleRate * 2.7);
+      const creakBuf = ctx.createBuffer(1, creakLen, ctx.sampleRate);
+      const cd = creakBuf.getChannelData(0);
+      for (let i = 0; i < creakLen; i++) cd[i] = Math.random() * 2 - 1;
+      const creak = ctx.createBufferSource();
+      creak.buffer = creakBuf;
+      const creakFilter = ctx.createBiquadFilter();
+      creakFilter.type = 'bandpass';
+      creakFilter.Q.value = 14;
+      creakFilter.frequency.setValueAtTime(620, t0 + 0.16);
+      creakFilter.frequency.linearRampToValueAtTime(980, t0 + 1.05);
+      creakFilter.frequency.linearRampToValueAtTime(700, t0 + 1.85);
+      creakFilter.frequency.linearRampToValueAtTime(430, t0 + 2.55);
+      const creakGain = ctx.createGain();
+      creakGain.gain.setValueAtTime(0.0001, t0 + 0.16);
+      creakGain.gain.linearRampToValueAtTime(0.075, t0 + 0.55);
+      creakGain.gain.linearRampToValueAtTime(0.06, t0 + 1.75);
+      creakGain.gain.linearRampToValueAtTime(0.0001, t0 + 2.6);
+      creak.connect(creakFilter).connect(creakGain).connect(ctx.destination);
+      creak.start(t0 + 0.16);
+      creak.stop(t0 + 2.7);
+
+      // 4. Final soft thud as the doors come to rest
+      const thud = ctx.createOscillator();
+      thud.type = 'triangle';
+      thud.frequency.setValueAtTime(95, t0 + 2.42);
+      thud.frequency.exponentialRampToValueAtTime(48, t0 + 2.7);
+      const thudGain = ctx.createGain();
+      thudGain.gain.setValueAtTime(0.0001, t0 + 2.42);
+      thudGain.gain.exponentialRampToValueAtTime(0.2, t0 + 2.47);
+      thudGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 2.85);
+      thud.connect(thudGain).connect(ctx.destination);
+      thud.start(t0 + 2.42);
+      thud.stop(t0 + 2.9);
+    } catch {
+      /* audio is a nicety — never block the entrance */
+    }
   }
 
   async function openInvitation() {
     if (opened) return;
     opened = true;
     $('open').disabled = true;
+    playDoorSound();
 
     if (source('music')) {
       $('media-controls').hidden = false;
@@ -585,7 +669,7 @@
       finishOpening();
     } else {
       $('entrance').classList.add('door-opening');
-      openingTimer = setTimeout(finishOpening, 1400);
+      openingTimer = setTimeout(finishOpening, 2650);
     }
   }
 
@@ -681,7 +765,7 @@
         `DTSTAMP:${stamp(new Date())}`,
         `DTSTART:${stamp(date)}`,
         `DTEND:${stamp(end)}`,
-        `SUMMARY:${icsEscape('Sacerdotal Ordination of Deacon Christ Rajan Minj SJ & Deacon Reuell Paul SJ')}`,
+        `SUMMARY:${icsEscape('Sacerdotal Ordination of Deacon Reuell Paul SJ & Deacon Christ Rajan Minj SJ')}`,
         `LOCATION:${icsEscape(data.venue.name + ', ' + data.venue.address)}`,
         `DESCRIPTION:${icsEscape('Sacerdotal Ordination to the Priesthood of Jesus Christ, conferred by Rt. Rev. Bishop Stephen Lepcha, Bishop of Darjeeling at St. Mary’s Hill, Kurseong.')}`,
         'END:VEVENT',

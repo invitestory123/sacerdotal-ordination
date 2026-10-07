@@ -5,14 +5,14 @@
 window.WEDDING_DATA = {
   "theme": "jesuit-crimson",
   "couple": {
-    "first": "DEACON CHRIST RAJAN MINJ SJ",
-    "second": "DEACON REUELL PAUL SJ",
+    "first": "DEACON REUELL PAUL SJ",
+    "second": "DEACON CHRIST RAJAN MINJ SJ",
     "heroNote": "The Darjeeling–Nepal Jesuits cordially invite you",
     "subtitle": "|| Ad Majorem Dei Gloriam ||"
   },
   "ordinands": {
-    "first": "DEACON CHRIST RAJAN MINJ SJ",
-    "second": "DEACON REUELL PAUL SJ",
+    "first": "DEACON REUELL PAUL SJ",
+    "second": "DEACON CHRIST RAJAN MINJ SJ",
     "hosts": "The Darjeeling–Nepal Jesuits",
     "calling": "Anointing by",
     "bishop": "Rt. Rev. Bishop Stephen Lepcha",
