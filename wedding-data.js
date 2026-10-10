@@ -75,7 +75,7 @@ window.WEDDING_DATA = {
     {
       "time": "10:30 a.m.",
       "title": "Holy Eucharist & Rite of Ordination",
-      "detail": "Pontifical Mass and Imposition of Hands by Bishop Stephen Lepcha"
+      "detail": "Imposition of Hands by Bishop Stephen Lepcha"
     },
     {
       "time": "Thereafter",

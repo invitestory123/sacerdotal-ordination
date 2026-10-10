@@ -2834,7 +2834,6 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
 
 .countdown-section,
 .ordinands-section,
-.schedule-section,
 .live-stream-section,
 .etiquette-section,
 .rsvp-section {
@@ -2844,7 +2843,7 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
     url('../assets/theme-top-canopy.jpg'),
     url('../assets/theme-bottom-chalice.jpg') !important;
   background-position:
-    top -60px center,
+    top -85px center,
     bottom -15px center !important;
   background-size:
     100% auto,
@@ -2857,8 +2856,9 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
   padding-bottom: 75px !important;
 }
 
-/* Venue Section: Top flower removed across the page break so text is completely legible */
-.venue-section {
+/* Venue & Schedule Sections: Top flowers removed so headers (Order of the Day, Ceremonial Sequence, Ordination Venue) are 100% legible */
+.venue-section,
+.schedule-section {
   position: relative;
   background-color: #ffffff !important;
   background-image:
