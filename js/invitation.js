@@ -394,7 +394,7 @@
           <span class="rsvp-kicker">Communion &amp; Presence</span>
           <div class="seal-mini">☩</div>
           <h2 class="script" id="rsvp-title">${text(data.rsvp?.heading || 'Prayerful Communion & Presence')}</h2>
-          <p>${text(data.rsvp?.note || 'Kindly let us know of your presence or send your prayerful wishes to 9789876513 via WhatsApp.')}</p>
+          <p>${text(data.rsvp?.note || 'Kindly let us know of your presence or send your prayerful wishes to +91 7583925441 via WhatsApp.')}</p>
 
           ${data.rsvp?.deadline ? `<p class="rsvp-deadline">Kindly reply by ${text(data.rsvp.deadline)}</p>` : ''}
 
@@ -415,7 +415,7 @@
 
             <!-- WhatsApp RSVP Button -->
             <div class="whatsapp-rsvp-wrap">
-              <a class="action whatsapp-btn" id="whatsapp-rsvp-btn" href="${safeURL(data.rsvp?.whatsappUrl || 'https://wa.me/919789876513?text=Hi.%0APeace%20be%20with%20you.%F0%9F%AA%B7%0AI%20will%20be%20present%20for%20the%20Ordination%20at%20St.%20Mary%27s%20Kurseong.%20%E2%9C%A8%0ABest%20wishes.')}" target="_blank" rel="noopener noreferrer">
+              <a class="action whatsapp-btn" id="whatsapp-rsvp-btn" href="${safeURL(data.rsvp?.whatsappUrl || 'https://wa.me/917583925441?text=Hi.%0APeace%20be%20with%20you.%F0%9F%AA%B7%0AI%20will%20be%20present%20for%20the%20Ordination%20at%20St.%20Mary%27s%20Kurseong.%20%E2%9C%A8%0ABest%20wishes.')}" target="_blank" rel="noopener noreferrer">
                 <svg class="wa-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
                   <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 0 1-1.23-4.29c0-4.43 3.61-8.04 8.04-8.04 2.15 0 4.17.84 5.69 2.35 1.52 1.52 2.36 3.54 2.36 5.69 0 4.44-3.61 8.05-8.07 8.05zm4.41-6.03c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.52.1.46-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.15-.06-.1-.22-.16-.46-.28z"/>
                 </svg>
@@ -515,7 +515,7 @@
   const rsvpName = $('rsvp-name');
   const rsvpAttendance = $('rsvp-attendance');
   const waBtn = $('whatsapp-rsvp-btn');
-  const basePhone = String(data.rsvp?.whatsapp || '9789876513').replace(/\D/g, '');
+  const basePhone = String(data.rsvp?.whatsapp || '7583925441').replace(/\D/g, '');
 
   function buildWhatsAppRSVPUrl() {
     const guestName = rsvpName ? rsvpName.value.trim() : '';

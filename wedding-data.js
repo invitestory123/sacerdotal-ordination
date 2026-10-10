@@ -107,11 +107,11 @@ window.WEDDING_DATA = {
   },
   "rsvp": {
     "email": "",
-    "phone": "9789876513",
-    "whatsapp": "9789876513",
-    "whatsappUrl": "https://wa.me/919789876513?text=Hi.%0APeace%20be%20with%20you.%F0%9F%AA%B7%0AI%20will%20be%20present%20for%20the%20Ordination%20at%20St.%20Mary%27s%20Kurseong.%20%E2%9C%A8%0ABest%20wishes.",
+    "phone": "+91 7583925441",
+    "whatsapp": "7583925441",
+    "whatsappUrl": "https://wa.me/917583925441?text=Hi.%0APeace%20be%20with%20you.%F0%9F%AA%B7%0AI%20will%20be%20present%20for%20the%20Ordination%20at%20St.%20Mary%27s%20Kurseong.%20%E2%9C%A8%0ABest%20wishes.",
     "heading": "Prayerful Communion & Presence",
-    "note": "Kindly let us know of your presence or send your prayerful wishes to 9789876513 via WhatsApp.",
+    "note": "Kindly let us know of your presence or send your prayerful wishes to +91 7583925441 via WhatsApp.",
     "deadline": "30th October 2026"
   },
   "compliments": {
