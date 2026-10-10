@@ -22,29 +22,22 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: #150205;
+  background: #f0f4f8;
   color: var(--ink);
   font: 18px/1.65 "Cormorant Garamond", Georgia, serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Fixed sanctuary backdrop — majestic royal sanctuary without muddy sepia */
+/* Fixed backdrop — soft ambient blue & watercolor eucalyptus matching the sacred stationery */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(92, 10, 22, 0.6) 0%, rgba(35, 3, 8, 0.82) 55%, rgba(18, 1, 4, 0.94) 100%),
-    url('../assets/ordination-altar-cinematic.jpg') center / cover no-repeat;
-  animation: site-bg-zoom 26s ease-in-out infinite;
-  will-change: transform, opacity;
-}
-
-@keyframes site-bg-zoom {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.12); opacity: 0.92; }
-  100% { transform: scale(1); opacity: 1; }
+    linear-gradient(180deg, rgba(235, 242, 250, 0.72) 0%, rgba(245, 248, 252, 0.88) 55%, rgba(235, 242, 250, 0.95) 100%),
+    url('../assets/sacred-hydrangea-bg.jpg') center top / cover no-repeat;
+  will-change: opacity;
 }
 
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -60,9 +53,13 @@ button:disabled { cursor: wait; opacity: 0.7; }
 .invitation {
   max-width: 580px;
   margin: 0 auto;
-  background: #ffffff;
+  background-color: #ffffff;
+  background-image: url('../assets/sacred-hydrangea-bg.jpg');
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   overflow: hidden;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.4), 0 0 35px rgba(197, 153, 62, 0.25);
+  box-shadow: 0 0 60px rgba(50, 80, 115, 0.22), 0 0 35px rgba(197, 153, 62, 0.2);
   position: relative;
   border-left: 2px solid var(--metal);
   border-right: 2px solid var(--metal);
@@ -2422,11 +2419,29 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
    watermark, and rich liturgical gold borders throughout)
 ---------------------------------------------------- */
 .invitation {
-  background: #ffffff;
+  background-color: #ffffff;
+  background-image: url('../assets/sacred-hydrangea-bg.jpg');
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.ordination-intro {
+  background: transparent !important;
+}
+
+.ordination-intro .invitation-text-block {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(6px);
+}
+
+.ordination-intro .date-venue-plaque {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(6px);
 }
 
 .paper-section {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.95);
   background-image:
     radial-gradient(ellipse 70% 35% at 50% 0%, rgba(232, 199, 123, 0.12) 0%, transparent 70%),
     url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c5993e' fill-opacity='0.038' fill-rule='evenodd'%3E%3Cpath d='M28 2l2.5 10.5L41 15l-10.5 2.5L28 28l-2.5-10.5L15 15l10.5-2.5zM2 28l2.5 10.5L15 41l-10.5 2.5L2 54l-2.5-10.5L-11 41l10.5-2.5zM54 28l2.5 10.5L67 41l-10.5 2.5L54 54l-2.5-10.5L41 41l10.5-2.5zM28 54l2.5 10.5L41 67l-10.5 2.5L28 80l-2.5-10.5L15 67l10.5-2.5z'/%3E%3Ccircle cx='28' cy='28' r='1.2'/%3E%3C/g%3E%3C/svg%3E");

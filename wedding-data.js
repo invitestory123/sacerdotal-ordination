@@ -121,6 +121,7 @@ window.WEDDING_DATA = {
     "jesuitSeal": "./assets/jesuit-seal.jpg",
     "altarArt": "./assets/ordination-altar.jpg",
     "venueWatermark": "./assets/st-marys-hill-historic.jpg",
+    "pageBackground": "./assets/sacred-hydrangea-bg.jpg",
     "music": "./media/music.mp3",
     "musicTitle": "Sacred Reverence (Heartwarming)",
     "musicSource": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100207"
