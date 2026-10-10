@@ -73,7 +73,7 @@ button:disabled { cursor: wait; opacity: 0.7; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
+  background: #ffffff url('../assets/entrance-floral-bg.png') center / cover no-repeat;
   transition: opacity 1.1s ease, transform 1.1s ease;
   overflow-y: auto;
   padding: 16px;
@@ -95,7 +95,7 @@ button:disabled { cursor: wait; opacity: 0.7; }
   text-align: center;
   position: relative;
   z-index: 2;
-  background: #ffffff;
+  background: #ffffff url('../assets/entrance-floral-bg.png') center / cover no-repeat;
   border: 2px solid var(--metal);
   outline: 1px solid rgba(197, 153, 62, 0.45);
   outline-offset: -7px;
@@ -179,7 +179,7 @@ button:disabled { cursor: wait; opacity: 0.7; }
   opacity: 0.85;
 }
 
-/* Shrine Stage & 3D Door Portal — door fills the page, titles fit above and below */
+/* Shrine Stage & 3D Door Portal — door fills the page, clean natural appearance without golden hue/shadow */
 .door-shrine-stage {
   position: relative;
   width: min(100%, 470px);
@@ -188,24 +188,12 @@ button:disabled { cursor: wait; opacity: 0.7; }
   margin: 0 auto 12px;
   perspective: 1400px;
   transform-style: preserve-3d;
-  filter: drop-shadow(0 12px 35px rgba(181, 135, 57, 0.35)) drop-shadow(0 0 45px rgba(255, 225, 150, 0.45));
+  filter: none;
 }
 
-/* Radiant festive halo: the white door art dissolves smoothly into the backdrop */
+/* Golden halo removed per instruction 1: keep church image as it is */
 .door-shrine-stage::before {
-  content: '';
-  position: absolute;
-  inset: -14% -12%;
-  z-index: 0;
-  background: radial-gradient(
-    ellipse 68% 66% at 50% 50%,
-    rgba(255, 240, 205, 0.72) 0%,
-    rgba(246, 215, 150, 0.5) 36%,
-    rgba(216, 171, 93, 0.24) 62%,
-    transparent 82%
-  );
-  filter: blur(14px);
-  pointer-events: none;
+  display: none !important;
 }
 
 .door-interior-glow {
@@ -214,25 +202,23 @@ button:disabled { cursor: wait; opacity: 0.7; }
   z-index: 1;
   border-radius: 10px;
   overflow: hidden;
-  background: #1a080c;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0.96;
   border: 2px solid var(--metal-light);
   box-shadow:
-    inset 0 0 35px rgba(0, 0, 0, 0.7),
-    0 0 25px rgba(232, 199, 123, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.3);
+    inset 0 0 15px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.5);
   transition: opacity 2.4s ease 0.12s, box-shadow 2.4s ease;
 }
 
 .door-opening .door-interior-glow {
   opacity: 1;
   box-shadow:
-    inset 0 0 40px rgba(0, 0, 0, 0.6),
-    0 0 35px rgba(232, 199, 123, 0.65),
-    0 0 0 1px rgba(255, 255, 255, 0.5);
+    inset 0 0 20px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.7);
 }
 
 .door-reveal-content {
@@ -242,7 +228,7 @@ button:disabled { cursor: wait; opacity: 0.7; }
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: #140407;
+  background: #ffffff;
   overflow: hidden;
 }
 
@@ -251,23 +237,24 @@ button:disabled { cursor: wait; opacity: 0.7; }
   inset: 0;
   z-index: 1;
   overflow: hidden;
-  background: #1c050a;
+  background: #ffffff;
 }
 
 .door-reveal-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 14%;
+  object-fit: contain;
+  object-position: center center;
   display: block;
-  filter: brightness(1.02) contrast(1.04);
-  transform: scale(0.85);
-  transform-origin: center 20%;
+  background: #ffffff;
+  filter: brightness(1.02) contrast(1.02);
+  transform: scale(0.96);
+  transform-origin: center center;
   transition: transform 3.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .door-opening .door-reveal-photo {
-  transform: scale(0.88);
+  transform: scale(1);
 }
 
 .door-reveal-halo {
@@ -864,7 +851,10 @@ button:disabled { cursor: wait; opacity: 0.7; }
   text-transform: uppercase;
   color: var(--metal);
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.95), 0 0 10px rgba(255, 255, 255, 0.9);
 }
 
 .script {
@@ -2006,8 +1996,8 @@ button:disabled { cursor: wait; opacity: 0.7; }
 ---------------------------------------------------- */
 .media-controls {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  top: 14px;
+  right: 14px;
   z-index: 90;
   display: flex;
   gap: 8px;
@@ -2015,20 +2005,21 @@ button:disabled { cursor: wait; opacity: 0.7; }
 
 .media-button {
   border: 1px solid var(--metal-light);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
   border-radius: 30px;
-  background: var(--accent);
+  background: rgba(107, 16, 28, 0.92);
+  backdrop-filter: blur(4px);
   color: #fff;
-  padding: 10px 18px;
-  font-size: 13px;
+  padding: 7px 14px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   transition: transform 0.2s, background 0.2s;
 }
 
 .media-button:hover {
   transform: translateY(-2px);
-  background: var(--accent-light);
+  background: var(--accent);
 }
 
 .status {
@@ -2422,7 +2413,7 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
     url('../assets/theme-top-canopy.jpg'),
     url('../assets/theme-bottom-chalice.jpg');
   background-position:
-    top center,
+    top -52px center,
     bottom center;
   background-size:
     100% auto,
@@ -2430,12 +2421,59 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
   background-repeat:
     no-repeat,
     no-repeat;
-  padding: 42px 18px 30px;
+  padding: 24px 18px 32px;
   border-bottom: 2px solid var(--metal);
 }
 
 .first-page-cover .seal-badge-wrap {
-  margin-bottom: 14px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.first-page-cover .badge-seal {
+  width: 82px;
+  height: 82px;
+  filter: drop-shadow(0 4px 12px rgba(107, 16, 28, 0.12));
+}
+
+/* Heading in typography font: Omnibus Omnia */
+.omnibus-heading {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(23px, 5.6vw, 30px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 6px 0 4px;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(197, 153, 62, 0.18);
+  text-align: center;
+}
+
+/* Sub Heading in calligraphy but not italics: “All Things to All People, for Christ.” */
+.omnibus-subheading {
+  font-family: "Parisienne", "Imperial Script", cursive;
+  font-style: normal !important;
+  font-weight: 400;
+  font-size: clamp(19px, 4.6vw, 24px);
+  color: var(--accent-dark);
+  margin: 2px 0 4px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+/* Scripture reference: 1 Cor 9:22 */
+.omnibus-scripture {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--metal);
+  margin: 0 auto 14px;
+  text-align: center;
 }
 
 .first-page-cover .invitation-text-block {
@@ -2443,13 +2481,265 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
   outline: 1px solid rgba(197, 153, 62, 0.45);
   outline-offset: -6px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(4px);
-  padding: 26px 18px 32px;
+  padding: 26px 18px 28px;
   margin: 0 auto;
   box-shadow: 0 6px 24px rgba(123, 14, 30, 0.05), 0 0 18px rgba(197, 153, 62, 0.16);
   position: relative;
   z-index: 2;
+  text-align: center;
+}
+
+/* Solemn preamble lines */
+.invitation-preamble-group {
+  margin: 0 0 18px;
+  line-height: 1.55;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(15.5px, 3.8vw, 17.5px);
+  color: var(--ink);
+}
+
+.invitation-preamble-group p {
+  margin: 3px 0;
+}
+
+.invitation-lead-line {
+  font-style: italic;
+  color: var(--ink);
+}
+
+.invitation-hosts-line {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.invitation-families-line {
+  color: var(--ink);
+}
+
+.invitation-invite-line {
+  font-style: italic;
+  color: var(--ink-muted);
+  margin-top: 4px !important;
+}
+
+/* Side-by-side Ordinands Duo with Images */
+.ordinands-side-by-side {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px auto 16px;
+  max-width: 480px;
+}
+
+.ordinand-hero-cell {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ordinand-hero-framed-wrap {
+  width: 100%;
+  max-width: 175px;
+  margin: 0 auto 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0 4px 14px rgba(107, 16, 28, 0.1));
+}
+
+.ordinand-hero-framed-img {
+  width: 100%;
+  height: auto;
+  max-height: 235px;
+  object-fit: contain;
+  display: block;
+}
+
+.ordinands-duo-amp {
+  font-family: "Parisienne", cursive;
+  font-size: 28px;
+  color: var(--metal);
+  margin-top: 80px;
+  flex-shrink: 0;
+}
+
+.ordinand-hero-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(13px, 3.1vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin: 4px 0 0;
+  line-height: 1.25;
+}
+
+.conferral-calling-line {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(14.5px, 3.6vw, 16.5px);
+  font-style: italic;
+  color: var(--ink-muted);
+  margin: 8px 0 14px;
+}
+
+/* Bishop Highlight with Center Image & Cursive Calligraphic Name */
+.bishop-hero-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 10px auto 16px;
+}
+
+.bishop-hero-portrait-wrap {
+  width: min(100%, 180px);
+  margin: 0 auto 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0 6px 18px rgba(107, 16, 28, 0.12));
+}
+
+.bishop-hero-portrait-img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  display: block;
+}
+
+.bishop-hero-name {
+  font-family: "Great Vibes", "Parisienne", cursive;
+  font-size: clamp(26px, 6.8vw, 34px);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  margin: 4px 0 2px;
+  line-height: 1.25;
+  text-shadow: 0 1px 2px rgba(197, 153, 62, 0.18);
+}
+
+.bishop-hero-diocese {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(13.5px, 3.4vw, 15px);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--metal-dark);
+  margin: 0;
+}
+
+/* Date & Time Banner */
+.date-time-banner {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(16.5px, 4.4vw, 19.5px);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 16px 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.banner-pipe {
+  color: var(--metal);
+  font-weight: 400;
+}
+
+/* Inside Countdown Timer */
+.inside-countdown-wrap {
+  margin: 12px auto 16px;
+}
+
+.inside-countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.inside-countdown div {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--metal);
+  border-radius: 8px;
+  padding: 8px 4px 6px;
+  box-shadow: 0 2px 8px rgba(107, 16, 28, 0.05);
+}
+
+.inside-countdown strong {
+  display: block;
+  font-size: clamp(18px, 4.8vw, 22px);
+  color: var(--accent);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.inside-countdown span {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  display: block;
+  margin-top: 3px;
+}
+
+/* Venue Block */
+.venue-hero-block {
+  margin: 16px auto 16px;
+  text-align: center;
+  border-top: 1px solid rgba(197, 153, 62, 0.3);
+  padding-top: 14px;
+}
+
+.venue-hero-kicker {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--metal);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.venue-hero-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(16px, 4vw, 18.5px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 3px;
+}
+
+.venue-hero-sub {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(13.5px, 3.4vw, 15px);
+  color: var(--ink-muted);
+  margin: 1px 0;
+}
+
+/* Inside Map & Action Links */
+.inside-actions-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+.inside-actions-wrap .action {
+  width: 100%;
+  max-width: 300px;
+  justify-content: center;
 }
 
 .ordination-intro {
@@ -2457,18 +2747,8 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
   background: #ffffff;
 }
 
-.ordination-intro .date-venue-plaque {
-  margin: 32px 18px 24px;
-  background: #ffffff !important;
-  border: 2px solid var(--metal);
-  outline: 1px solid rgba(197, 153, 62, 0.45);
-  outline-offset: -5px;
-  border-radius: 10px;
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06), 0 0 16px rgba(197, 153, 62, 0.14);
-}
-
 .ordination-intro .hero-link {
-  margin: 0 auto 32px;
+  margin: 18px auto 26px;
   display: inline-block;
 }
 
@@ -2485,8 +2765,8 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
     url('../assets/theme-top-canopy.jpg'),
     url('../assets/theme-bottom-chalice.jpg');
   background-position:
-    top center,
-    bottom center;
+    top -60px center,
+    bottom -15px center;
   background-size:
     100% auto,
     100% auto;
@@ -2494,8 +2774,8 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
     no-repeat,
     no-repeat;
   border-bottom: 2px solid var(--metal);
-  padding-top: 55px;
-  padding-bottom: 65px;
+  padding-top: 88px;
+  padding-bottom: 75px;
 }
 
 .countdown-section,
@@ -2511,8 +2791,8 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
     url('../assets/theme-top-canopy.jpg'),
     url('../assets/theme-bottom-chalice.jpg') !important;
   background-position:
-    top center,
-    bottom center !important;
+    top -60px center,
+    bottom -15px center !important;
   background-size:
     100% auto,
     100% auto !important;
@@ -2520,6 +2800,8 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
     no-repeat,
     no-repeat !important;
   border-bottom: 2px solid var(--metal);
+  padding-top: 88px !important;
+  padding-bottom: 75px !important;
 }
 
 .closing {
@@ -2529,14 +2811,15 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
     url('../assets/theme-top-canopy.jpg'),
     url('../assets/theme-bottom-chalice.jpg') !important;
   background-position:
-    top center,
-    bottom center !important;
+    top -60px center,
+    bottom -15px center !important;
   background-size:
     100% auto,
     100% auto !important;
   background-repeat:
     no-repeat,
     no-repeat !important;
+  padding-top: 88px !important;
 }
 
 .closing-colophon {

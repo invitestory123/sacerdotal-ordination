@@ -1,6 +1,6 @@
 # Customer Editing Guide — Sacerdotal Ordination Invitation
 
-This invitation is a 100% self-contained luxury ecclesiastical invitation for the **Sacerdotal Ordination** of **Deacon Reuell Paul, SJ** & **Deacon Christ Rajan Minj, SJ** to the Priesthood of Jesus Christ, conferred by **The Most Rev. Stephen Lepcha**, Bishop of Darjeeling, on **20 November 2026** at **St. Mary's Hill, Kurseong**.
+This invitation is a 100% self-contained luxury ecclesiastical invitation for the **Sacerdotal Ordination** of **Deacon Reuell Paul, SJ** & **Deacon Christ Rajan Minj, SJ** to the Priesthood of Jesus Christ, conferred by **Rt. Rev. Stephen Lepcha**, Bishop of Darjeeling, on **20 November 2026** at **St. Mary's Hill, Kurseong**.
 
 ---
 
@@ -11,7 +11,8 @@ All event details, timings, location, and streaming links are configured in:
 
 ### 1. Ordinands & Conferrer
 - `couple.first` & `couple.second`: Ordinand names (Deacon Reuell Paul, SJ & Deacon Christ Rajan Minj, SJ)
-- `ordinands.bishop`: The Most Rev. Stephen Lepcha, Bishop of Darjeeling
+- `couple.motto` & `couple.mottoSub`: "Omnibus Omnia" & "“All Things to All People, for Christ.”" (1 Cor 9:22)
+- `ordinands.bishop`: Rt. Rev. Stephen Lepcha, Bishop of Darjeeling
 - `ordinands.hosts`: The Darjeeling–Nepal Jesuits, together with the families of the ordinands
 
 ### 2. Date, Time & Countdown
@@ -22,28 +23,37 @@ All event details, timings, location, and streaming links are configured in:
 ### 3. Ceremonial Sequence
 - `schedule`: Array of ceremonial steps (Arrival & Gathering, Holy Eucharist & Rite of Ordination, Agape Meal & Felicitation).
 
-### 4. Venue & Satellite Map Links
-- `venue.name`: ST. MARY'S HILL KURSEONG (St. John Berchman's Parish — spelled with 'a', guaranteed on the same line)
+### 4. Venue & Satellite Map Links (Page 2)
+- Replaces the redundant intermediate date-venue card and sits directly after the first page announcement.
+- `venue.name`: ST. MARY'S HILL KURSEONG (St. John Berchman's Parish)
 - `venue.mapsUrl`: Google Maps navigation link (`https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw`)
-- `venue.satelliteUrl`: Google Maps direct satellite view link (`https://www.google.com/maps/place/St.+Mary's+Hill+Church,+Kurseong/@26.8837,88.2762,700m/data=!3m1!1e3`) — replaces the broken Firebase dynamic shortlink (`onmGYCHSL7iwgBrUA`) with direct coordinate satellite mode.
-- `venue.satelliteImage`: Enhanced aerial satellite photography of St. Mary's Hill (`./assets/st-marys-satellite-map.jpg`, upscaled 2× and sharpened before insertion)
-- `venue.watermarkImage`: Image 3 historic St. Mary's Hill photograph used as the location watermark background (`./assets/st-marys-hill-historic.jpg`, applied via `.watermark-bg-overlay` in `css/invitation.css`)
+- `venue.satelliteUrl`: Google Maps direct satellite view link (`https://www.google.com/maps/place/St.+Mary's+Hill+Church,+Kurseong/@26.8837,88.2762,700m/data=!3m1!1e3`)
+- `venue.satelliteImage`: Enhanced aerial satellite photography of St. Mary's Hill (`./assets/st-marys-satellite-map.jpg`)
+- `venue.watermarkImage`: Historic St. Mary's Hill photograph used as the location watermark background (`./assets/st-marys-hill-historic.jpg`)
+- Floral canopy positioned with negative top offset (`top -60px center`) and `padding-top: 88px` so the "ORDINATION VENUE" kicker is never obscured.
 
 ### 5. Live Telecast on YouTube
 - `liveStream.url`: YouTube live broadcast link (`https://www.youtube.com/live/illwWKDujck?si=X8uv-ORdfTfyP-pA`)
 - `liveStream.qrImage`: YouTube QR code (`./assets/youtube-live-qr.jpg`)
 
-### 6. RSVP (Two Input Boxes & WhatsApp RSVP)
-- Two input boxes restored: **Your full name** (`#rsvp-name`) and **Will you be joining us?** (`#rsvp-attendance` with *Joyfully accepts* / *Regretfully declines*).
-- **Deadline**: Updated to **30th October 2026** (`rsvp.deadline`).
-- **WhatsApp RSVP**: Direct WhatsApp button (`#whatsapp-rsvp-btn`) automatically personalizes the reply message with the guest's name and attendance response upon input/click.
+### 6. RSVP (Two Input Boxes & SEND RSVP via WhatsApp)
+- Input 1: **Your full name / Fr / Sr** (`#rsvp-name`).
+- Input 2: **Will you be joining us?** (`#rsvp-attendance` with *Joyfully accepts* / *Regretfully declines*).
+- **Deadline**: Reply by **30th October 2026** (`rsvp.deadline`).
+- **SEND RSVP Button**: Direct WhatsApp button (`#whatsapp-rsvp-btn`) labeled **SEND RSVP** with WhatsApp icon.
+- **WhatsApp Messages**:
+  - **Acceptance** (default / Joyfully accepts):
+    `Hi.\nPeace be with you.🪷\nI will be present for the Ordination at St. Mary's Kurseong. ✨\nBest wishes.` (with `- [Name]` appended if filled).
+  - **Declining** (Regretfully declines):
+    `Hi.\nPeace be with you.\nI regret to inform you that I won't be present for the ordination at Kurseong.` (with `- [Name]` appended if filled).
 
 ### 7. With Best Compliments From (Closing Section)
 - `compliments.title`: "With Best compliments from" (in script calligraphy).
-- `compliments.items`: Array of names or placeholder lines (`- - - - -`) displayed in the compliments card. Ready to be updated when the list is provided.
+- `compliments.items`: Array of names or placeholder lines (`- - - - -`).
 - `compliments.endingLine`: "Sacerdotal Ordination to the Priesthood of Jesus Christ".
 
-### 8. Attire Note
+### 8. Prayer for Priests & Attire
+- `details.prayerForPriests`: "Almighty God, pour out Your grace on the priests You have chosen for yourself. Strengthen them with the gifts of the Holy Spirit, so that they become All things to All People, and through them, may Your Word be truly proclaimed, Your Sacraments, be faithfully administered and devoutly received. Through Christ the Eternal High Priest we pray. Amen."
 - `details.dressCode`: "Priests are requested to bring an alb and cincture for the mass. Stole/ chausible will be provided"
 
 ---

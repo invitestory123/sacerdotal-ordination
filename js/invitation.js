@@ -143,64 +143,124 @@
     <!-- Main Invitation Stationery -->
     <main class="invitation" id="invitation" inert>
 
-      <!-- First page: seal, Ad Majorem, solemn invitation copy and plaque -->
+      <!-- Inside First Page: Omnibus Omnia, solemn conferral, ordinands duo & Bishop -->
       <section class="paper-section ordination-intro" id="sacramental-call" aria-label="Sacramental Calling">
         <div class="first-page-cover" id="first-page-cover">
+          <!-- Logo on top (golden IHS) -->
           <div class="seal-badge-wrap reveal">
-            <img class="badge-seal" src="./assets/jesuit-seal.jpg" alt="Darjeeling Nepal Jesuit Province" width="90" height="90">
+            <img class="badge-seal" src="./assets/jesuit-seal.jpg" alt="Society of Jesus Golden IHS Seal" width="86" height="86">
           </div>
-          <h2 class="amdg-heading reveal">Ad Majorem Dei Gloriam</h2>
+
+          <!-- Heading : in typography font: Omnibus Omnia -->
+          <h2 class="omnibus-heading reveal">Omnibus Omnia</h2>
+
+          <!-- Sub Heading : in calligraphy but not italics: “All Things to All People, for Christ.” -->
+          <p class="omnibus-subheading reveal">“All Things to All People, for Christ.”</p>
+
+          <!-- 1 Cor 9:22 -->
+          <p class="omnibus-scripture reveal">1 Cor 9:22</p>
+
           <div class="rule" aria-hidden="true"></div>
 
-          <!-- Continuous Paragraph (With the blessings of the Almighty — exact client copy) -->
+          <!-- Main Inner Plaque Card -->
           <div class="invitation-text-block reveal" id="names" tabindex="-1">
-            <p class="invitation-continuous-para">
-              With the blessings of the Almighty and in the grace of a vocation,<br>
-              faithfully discerned, freely embraced, and now brought to its sacramental fulfilment,
-            </p>
-            <p class="invitation-continuous-para invitation-para-follow">
-              The Darjeeling–Nepal Jesuits, together with the families of the ordinands,<br>
-              cordially invite you to the
-            </p>
+            <div class="invitation-preamble-group">
+              <p class="invitation-lead-line">With the blessings of God and the prayers of our elders,</p>
+              <p class="invitation-hosts-line">The Darjeeling–Nepal Jesuits,</p>
+              <p class="invitation-families-line">together with the families of the ordinands,</p>
+              <p class="invitation-invite-line">cordially invite you to the</p>
+            </div>
+
             <h3 class="ordination-callout">SACERDOTAL ORDINATION</h3>
             <p class="of-label">of</p>
-            <div class="ordinands-feature">
-              <div class="ordinand-card">
-                <h4>DEACON REUELL PAUL, SJ</h4>
-              </div>
-              <span class="ordinand-conjunction">&amp;</span>
-              <div class="ordinand-card">
-                <h4>DEACON CHRIST RAJAN MINJ, SJ</h4>
-              </div>
+
+            <!-- Side-by-side Ordinands Duo with Framed Cutout Images: Reuell SJ first, then &, then Rajan SJ -->
+            <div class="ordinands-side-by-side">
+              <!-- Deacon Reuell Paul, SJ -->
+              <article class="ordinand-hero-cell">
+                <div class="ordinand-hero-framed-wrap">
+                  <img class="ordinand-hero-framed-img" src="./assets/ordinand-reuell-framed.png" alt="Deacon Reuell Paul, SJ" loading="lazy">
+                </div>
+                <h4 class="ordinand-hero-title">DEACON REUELL PAUL, SJ</h4>
+              </article>
+
+              <div class="ordinands-duo-amp" aria-hidden="true">&amp;</div>
+
+              <!-- Deacon Christ Rajan Minj, SJ -->
+              <article class="ordinand-hero-cell">
+                <div class="ordinand-hero-framed-wrap">
+                  <img class="ordinand-hero-framed-img" src="./assets/ordinand-rajan-framed.png" alt="Deacon Christ Rajan Minj, SJ" loading="lazy">
+                </div>
+                <h4 class="ordinand-hero-title">DEACON CHRIST RAJAN MINJ, SJ</h4>
+              </article>
             </div>
-            <p class="priesthood-text">Which will be solemnly conferred upon them by</p>
-            <div class="bishop-highlight">
-              <p class="bishop-title-main">THE MOST REV. STEPHEN LEPCHA</p>
-              <p class="bishop-diocese">Bishop of Darjeeling</p>
+
+            <p class="priesthood-text">to the Sacred Order of Priesthood,</p>
+            <p class="conferral-calling-line">Which will be solemnly conferred upon them by</p>
+
+            <!-- Centre img of Bishop just above the calligraphic cursive name -->
+            <div class="bishop-hero-feature">
+              <div class="bishop-hero-portrait-wrap">
+                <img class="bishop-hero-portrait-img" src="./assets/bishop-cutout-transparent.png" alt="Rt. Rev. Stephen Lepcha, Bishop of Darjeeling" loading="lazy">
+              </div>
+              <p class="bishop-hero-name">Rt. Rev. Stephen Lepcha</p>
+              <p class="bishop-hero-diocese">Bishop of Darjeeling</p>
             </div>
+
+            <div class="liturgical-divider" aria-hidden="true"><span>☩</span></div>
+
+            <!-- Date & Time: 20 NOVEMBER 2026 | 10:30 AM -->
+            <div class="date-time-banner">
+              <span>20 NOVEMBER 2026</span>
+              <span class="banner-pipe">|</span>
+              <span>10:30 AM</span>
+            </div>
+
           </div>
         </div>
 
-        <!-- Date & Venue Plaque with Image 3 Historic Watermark (On / at) -->
-        <div class="date-venue-plaque location-watermark-card reveal">
-          <div class="watermark-bg-overlay" aria-hidden="true"></div>
-          <div class="plaque-col">
-            <span class="plaque-label">On</span>
-            <strong class="plaque-value">20 NOVEMBER 2026</strong>
-            <span class="plaque-sub">10.30 am</span>
+        <a class="hero-link" href="#venue-section">View Venue &amp; Programme ↓</a>
+      </section>
+
+      <!-- Venue Section: Enhanced Satellite Image (Image 2) & Location Box -->
+      <section class="paper-section venue-section" id="venue-section" aria-labelledby="venue-title">
+        <span class="section-kicker reveal">Ordination Venue</span>
+        <h2 class="script reveal" id="venue-title">St. Mary’s Hill Kurseong</h2>
+        <p class="venue-subheading reveal">St. John Berchman’s Parish</p>
+        <div class="rule" aria-hidden="true"></div>
+
+        <!-- Satellite Picture (Image 2 Enhanced) & Watermark Location Box -->
+        <div class="satellite-feature-card reveal">
+          <div class="satellite-image-wrapper">
+            <img class="satellite-img" src="${text(data.venue.satelliteImage || './assets/st-marys-satellite-map.jpg')}" alt="Enhanced Satellite perspective of St. Mary's Hill, Kurseong featuring St. Mary's Grotto" loading="lazy">
+            <div class="satellite-badge">
+              <span class="badge-icon">🛰️</span> Satellite Map View
+            </div>
           </div>
-          <div class="plaque-divider"></div>
-          <div class="plaque-col">
-            <span class="plaque-label">at</span>
-            <strong class="plaque-value">ST. MARY’S HILL, KURSEONG</strong>
-            <span class="plaque-sub plaque-venue-sub">
-              <span class="theologate-line">Former Jesuit Theologate</span>
-              <span class="parish-line">St. John Berchman’s Parish</span>
-            </span>
+          <p class="venue-caption">${text(data.venue.sceneCaption)}</p>
+
+          <div class="location-details-box location-watermark-card">
+            <div class="watermark-bg-overlay" aria-hidden="true"></div>
+            <div class="location-details-inner">
+              <h3 class="venue-name">ST. MARY’S HILL KURSEONG</h3>
+              <p class="venue-history">St. John Berchman’s Parish</p>
+              <address class="venue-address">${text(data.venue.address)}</address>
+              <p class="venue-timing">${text(data.venue.timeLabel)}</p>
+
+              <div class="actions map-actions">
+                <a class="action" id="maps" href="${safeURL(data.venue.mapsUrl || 'https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw')}" target="_blank" rel="noopener noreferrer">
+                  <span>📍 Open in Google Maps</span>
+                </a>
+                <a class="action secondary" id="satellite-link" href="${safeURL(data.venue.satelliteUrl || 'https://www.google.com/maps/place/St.+Mary\'s+Hill+Church,+Kurseong/@26.8837,88.2762,700m/data=!3m1!1e3')}" target="_blank" rel="noopener noreferrer">
+                  <span>🛰️ View Satellite Link</span>
+                </a>
+                <button class="action secondary" id="calendar">
+                  <span>📅 Add to Calendar</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-
-        <a class="hero-link" href="#schedule-title">View Programme ↓</a>
       </section>
 
       <!-- The Ordinands Individual Showcase (Left & Right Profiles) -->
@@ -281,47 +341,6 @@
         </p>
       </section>
 
-      <!-- Venue Section: Enhanced Satellite Image (2) and Watermark Background (3) -->
-      <section class="paper-section venue-section" aria-labelledby="venue-title">
-        <span class="section-kicker reveal">Ordination Venue</span>
-        <h2 class="script reveal" id="venue-title">St. Mary’s Hill Kurseong</h2>
-        <p class="venue-subheading reveal">St. John Berchman’s Parish</p>
-        <div class="rule" aria-hidden="true"></div>
-
-        <!-- Satellite Picture (Image 2 Enhanced) & Watermark Location Box (Image 3) -->
-        <div class="satellite-feature-card reveal">
-          <div class="satellite-image-wrapper">
-            <img class="satellite-img" src="${text(data.venue.satelliteImage || './assets/st-marys-satellite-map.jpg')}" alt="Enhanced Satellite perspective of St. Mary's Hill, Kurseong featuring St. Mary's Grotto" loading="lazy">
-            <div class="satellite-badge">
-              <span class="badge-icon">🛰️</span> Satellite Map View
-            </div>
-          </div>
-          <p class="venue-caption">${text(data.venue.sceneCaption)}</p>
-
-          <div class="location-details-box location-watermark-card">
-            <div class="watermark-bg-overlay" aria-hidden="true"></div>
-            <div class="location-details-inner">
-              <h3 class="venue-name">ST. MARY’S HILL KURSEONG</h3>
-              <p class="venue-history">St. John Berchman’s Parish</p>
-              <address class="venue-address">${text(data.venue.address)}</address>
-              <p class="venue-timing">${text(data.venue.timeLabel)}</p>
-
-              <div class="actions map-actions">
-                <a class="action" id="maps" href="${safeURL(data.venue.mapsUrl || 'https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw')}" target="_blank" rel="noopener noreferrer">
-                  <span>📍 Open in Google Maps</span>
-                </a>
-                <a class="action secondary" id="satellite-link" href="${safeURL(data.venue.satelliteUrl || 'https://www.google.com/maps/place/St.+Mary\'s+Hill+Church,+Kurseong/@26.8837,88.2762,700m/data=!3m1!1e3')}" target="_blank" rel="noopener noreferrer">
-                  <span>🛰️ View Satellite Link</span>
-                </a>
-                <button class="action secondary" id="calendar">
-                  <span>📅 Add to Calendar</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Live Telecast Section with YouTube QR and Link (Live from 10:00 AM onwards) -->
       <section class="paper-section live-stream-section" aria-labelledby="live-title">
         <div class="live-stream-card reveal">
@@ -382,8 +401,8 @@
           <!-- Two RSVP Input Boxes (Name & Attendance) -->
           <form class="rsvp-form" id="rsvp-form" onsubmit="return false;">
             <div class="rsvp-field">
-              <label for="rsvp-name">Your full name</label>
-              <input id="rsvp-name" name="guestName" autocomplete="name" maxlength="120" placeholder="First and last name">
+              <label for="rsvp-name">Your full name / Fr / Sr</label>
+              <input id="rsvp-name" name="guestName" autocomplete="name" maxlength="120" placeholder="Your full name / Fr / Sr">
             </div>
             <div class="rsvp-field">
               <label for="rsvp-attendance">Will you be joining us?</label>
@@ -396,11 +415,11 @@
 
             <!-- WhatsApp RSVP Button -->
             <div class="whatsapp-rsvp-wrap">
-              <a class="action whatsapp-btn" id="whatsapp-rsvp-btn" href="${safeURL(data.rsvp?.whatsappUrl || 'https://wa.me/919789876513?text=Peace%20be%20with%20you.%20I%20would%20like%20to%20send%20prayerful%20wishes%20and%20RSVP%20for%20the%20Sacerdotal%20Ordination%20at%20Kurseong.')}" target="_blank" rel="noopener noreferrer">
+              <a class="action whatsapp-btn" id="whatsapp-rsvp-btn" href="${safeURL(data.rsvp?.whatsappUrl || 'https://wa.me/919789876513?text=Hi.%0APeace%20be%20with%20you.%F0%9F%AA%B7%0AI%20will%20be%20present%20for%20the%20Ordination%20at%20St.%20Mary%27s%20Kurseong.%20%E2%9C%A8%0ABest%20wishes.')}" target="_blank" rel="noopener noreferrer">
                 <svg class="wa-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
                   <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.06c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 0 1-1.23-4.29c0-4.43 3.61-8.04 8.04-8.04 2.15 0 4.17.84 5.69 2.35 1.52 1.52 2.36 3.54 2.36 5.69 0 4.44-3.61 8.05-8.07 8.05zm4.41-6.03c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.52.1.46-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.15-.06-.1-.22-.16-.46-.28z"/>
                 </svg>
-                <span>WhatsApp RSVP: 9789876513</span>
+                <span>SEND RSVP</span>
               </a>
             </div>
           </form>
@@ -502,16 +521,14 @@
     const guestName = rsvpName ? rsvpName.value.trim() : '';
     const attValue = rsvpAttendance ? rsvpAttendance.value : '';
     let msg = '';
-    if (guestName && attValue) {
-      const statusText = attValue === 'yes' ? 'Joyfully accepts' : 'Regretfully declines';
-      msg = `Peace be with you. RSVP from ${guestName}: ${statusText} for the Sacerdotal Ordination of Deacon Reuell Paul SJ & Deacon Christ Rajan Minj SJ at Kurseong.`;
-    } else if (guestName) {
-      msg = `Peace be with you. This is ${guestName} sending prayerful wishes and RSVP for the Sacerdotal Ordination at Kurseong.`;
-    } else if (attValue) {
-      const statusText = attValue === 'yes' ? 'Joyfully accepts' : 'Regretfully declines';
-      msg = `Peace be with you. I would like to RSVP: ${statusText} for the Sacerdotal Ordination at Kurseong.`;
+    if (attValue === 'no') {
+      msg = guestName
+        ? `Hi.\nPeace be with you.\nI regret to inform you that I won't be present for the ordination at Kurseong.\n- ${guestName}`
+        : `Hi.\nPeace be with you.\nI regret to inform you that I won't be present for the ordination at Kurseong.`;
     } else {
-      msg = 'Peace be with you. I would like to send prayerful wishes and RSVP for the Sacerdotal Ordination at Kurseong.';
+      msg = guestName
+        ? `Hi.\nPeace be with you.🪷\nI will be present for the Ordination at St. Mary's Kurseong. ✨\nBest wishes.\n- ${guestName}`
+        : `Hi.\nPeace be with you.🪷\nI will be present for the Ordination at St. Mary's Kurseong. ✨\nBest wishes.`;
     }
     return `https://wa.me/91${basePhone}?text=${encodeURIComponent(msg)}`;
   }
@@ -746,12 +763,15 @@
       seconds: seconds % 60
     };
     for (const [key, value] of Object.entries(values)) {
-      const el = document.querySelector(`[data-count="${key}"]`);
-      if (el) el.textContent = String(value).padStart(2, '0');
+      document.querySelectorAll(`[data-count="${key}"]`).forEach(el => {
+        el.textContent = String(value).padStart(2, '0');
+      });
     }
     if (!remaining) {
-      $('countdown-title').textContent = 'The Sacred Ordination Has Commenced';
-      $('countdown-note').textContent = 'Deo Gratias · In prayerful communion.';
+      const ct = $('countdown-title');
+      if (ct) ct.textContent = 'The Sacred Ordination Has Commenced';
+      const cn = $('countdown-note');
+      if (cn) cn.textContent = 'Deo Gratias · In prayerful communion.';
     }
   }
   tick();
@@ -761,35 +781,42 @@
   const icsEscape = value => String(value).replace(/\\/g, '\\\\').replace(/\r?\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;');
   const stamp = value => value.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
 
+  function downloadCalendar() {
+    if (!validDate) return;
+    const configuredEnd = new Date(data.wedding.endISO);
+    const end = Number.isFinite(configuredEnd.getTime()) && configuredEnd > date ? configuredEnd : new Date(date.getTime() + 4 * 3600000);
+    const lines = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Society of Jesus//Sacerdotal Ordination//EN',
+      'CALSCALE:GREGORIAN',
+      'BEGIN:VEVENT',
+      `UID:ordination-jesuit-${date.getTime()}@darjeeling-nepal.jesuits`,
+      `DTSTAMP:${stamp(new Date())}`,
+      `DTSTART:${stamp(date)}`,
+      `DTEND:${stamp(end)}`,
+      `SUMMARY:${icsEscape('Sacerdotal Ordination of Deacon Reuell Paul SJ & Deacon Christ Rajan Minj SJ')}`,
+      `LOCATION:${icsEscape(data.venue.name + ', ' + data.venue.address)}`,
+      `DESCRIPTION:${icsEscape('Sacerdotal Ordination to the Priesthood of Jesus Christ, conferred by Rt. Rev. Bishop Stephen Lepcha, Bishop of Darjeeling at St. Mary’s Hill, Kurseong.')}`,
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ];
+    const url = URL.createObjectURL(new Blob([lines.join('\r\n') + '\r\n'], { type: 'text/calendar;charset=utf-8' }));
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `sacerdotal-ordination-kurseong.ics`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    notify('Calendar invitation has been downloaded.');
+  }
+
   if ($('calendar')) {
     $('calendar').disabled = !validDate;
-    $('calendar').addEventListener('click', () => {
-      const configuredEnd = new Date(data.wedding.endISO);
-      const end = Number.isFinite(configuredEnd.getTime()) && configuredEnd > date ? configuredEnd : new Date(date.getTime() + 4 * 3600000);
-      const lines = [
-        'BEGIN:VCALENDAR',
-        'VERSION:2.0',
-        'PRODID:-//Society of Jesus//Sacerdotal Ordination//EN',
-        'CALSCALE:GREGORIAN',
-        'BEGIN:VEVENT',
-        `UID:ordination-jesuit-${date.getTime()}@darjeeling-nepal.jesuits`,
-        `DTSTAMP:${stamp(new Date())}`,
-        `DTSTART:${stamp(date)}`,
-        `DTEND:${stamp(end)}`,
-        `SUMMARY:${icsEscape('Sacerdotal Ordination of Deacon Reuell Paul SJ & Deacon Christ Rajan Minj SJ')}`,
-        `LOCATION:${icsEscape(data.venue.name + ', ' + data.venue.address)}`,
-        `DESCRIPTION:${icsEscape('Sacerdotal Ordination to the Priesthood of Jesus Christ, conferred by Rt. Rev. Bishop Stephen Lepcha, Bishop of Darjeeling at St. Mary’s Hill, Kurseong.')}`,
-        'END:VEVENT',
-        'END:VCALENDAR'
-      ];
-      const url = URL.createObjectURL(new Blob([lines.join('\r\n') + '\r\n'], { type: 'text/calendar;charset=utf-8' }));
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `sacerdotal-ordination-kurseong.ics`;
-      a.click();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-      notify('Calendar invitation has been downloaded.');
-    });
+    $('calendar').addEventListener('click', downloadCalendar);
+  }
+  if ($('calendar-inline')) {
+    $('calendar-inline').disabled = !validDate;
+    $('calendar-inline').addEventListener('click', downloadCalendar);
   }
 
   // Preview / QA aid: index.html?open renders the invitation with the doors
