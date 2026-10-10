@@ -4,10 +4,10 @@ window.INVITATION_THEMES = {
     "name": "Sacred Jesuit Crimson & Gold",
     "palette": "altar ivory, liturgical crimson, sacred gold, deep obsidian",
     "scene": "Gothic sanctuary with vaulted arches, radiant IHS monstrance, chalice, and Himalayan mountain silhouettes at Kurseong",
-    "paper": "#fbf8f3",
-    "ink": "#231a17",
-    "accent": "#7c1a27",
-    "metal": "#b58739"
+    "paper": "#ffffff",
+    "ink": "#1a1113",
+    "accent": "#7b0e1e",
+    "metal": "#c5993e"
   },
   "cinnamon-camellia": {
     "slug": "cinnamon-camellia",

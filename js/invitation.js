@@ -86,8 +86,20 @@
 
         <!-- Gothic Architectural Double Door Shrine (Door 2) -->
         <div class="door-shrine-stage" id="doorStage">
-          <!-- Sanctuary Golden Glow revealed behind parting doors -->
-          <div class="door-interior-glow" aria-hidden="true">
+          <!-- Sanctuary Golden Glow & Both Ordinands Photo Revealed Behind Parting Doors -->
+          <div class="door-interior-glow" id="doorInteriorReveal">
+            <div class="door-reveal-content">
+              <div class="door-reveal-photo-wrap">
+                <img class="door-reveal-photo" src="./assets/ordinands-together.jpg" alt="Deacon Christ Rajan Minj SJ &amp; Deacon Reuell Paul SJ" decoding="async">
+                <div class="door-reveal-halo" aria-hidden="true"></div>
+                <div class="door-reveal-frame-rim" aria-hidden="true"></div>
+              </div>
+              <div class="door-reveal-plaque">
+                <span class="door-reveal-cross">☩</span>
+                <span class="door-reveal-title">DEACON CHRIST RAJAN MINJ SJ &amp; DEACON REUELL PAUL SJ</span>
+                <span class="door-reveal-sub">Society of Jesus · Darjeeling–Nepal Province</span>
+              </div>
+            </div>
             <div class="sanctuary-rays"></div>
           </div>
 
@@ -732,7 +744,7 @@
       finishOpening();
     } else {
       $('entrance').classList.add('door-opening');
-      openingTimer = setTimeout(finishOpening, 2650);
+      openingTimer = setTimeout(finishOpening, 3300);
     }
   }
 
