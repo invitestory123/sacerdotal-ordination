@@ -54,10 +54,6 @@ button:disabled { cursor: wait; opacity: 0.7; }
   max-width: 580px;
   margin: 0 auto;
   background-color: #ffffff;
-  background-image: url('../assets/sacred-hydrangea-bg.jpg');
-  background-position: top center;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
   overflow: hidden;
   box-shadow: 0 0 60px rgba(50, 80, 115, 0.22), 0 0 35px rgba(197, 153, 62, 0.2);
   position: relative;
@@ -1160,7 +1156,7 @@ button:disabled { cursor: wait; opacity: 0.7; }
 
 .countdown-section {
   padding: 60px 24px 65px;
-  background: #f4ede1;
+  background: #ffffff;
 }
 
 .countdown {
@@ -2414,74 +2410,149 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
    every section becomes a translucent sheet of paper)
 ---------------------------------------------------- */
 /* ----------------------------------------------------
-   PAGE BACKGROUNDS & ORNATE LITURGICAL BORDERS
-   (Clean altar ivory & crisp white, subtle sacred damask
-   watermark, and rich liturgical gold borders throughout)
+   FIRST PAGE THEME & EXTENDED BACKGROUND
+   (Blue hydrangeas & eucalyptus canopy at top, extending
+   all the way down till the end of the first box, with
+   the golden chalice and floral blooms anchoring the base)
 ---------------------------------------------------- */
-.invitation {
+.first-page-cover {
+  position: relative;
   background-color: #ffffff;
-  background-image: url('../assets/sacred-hydrangea-bg.jpg');
-  background-position: top center;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
+  background-image:
+    url('../assets/theme-top-canopy.jpg'),
+    url('../assets/theme-bottom-chalice.jpg');
+  background-position:
+    top center,
+    bottom center;
+  background-size:
+    100% auto,
+    100% auto;
+  background-repeat:
+    no-repeat,
+    no-repeat;
+  padding: 42px 18px 30px;
+  border-bottom: 2px solid var(--metal);
+}
+
+.first-page-cover .seal-badge-wrap {
+  margin-bottom: 14px;
+}
+
+.first-page-cover .invitation-text-block {
+  border: 2px solid var(--metal);
+  outline: 1px solid rgba(197, 153, 62, 0.45);
+  outline-offset: -6px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(4px);
+  padding: 26px 18px 32px;
+  margin: 0 auto;
+  box-shadow: 0 6px 24px rgba(123, 14, 30, 0.05), 0 0 18px rgba(197, 153, 62, 0.16);
+  position: relative;
+  z-index: 2;
 }
 
 .ordination-intro {
-  background: transparent !important;
-}
-
-.ordination-intro .invitation-text-block {
-  background: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(6px);
+  padding: 0 !important;
+  background: #ffffff;
 }
 
 .ordination-intro .date-venue-plaque {
-  background: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(6px);
+  margin: 32px 18px 24px;
+  background: #ffffff !important;
+  border: 2px solid var(--metal);
+  outline: 1px solid rgba(197, 153, 62, 0.45);
+  outline-offset: -5px;
+  border-radius: 10px;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06), 0 0 16px rgba(197, 153, 62, 0.14);
 }
 
+.ordination-intro .hero-link {
+  margin: 0 auto 32px;
+  display: inline-block;
+}
+
+/* ----------------------------------------------------
+   EVERY PAGE SHARING THE SAME SACRED BOTANICAL THEME
+   (Watercolor blue hydrangeas, eucalyptus greenery canopy
+   at top, golden chalice & sacred floral blooms at bottom,
+   on pure altar white stationery with rich gold borders)
+---------------------------------------------------- */
 .paper-section {
-  background-color: rgba(255, 255, 255, 0.95);
-  background-image:
-    radial-gradient(ellipse 70% 35% at 50% 0%, rgba(232, 199, 123, 0.12) 0%, transparent 70%),
-    url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c5993e' fill-opacity='0.038' fill-rule='evenodd'%3E%3Cpath d='M28 2l2.5 10.5L41 15l-10.5 2.5L28 28l-2.5-10.5L15 15l10.5-2.5zM2 28l2.5 10.5L15 41l-10.5 2.5L2 54l-2.5-10.5L-11 41l10.5-2.5zM54 28l2.5 10.5L67 41l-10.5 2.5L54 54l-2.5-10.5L41 41l10.5-2.5zM28 54l2.5 10.5L41 67l-10.5 2.5L28 80l-2.5-10.5L15 67l10.5-2.5z'/%3E%3Ccircle cx='28' cy='28' r='1.2'/%3E%3C/g%3E%3C/svg%3E");
-  border-bottom: 1px solid rgba(197, 153, 62, 0.35);
-}
-
-.countdown-section {
+  position: relative;
   background-color: #ffffff;
   background-image:
-    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(232, 199, 123, 0.14) 0%, transparent 75%),
-    url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c5993e' fill-opacity='0.038' fill-rule='evenodd'%3E%3Cpath d='M28 2l2.5 10.5L41 15l-10.5 2.5L28 28l-2.5-10.5L15 15l10.5-2.5z'/%3E%3C/g%3E%3C/svg%3E");
+    url('../assets/theme-top-canopy.jpg'),
+    url('../assets/theme-bottom-chalice.jpg');
+  background-position:
+    top center,
+    bottom center;
+  background-size:
+    100% auto,
+    100% auto;
+  background-repeat:
+    no-repeat,
+    no-repeat;
+  border-bottom: 2px solid var(--metal);
+  padding-top: 55px;
+  padding-bottom: 65px;
 }
 
-.ordinands-section {
-  background-color: #ffffff;
-  background-image:
-    radial-gradient(ellipse 75% 35% at 50% 0%, rgba(232, 199, 123, 0.12) 0%, transparent 70%),
-    url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c5993e' fill-opacity='0.038' fill-rule='evenodd'%3E%3Cpath d='M28 2l2.5 10.5L41 15l-10.5 2.5L28 28l-2.5-10.5L15 15l10.5-2.5z'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-.live-stream-section {
-  background-color: #ffffff;
-  background-image:
-    radial-gradient(ellipse 70% 35% at 50% 0%, rgba(232, 199, 123, 0.12) 0%, transparent 70%),
-    url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c5993e' fill-opacity='0.038' fill-rule='evenodd'%3E%3Cpath d='M28 2l2.5 10.5L41 15l-10.5 2.5L28 28l-2.5-10.5L15 15l10.5-2.5z'/%3E%3C/g%3E%3C/svg%3E");
-}
-
+.countdown-section,
+.ordinands-section,
+.schedule-section,
+.venue-section,
+.live-stream-section,
+.etiquette-section,
 .rsvp-section {
-  background-color: #ffffff;
+  position: relative;
+  background-color: #ffffff !important;
   background-image:
-    radial-gradient(ellipse 70% 35% at 50% 0%, rgba(232, 199, 123, 0.14) 0%, transparent 70%),
-    url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c5993e' fill-opacity='0.038' fill-rule='evenodd'%3E%3Cpath d='M28 2l2.5 10.5L41 15l-10.5 2.5L28 28l-2.5-10.5L15 15l10.5-2.5z'/%3E%3C/g%3E%3C/svg%3E");
+    url('../assets/theme-top-canopy.jpg'),
+    url('../assets/theme-bottom-chalice.jpg') !important;
+  background-position:
+    top center,
+    bottom center !important;
+  background-size:
+    100% auto,
+    100% auto !important;
+  background-repeat:
+    no-repeat,
+    no-repeat !important;
+  border-bottom: 2px solid var(--metal);
 }
 
 .closing {
-  background-color: #ffffff;
+  position: relative;
+  background-color: #ffffff !important;
+  background-image:
+    url('../assets/theme-top-canopy.jpg'),
+    url('../assets/theme-bottom-chalice.jpg') !important;
+  background-position:
+    top center,
+    bottom center !important;
+  background-size:
+    100% auto,
+    100% auto !important;
+  background-repeat:
+    no-repeat,
+    no-repeat !important;
 }
 
 .closing-colophon {
   background-color: #ffffff;
+  border-top: 1px solid rgba(197, 153, 62, 0.3);
+}
+
+/* Ensure cards inside each section have crisp translucent white backings */
+.ordinand-profile-card,
+.satellite-feature-card,
+.location-details-box,
+.live-stream-card,
+.notes-grid .note-card,
+.rsvp-card {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(4px);
 }
 
 /* ----------------------------------------------------

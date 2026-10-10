@@ -122,6 +122,8 @@ window.WEDDING_DATA = {
     "altarArt": "./assets/ordination-altar.jpg",
     "venueWatermark": "./assets/st-marys-hill-historic.jpg",
     "pageBackground": "./assets/sacred-hydrangea-bg.jpg",
+    "themeTopCanopy": "./assets/theme-top-canopy.jpg",
+    "themeBottomChalice": "./assets/theme-bottom-chalice.jpg",
     "music": "./media/music.mp3",
     "musicTitle": "Sacred Reverence (Heartwarming)",
     "musicSource": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100207"

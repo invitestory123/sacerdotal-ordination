@@ -145,37 +145,39 @@
 
       <!-- First page: seal, Ad Majorem, solemn invitation copy and plaque -->
       <section class="paper-section ordination-intro" id="sacramental-call" aria-label="Sacramental Calling">
-        <div class="seal-badge-wrap reveal">
-          <img class="badge-seal" src="./assets/jesuit-seal.jpg" alt="Darjeeling Nepal Jesuit Province" width="90" height="90">
-        </div>
-        <h2 class="amdg-heading reveal">Ad Majorem Dei Gloriam</h2>
-        <div class="rule" aria-hidden="true"></div>
-
-        <!-- Continuous Paragraph (With the blessings of the Almighty — exact client copy) -->
-        <div class="invitation-text-block reveal" id="names" tabindex="-1">
-          <p class="invitation-continuous-para">
-            With the blessings of the Almighty and in the grace of a vocation,<br>
-            faithfully discerned, freely embraced, and now brought to its sacramental fulfilment,
-          </p>
-          <p class="invitation-continuous-para invitation-para-follow">
-            The Darjeeling–Nepal Jesuits, together with the families of the ordinands,<br>
-            cordially invite you to the
-          </p>
-          <h3 class="ordination-callout">SACERDOTAL ORDINATION</h3>
-          <p class="of-label">of</p>
-          <div class="ordinands-feature">
-            <div class="ordinand-card">
-              <h4>DEACON REUELL PAUL, SJ</h4>
-            </div>
-            <span class="ordinand-conjunction">&amp;</span>
-            <div class="ordinand-card">
-              <h4>DEACON CHRIST RAJAN MINJ, SJ</h4>
-            </div>
+        <div class="first-page-cover" id="first-page-cover">
+          <div class="seal-badge-wrap reveal">
+            <img class="badge-seal" src="./assets/jesuit-seal.jpg" alt="Darjeeling Nepal Jesuit Province" width="90" height="90">
           </div>
-          <p class="priesthood-text">Which will be solemnly conferred upon them by</p>
-          <div class="bishop-highlight">
-            <p class="bishop-title-main">THE MOST REV. STEPHEN LEPCHA</p>
-            <p class="bishop-diocese">Bishop of Darjeeling</p>
+          <h2 class="amdg-heading reveal">Ad Majorem Dei Gloriam</h2>
+          <div class="rule" aria-hidden="true"></div>
+
+          <!-- Continuous Paragraph (With the blessings of the Almighty — exact client copy) -->
+          <div class="invitation-text-block reveal" id="names" tabindex="-1">
+            <p class="invitation-continuous-para">
+              With the blessings of the Almighty and in the grace of a vocation,<br>
+              faithfully discerned, freely embraced, and now brought to its sacramental fulfilment,
+            </p>
+            <p class="invitation-continuous-para invitation-para-follow">
+              The Darjeeling–Nepal Jesuits, together with the families of the ordinands,<br>
+              cordially invite you to the
+            </p>
+            <h3 class="ordination-callout">SACERDOTAL ORDINATION</h3>
+            <p class="of-label">of</p>
+            <div class="ordinands-feature">
+              <div class="ordinand-card">
+                <h4>DEACON REUELL PAUL, SJ</h4>
+              </div>
+              <span class="ordinand-conjunction">&amp;</span>
+              <div class="ordinand-card">
+                <h4>DEACON CHRIST RAJAN MINJ, SJ</h4>
+              </div>
+            </div>
+            <p class="priesthood-text">Which will be solemnly conferred upon them by</p>
+            <div class="bishop-highlight">
+              <p class="bishop-title-main">THE MOST REV. STEPHEN LEPCHA</p>
+              <p class="bishop-diocese">Bishop of Darjeeling</p>
+            </div>
           </div>
         </div>
 
