@@ -14,10 +14,10 @@ window.WEDDING_DATA = {
     "mottoRef": "1 Cor 9:22"
   },
   "ordinands": {
-    "first": "DEACON REUELL PAUL, SJ",
-    "second": "DEACON CHRIST RAJAN MINJ, SJ",
-    "firstPhoto": "./assets/ordinand-reuell-framed.png",
-    "secondPhoto": "./assets/ordinand-rajan-framed.png",
+    "first": "DEACON REUELL PAUL SJ",
+    "second": "DEACON CHRIST RAJAN MINJ SJ",
+    "firstPhoto": "./assets/deacon-reuell-hd.png",
+    "secondPhoto": "./assets/deacon-rajan-hd.png",
     "hosts": "The Darjeeling–Nepal Jesuits",
     "families": "together with the families of the ordinands",
     "inviteNote": "cordially invite you to the",

@@ -70,7 +70,7 @@
       </div>
       <div class="door-scene-wrapper">
         <header class="door-header">
-          <span class="door-motto">|| Ad Majorem Dei Gloriam ||</span>
+          <span class="door-motto">Ad Majorem Dei Gloriam</span>
           <h1 class="door-main-title">
             <span>Invitation to the</span>
             <span>Priestly Ordination</span>
@@ -179,10 +179,10 @@
               <!-- Row 1: Name Box on Left, Deacon Reuell on Right (hands pointing left towards his name) -->
               <div class="ordinand-staggered-row reuell-row">
                 <div class="ordinand-name-card-box">
-                  <h4 class="ordinand-box-title">DEACON REUELL PAUL,<br><span class="sj-pill">SJ</span></h4>
+                  <h4 class="ordinand-box-title">DEACON REUELL PAUL<br><span class="sj-pill">SJ</span></h4>
                 </div>
                 <div class="ordinand-staggered-photo-wrap">
-                  <img class="ordinand-staggered-img" src="./assets/ordinand-reuell-framed.png" alt="Deacon Reuell Paul, SJ" loading="lazy">
+                  <img class="ordinand-staggered-img" src="./assets/deacon-reuell-hd.png" alt="Deacon Reuell Paul SJ" loading="lazy">
                 </div>
               </div>
 
@@ -191,10 +191,10 @@
               <!-- Row 2: Deacon Christ Rajan on Left (hands pointing right towards his name), Name Box on Right -->
               <div class="ordinand-staggered-row rajan-row">
                 <div class="ordinand-staggered-photo-wrap">
-                  <img class="ordinand-staggered-img" src="./assets/ordinand-rajan-framed.png" alt="Deacon Christ Rajan Minj, SJ" loading="lazy">
+                  <img class="ordinand-staggered-img" src="./assets/deacon-rajan-hd.png" alt="Deacon Christ Rajan Minj SJ" loading="lazy">
                 </div>
                 <div class="ordinand-name-card-box">
-                  <h4 class="ordinand-box-title">DEACON CHRIST<br>RAJAN MINJ, <span class="sj-pill">SJ</span></h4>
+                  <h4 class="ordinand-box-title">DEACON CHRIST<br>RAJAN MINJ <span class="sj-pill">SJ</span></h4>
                 </div>
               </div>
             </div>
