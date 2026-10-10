@@ -36,7 +36,7 @@ window.WEDDING_DATA = {
     "left": {
       "name": "DEACON CHRIST RAJAN MINJ SJ",
       "title": "Deacon Christ Rajan Minj SJ",
-      "subtitle": "Society of Jesus · Darjeeling Province",
+      "subtitle": "Diocese of Bagdogra · Society of Jesus",
       "parents": "S/O Mr. Cyprian Minj and Mrs. Sarita Beck",
       "massPlace": "St Ignatius Church, Goomgooma",
       "massDate": "21st November 2026",
@@ -47,11 +47,11 @@ window.WEDDING_DATA = {
     "right": {
       "name": "DEACON REUELL PAUL SJ",
       "title": "Deacon Reuell Paul SJ",
-      "subtitle": "Society of Jesus · Darjeeling Province",
+      "subtitle": "Diocese of Darjeeling · Society of Jesus",
       "parents": "S/O Lt. Mr. Hilarius Paul and Mrs. Lily Paul",
       "massPlace": "St. John Berchman's Parish",
-      "massDate": "21st November 2026",
-      "massTime": "10:30 am",
+      "massDate": "29th November 2026",
+      "massTime": "8:00 am",
       "photoPrayer": "./assets/ordinand-reuell-censer.png",
       "thanksgiving": "Thanksgiving Mass"
     }

@@ -174,25 +174,29 @@
             <h3 class="ordination-callout">SACERDOTAL ORDINATION</h3>
             <p class="of-label">of</p>
 
-            <!-- Side-by-side Ordinands Duo with Framed Cutout Images: Reuell SJ first, then &, then Rajan SJ -->
-            <div class="ordinands-side-by-side">
-              <!-- Deacon Reuell Paul, SJ -->
-              <article class="ordinand-hero-cell">
-                <div class="ordinand-hero-framed-wrap">
-                  <img class="ordinand-hero-framed-img" src="./assets/ordinand-reuell-framed.png" alt="Deacon Reuell Paul, SJ" loading="lazy">
+            <!-- Staggered Ordinands Layout: Name at side & Image at side (matching folded hands pose) -->
+            <div class="ordinands-staggered-duo">
+              <!-- Row 1: Name Box on Left, Deacon Reuell on Right (hands pointing left towards his name) -->
+              <div class="ordinand-staggered-row reuell-row">
+                <div class="ordinand-name-card-box">
+                  <h4 class="ordinand-box-title">DEACON REUELL PAUL,<br><span class="sj-pill">SJ</span></h4>
                 </div>
-                <h4 class="ordinand-hero-title">DEACON REUELL PAUL, SJ</h4>
-              </article>
-
-              <div class="ordinands-duo-amp" aria-hidden="true">&amp;</div>
-
-              <!-- Deacon Christ Rajan Minj, SJ -->
-              <article class="ordinand-hero-cell">
-                <div class="ordinand-hero-framed-wrap">
-                  <img class="ordinand-hero-framed-img" src="./assets/ordinand-rajan-framed.png" alt="Deacon Christ Rajan Minj, SJ" loading="lazy">
+                <div class="ordinand-staggered-photo-wrap">
+                  <img class="ordinand-staggered-img" src="./assets/ordinand-reuell-framed.png" alt="Deacon Reuell Paul, SJ" loading="lazy">
                 </div>
-                <h4 class="ordinand-hero-title">DEACON CHRIST RAJAN MINJ, SJ</h4>
-              </article>
+              </div>
+
+              <div class="ordinands-staggered-amp" aria-hidden="true">&amp;</div>
+
+              <!-- Row 2: Deacon Christ Rajan on Left (hands pointing right towards his name), Name Box on Right -->
+              <div class="ordinand-staggered-row rajan-row">
+                <div class="ordinand-staggered-photo-wrap">
+                  <img class="ordinand-staggered-img" src="./assets/ordinand-rajan-framed.png" alt="Deacon Christ Rajan Minj, SJ" loading="lazy">
+                </div>
+                <div class="ordinand-name-card-box">
+                  <h4 class="ordinand-box-title">DEACON CHRIST<br>RAJAN MINJ, <span class="sj-pill">SJ</span></h4>
+                </div>
+              </div>
             </div>
 
             <p class="priesthood-text">to the Sacred Order of Priesthood,</p>
@@ -301,6 +305,10 @@
               <p class="profile-mass-place">${text(ordRight.massPlace)}</p>
               <p class="profile-mass-date">${text(ordRight.massDate)}</p>
               <p class="profile-mass-time">${text(ordRight.massTime)}</p>
+            </div>
+            <!-- Sacred Chalice coming in front of the box (as requested) -->
+            <div class="chalice-foreground-wrap" aria-hidden="true">
+              <img class="chalice-foreground-img" src="./assets/sacred-golden-chalice.png" alt="" loading="lazy">
             </div>
           </article>
 

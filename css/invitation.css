@@ -2254,10 +2254,11 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
 }
 
 .ordinand-profile-card {
+  position: relative;
   background: #ffffff;
   border: 1px solid rgba(216, 171, 93, 0.55);
   border-radius: 14px;
-  overflow: hidden;
+  overflow: visible !important;
   box-shadow: 0 10px 30px rgba(107, 16, 28, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.8) inset, 0 2px 14px rgba(181, 135, 57, 0.16);
   display: flex;
   flex-direction: column;
@@ -2269,11 +2270,30 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
   box-shadow: 0 14px 36px rgba(107, 16, 28, 0.14), 0 0 22px rgba(181, 135, 57, 0.3);
 }
 
+/* Foreground sacred chalice sitting in front of Deacon Reuell card corner */
+.chalice-foreground-wrap {
+  position: absolute;
+  bottom: -22px;
+  left: -20px;
+  width: 145px;
+  z-index: 10;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.2));
+}
+
+.chalice-foreground-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .profile-photo-container {
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 4;
   overflow: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   background: #231a17;
 }
 
@@ -2409,20 +2429,32 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
 .first-page-cover {
   position: relative;
   background-color: #ffffff;
-  background-image:
-    url('../assets/theme-top-canopy.jpg'),
-    url('../assets/theme-bottom-chalice.jpg');
-  background-position:
-    top -52px center,
-    bottom center;
-  background-size:
-    100% auto,
-    100% auto;
-  background-repeat:
-    no-repeat,
-    no-repeat;
   padding: 24px 18px 32px;
   border-bottom: 2px solid var(--metal);
+  overflow: hidden;
+}
+
+.first-page-cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 280px;
+  background-image: url('../assets/theme-top-canopy.jpg');
+  background-position: top -88px center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: radial-gradient(ellipse 95% 82% at 50% 0%, rgba(0,0,0,1) 45%, rgba(0,0,0,0.3) 75%, transparent 100%);
+  mask-image: radial-gradient(ellipse 95% 82% at 50% 0%, rgba(0,0,0,1) 45%, rgba(0,0,0,0.3) 75%, transparent 100%);
+  opacity: 0.95;
+}
+
+.first-page-cover > * {
+  position: relative;
+  z-index: 1;
 }
 
 .first-page-cover .seal-badge-wrap {
@@ -2524,59 +2556,81 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
   margin-top: 4px !important;
 }
 
-/* Side-by-side Ordinands Duo with Images */
-.ordinands-side-by-side {
+/* Staggered Ordinands Duo (Name at Side, Image at Side) */
+.ordinands-staggered-duo {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: column;
+  gap: 12px;
   margin: 18px auto 16px;
+  width: 100%;
   max-width: 480px;
 }
 
-.ordinand-hero-cell {
-  flex: 1;
-  min-width: 0;
+.ordinand-staggered-row {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.ordinand-name-card-box {
+  flex: 1 1 55%;
+  background: #ffffff;
+  border: 1.5px solid var(--metal);
+  outline: 1px solid rgba(197, 153, 62, 0.45);
+  outline-offset: -4px;
+  border-radius: 12px;
+  padding: 16px 12px;
   text-align: center;
-}
-
-.ordinand-hero-framed-wrap {
-  width: 100%;
-  max-width: 175px;
-  margin: 0 auto 6px;
+  box-shadow: 0 4px 14px rgba(123, 14, 30, 0.05), 0 0 10px rgba(197, 153, 62, 0.1);
   display: flex;
-  justify-content: center;
   align-items: center;
-  filter: drop-shadow(0 4px 14px rgba(107, 16, 28, 0.1));
+  justify-content: center;
 }
 
-.ordinand-hero-framed-img {
-  width: 100%;
-  height: auto;
-  max-height: 235px;
-  object-fit: contain;
-  display: block;
-}
-
-.ordinands-duo-amp {
-  font-family: "Parisienne", cursive;
-  font-size: 28px;
-  color: var(--metal);
-  margin-top: 80px;
-  flex-shrink: 0;
-}
-
-.ordinand-hero-title {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(13px, 3.1vw, 15px);
+.ordinand-box-title {
+  font-family: "Cinzel", "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(13.5px, 3.6vw, 16.5px);
   font-weight: 700;
   letter-spacing: 0.08em;
+  color: var(--crimson-deep, #6B101C);
+  line-height: 1.35;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.ordinand-box-title .sj-pill {
+  display: inline-block;
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+
+.ordinand-staggered-photo-wrap {
+  flex: 0 0 42%;
+  max-width: 170px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.ordinand-staggered-img {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.12));
+}
+
+.ordinands-staggered-amp {
+  font-family: "Great Vibes", "Playfair Display", Georgia, serif;
+  font-size: clamp(28px, 6.5vw, 36px);
   color: var(--accent);
-  margin: 4px 0 0;
-  line-height: 1.25;
+  text-align: center;
+  margin: -6px 0;
+  line-height: 1;
 }
 
 .conferral-calling-line {
@@ -2781,7 +2835,6 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
 .countdown-section,
 .ordinands-section,
 .schedule-section,
-.venue-section,
 .live-stream-section,
 .etiquette-section,
 .rsvp-section {
@@ -2801,6 +2854,23 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
     no-repeat !important;
   border-bottom: 2px solid var(--metal);
   padding-top: 88px !important;
+  padding-bottom: 75px !important;
+}
+
+/* Venue Section: Top flower removed across the page break so text is completely legible */
+.venue-section {
+  position: relative;
+  background-color: #ffffff !important;
+  background-image:
+    url('../assets/theme-bottom-chalice.jpg') !important;
+  background-position:
+    bottom -15px center !important;
+  background-size:
+    100% auto !important;
+  background-repeat:
+    no-repeat !important;
+  border-bottom: 2px solid var(--metal);
+  padding-top: 50px !important;
   padding-bottom: 75px !important;
 }
 
