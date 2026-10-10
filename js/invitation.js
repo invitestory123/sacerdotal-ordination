@@ -143,75 +143,7 @@
     <!-- Main Invitation Stationery -->
     <main class="invitation" id="invitation" inert>
 
-      <!-- Hero Announcement Banner (First page after the doors open: portraits, conferral, date & venue) -->
-      <section class="hero sacred-hero cinematic-hero" aria-label="Sacerdotal Ordination Announcement">
-        <div class="hero-overlay"></div>
-        <div class="hero-copy">
-          <div class="liturgical-cross" aria-hidden="true">☩</div>
-          <p class="amdg-tag">Ad Majorem Dei Gloriam</p>
-          <h2 class="hero-event-title">SACERDOTAL ORDINATION</h2>
-          <p class="hero-of">of</p>
-
-          <!-- Side-by-Side Ordinands Duo (Left: Rajan, Right: Reuell) -->
-          <div class="hero-ordinands-duo" id="names" tabindex="-1">
-
-            <!-- Deacon Christ Rajan Minj SJ (Left) -->
-            <article class="hero-ordinand-profile">
-              <div class="hero-portrait-arch">
-                <img class="hero-portrait-photo hero-portrait-photo--left" src="./assets/ordinand-christ-rajan.jpg" alt="DEACON CHRIST RAJAN MINJ SJ" fetchpriority="high">
-                <div class="hero-portrait-border" aria-hidden="true"></div>
-              </div>
-              <div class="hero-ordinand-meta">
-                <h3 class="hero-ordinand-name">DEACON CHRIST RAJAN MINJ SJ</h3>
-                <p class="hero-ordinand-sub">Society of Jesus · Darjeeling Province</p>
-              </div>
-            </article>
-
-            <!-- Center Liturgical Monogram & Separator -->
-            <div class="hero-duo-separator" aria-hidden="true">
-              <span class="duo-cross">☩</span>
-              <span class="duo-amp">&amp;</span>
-            </div>
-
-            <!-- Deacon Reuell Paul SJ (Right) -->
-            <article class="hero-ordinand-profile">
-              <div class="hero-portrait-arch">
-                <img class="hero-portrait-photo" src="./assets/ordinand-reuell-paul.jpg" alt="DEACON REUELL PAUL SJ" fetchpriority="high">
-                <div class="hero-portrait-border" aria-hidden="true"></div>
-              </div>
-              <div class="hero-ordinand-meta">
-                <h3 class="hero-ordinand-name">DEACON REUELL PAUL SJ</h3>
-                <p class="hero-ordinand-sub">Society of Jesus · Darjeeling Province</p>
-              </div>
-            </article>
-
-          </div>
-
-          <!-- Conferral of Holy Orders (solemnly conferred — client copy) -->
-          <div class="hero-conferral">
-            <p class="hero-calling">Which will be solemnly conferred upon them by</p>
-            <p class="bishop-name">THE MOST REV. STEPHEN LEPCHA</p>
-            <p class="bishop-title">Bishop of Darjeeling</p>
-          </div>
-
-          <!-- Date & Venue (On / at) -->
-          <div class="hero-datetime">
-            <p class="hero-lead">On</p>
-            <p class="hero-date">20 NOVEMBER 2026</p>
-            <p class="hero-time">10.30 am</p>
-            <p class="hero-lead">at</p>
-            <p class="hero-venue">ST. MARY’S HILL, KURSEONG</p>
-            <p class="hero-venue-sub">
-              <span class="theologate-line">Former Jesuit Theologate</span>
-              <span class="parish-line">St. John Berchman’s Parish</span>
-            </p>
-          </div>
-
-          <a class="hero-link" href="#schedule-title">View Programme ↓</a>
-        </div>
-      </section>
-
-      <!-- Second page: seal, Ad Majorem, solemn invitation copy and plaque -->
+      <!-- First page: seal, Ad Majorem, solemn invitation copy and plaque -->
       <section class="paper-section ordination-intro" id="sacramental-call" aria-label="Sacramental Calling">
         <div class="seal-badge-wrap reveal">
           <img class="badge-seal" src="./assets/jesuit-seal.jpg" alt="Darjeeling Nepal Jesuit Province" width="90" height="90">
@@ -220,7 +152,7 @@
         <div class="rule" aria-hidden="true"></div>
 
         <!-- Continuous Paragraph (With the blessings of the Almighty — exact client copy) -->
-        <div class="invitation-text-block reveal">
+        <div class="invitation-text-block reveal" id="names" tabindex="-1">
           <p class="invitation-continuous-para">
             With the blessings of the Almighty and in the grace of a vocation,<br>
             faithfully discerned, freely embraced, and now brought to its sacramental fulfilment,
@@ -265,6 +197,8 @@
             </span>
           </div>
         </div>
+
+        <a class="hero-link" href="#schedule-title">View Programme ↓</a>
       </section>
 
       <!-- The Ordinands Individual Showcase (Left & Right Profiles) -->
