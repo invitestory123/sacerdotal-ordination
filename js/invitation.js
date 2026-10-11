@@ -77,9 +77,13 @@
           </h1>
           <p class="door-of-line">Of</p>
           <p class="door-ordinands-line">
-            <span>Deacon Reuell Paul SJ</span>
-            <span class="door-amp">&amp;</span>
-            <span>Deacon Christ Rajan Minj SJ</span>
+            <span class="door-name-item">
+              <span class="door-name">Deacon Reuell Paul SJ</span>
+              <span class="door-amp">&amp;</span>
+            </span>
+            <span class="door-name-item">
+              <span class="door-name">Deacon Christ Rajan Minj SJ</span>
+            </span>
           </p>
           <div class="door-cross-divider" aria-hidden="true"><span>☩</span></div>
         </header>
