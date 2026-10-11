@@ -1,6 +1,6 @@
 /* Scroll work is event-driven; only visible scenes are measured and animated. */
 window.initInvitationMotion = function ({ theme, reduced }) {
-  const scenes = [...document.querySelectorAll('.door-scene-wrapper,.hero,.paper-section,.closing')];
+  const scenes = [...document.querySelectorAll('.door-scene-wrapper,.hero,.paper-section,.closing,.ordinand-profile-card')];
   const visible = new Set();
   const depth = { 'aubergine-magnolia': 30, 'petrol-dahlia': 24, 'cobalt-iris': 36, 'cinnamon-camellia': 26 }[theme] || 26;
   let paused = false, frame = 0;
@@ -9,12 +9,12 @@ window.initInvitationMotion = function ({ theme, reduced }) {
     scene.classList.add('motion-scene');
     // Falling flowers: small blue and white petals scattered here and there
     // Decorative layers never intercept gestures or enter the accessibility tree.
-    if (scene.matches('.door-scene-wrapper,.paper-section,.closing')) {
+    if (scene.matches('.door-scene-wrapper,.paper-section,.closing,.ordinand-profile-card')) {
       const layer = document.createElement('div');
       layer.className = 'motion-decor';
       layer.setAttribute('aria-hidden', 'true');
       const types = ['petal-blue', 'petal-white', 'flower-blue', 'flower-white'];
-      const count = 18;
+      const count = scene.matches('.ordinand-profile-card') ? 12 : 18;
       for (let i = 0; i < count; i++) {
         const petal = document.createElement('span');
         const type = types[i % types.length];

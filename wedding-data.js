@@ -115,7 +115,7 @@ window.WEDDING_DATA = {
     "deadline": "30th October 2026"
   },
   "compliments": {
-    "title": "With Best compliments from",
+    "title": "With Best Compliments",
     "leftColumn": {
       "clergy": [
         "Fr. Shajumon Chakkalakal, SJ (DAN Provincial) and the Darjeeling–Nepal Jesuits",
@@ -186,10 +186,10 @@ window.WEDDING_DATA = {
         "Lt. Mrs. Elizabeth Sharma"
       ],
       "jesuits": [
-        "Lt. Fr. Gerard Van Walleghem, Fr. Ambrose Pinto, Fr. Swebert D’Silva,",
-        "Fr. Giles Goluckmu, Fr. Leo Cachet, Fr. Casper Miller",
-        "Fr. Edu Gurung, Fr. Leslie Prabhu, Fr. Murray Abraham,",
-        "Fr. Alphonse Lingdamoo, Fr. Marian Rodriguez, Fr. Elias Pinto."
+        "Lt. Fr. Gerard Van Walleghem, Fr. Ambrose Pinto,",
+        "Fr. Swebert D’Silva, Fr. Giles Goluckmu, Fr. Leo Cachet,",
+        "Fr. Casper Miller, Fr. Edu Gurung, Fr. Leslie Prabhu,",
+        "Fr. Murray Abraham, Fr. Alphonse Lingdamoo, Fr. Marian Rodriguez, Fr. Elias Pinto."
       ],
       "blessing": "May they rest in the peace of Christ and share in the joy of eternal life."
     }
@@ -207,7 +207,7 @@ window.WEDDING_DATA = {
     "themeTopCanopy": "./assets/theme-top-canopy.jpg",
     "themeBottomChalice": "./assets/theme-bottom-chalice.jpg",
     "music": "./media/music.mp3",
-    "musicTitle": "Sacred Reverence (Heartwarming)",
-    "musicSource": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100207"
+    "musicTitle": "Way Maker (Instrumental) · Maranatha!",
+    "musicSource": "https://open.spotify.com/track/5oNBMaMlw7gu3zzA6F3M5O"
   }
 };

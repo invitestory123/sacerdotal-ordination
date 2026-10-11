@@ -181,27 +181,36 @@
             <h3 class="ordination-callout">SACERDOTAL ORDINATION</h3>
             <p class="of-label">of</p>
 
-            <!-- Ordinands Layout: Name Box in a Single Line (like red box) -->
-            <div class="ordinands-staggered-duo">
-              <!-- Row 1: Deacon Reuell Paul SJ -->
-              <div class="ordinand-staggered-row reuell-row">
-                <div class="ordinand-staggered-photo-wrap">
-                  <img class="ordinand-staggered-img" src="./assets/deacon-reuell-hd.png" alt="Deacon Reuell Paul SJ" loading="lazy">
+            <!-- Sacred Sanctuary Shrines: Both Ordinands in Gothic Arched Shrines with Golden Backlight & Single Line Plaques -->
+            <div class="ordinands-shrine-stage">
+              <!-- Shrine 1: Deacon Reuell Paul SJ -->
+              <div class="ordinand-sanctuary-shrine reuell-shrine">
+                <div class="shrine-arch-halo" aria-hidden="true"></div>
+                <div class="shrine-apex-cross" aria-hidden="true">☩</div>
+                <div class="shrine-photo-stage">
+                  <img class="shrine-deacon-img" src="./assets/deacon-reuell-hd.png" alt="Deacon Reuell Paul SJ" loading="lazy">
                 </div>
-                <div class="ordinand-name-card-box">
-                  <h4 class="ordinand-box-title">DEACON REUELL PAUL SJ</h4>
+                <div class="shrine-name-plaque">
+                  <h4 class="shrine-name-text">DEACON REUELL PAUL SJ</h4>
                 </div>
               </div>
 
-              <div class="ordinands-staggered-amp" aria-hidden="true">&amp;</div>
+              <!-- Sacred Ampersand Ribbon Divider -->
+              <div class="shrine-amp-divider" aria-hidden="true">
+                <span class="shrine-amp-line"></span>
+                <span class="shrine-amp-glyph">☩ &amp; ☩</span>
+                <span class="shrine-amp-line"></span>
+              </div>
 
-              <!-- Row 2: Deacon Christ Rajan Minj SJ -->
-              <div class="ordinand-staggered-row rajan-row">
-                <div class="ordinand-staggered-photo-wrap">
-                  <img class="ordinand-staggered-img" src="./assets/deacon-rajan-hd.png" alt="Deacon Christ Rajan Minj SJ" loading="lazy">
+              <!-- Shrine 2: Deacon Christ Rajan Minj SJ -->
+              <div class="ordinand-sanctuary-shrine rajan-shrine">
+                <div class="shrine-arch-halo" aria-hidden="true"></div>
+                <div class="shrine-apex-cross" aria-hidden="true">☩</div>
+                <div class="shrine-photo-stage">
+                  <img class="shrine-deacon-img" src="./assets/deacon-rajan-hd.png" alt="Deacon Christ Rajan Minj SJ" loading="lazy">
                 </div>
-                <div class="ordinand-name-card-box">
-                  <h4 class="ordinand-box-title">DEACON CHRIST RAJAN MINJ SJ</h4>
+                <div class="shrine-name-plaque">
+                  <h4 class="shrine-name-text">DEACON CHRIST RAJAN MINJ SJ</h4>
                 </div>
               </div>
             </div>
@@ -455,8 +464,7 @@
             <div class="closing-seal-wrap">
               <img src="./assets/jesuit-seal.jpg" alt="Society of Jesus Seal" width="84" height="84" class="closing-seal-img">
             </div>
-            <p class="closing-eyebrow">Society of Jesus · Darjeeling–Nepal Province</p>
-            <h2 class="closing-title script" id="closing-title">${text(data.compliments?.title || 'With Best compliments from')}</h2>
+            <h2 class="closing-title script" id="closing-title">${text(data.compliments?.title || 'With Best Compliments')}</h2>
             
             <div class="compliments-container">
               <!-- Two Columns -->
@@ -475,7 +483,10 @@
                     <div class="compliments-subgroup">
                       <h3 class="compliments-section-heading">${text(data.compliments.leftColumn.familyHeading || 'Family and Well-Wishers')}</h3>
                       <ul class="compliments-names-list">
-                        ${data.compliments.leftColumn.family.map(item => `<li>${text(item)}</li>`).join('')}
+                        ${data.compliments.leftColumn.family.map(item => {
+                          const isCouple = /and\s+Mrs|&\s+Mrs|and\s+Family|and\s+family/i.test(item);
+                          return `<li class="${isCouple ? 'couple-item' : ''}"><span class="nobr">${text(item)}</span></li>`;
+                        }).join('')}
                       </ul>
                     </div>
                   ` : ''}
@@ -487,7 +498,10 @@
                     <div class="compliments-subgroup">
                       <h3 class="compliments-section-heading">${text(data.compliments.rightColumn.familyHeading || 'Families and Well-Wishers (cont.)')}</h3>
                       <ul class="compliments-names-list">
-                        ${data.compliments.rightColumn.family.map(item => `<li>${text(item)}</li>`).join('')}
+                        ${data.compliments.rightColumn.family.map(item => {
+                          const isCouple = /and\s+Mrs|&\s+Mrs|and\s+Family|and\s+family/i.test(item);
+                          return `<li class="${isCouple ? 'couple-item' : ''}"><span class="nobr">${text(item)}</span></li>`;
+                        }).join('')}
                       </ul>
                     </div>
                   ` : ''}
@@ -513,12 +527,12 @@
                   <p class="compliments-communion-sub">${text(data.compliments.base.subtitle || 'With gratitude for their life')}</p>
                   
                   <ul class="compliments-names-list communion-departed-list">
-                    ${(data.compliments.base.departed || []).map(item => `<li>${text(item)}</li>`).join('')}
+                    ${(data.compliments.base.departed || []).map(item => `<li><span class="nobr">${text(item)}</span></li>`).join('')}
                   </ul>
 
                   ${(data.compliments.base.jesuits || []).length ? `
                     <div class="communion-jesuits-block">
-                      ${data.compliments.base.jesuits.map(line => `<p class="communion-jesuit-line">${text(line)}</p>`).join('')}
+                      ${data.compliments.base.jesuits.map(line => `<p class="communion-jesuit-line">${text(line).replace(/Fr\.\s+Swebert\s+D[’']Silva/g, '<span class="nobr">Fr. Swebert D’Silva</span>')}</p>`).join('')}
                     </div>
                   ` : ''}
 
