@@ -455,6 +455,7 @@
             <div class="closing-seal-wrap">
               <img src="./assets/jesuit-seal.jpg" alt="Society of Jesus Seal" width="84" height="84" class="closing-seal-img">
             </div>
+            <p class="closing-eyebrow">Society of Jesus · Darjeeling–Nepal Province</p>
             <h2 class="closing-title script" id="closing-title">${text(data.compliments?.title || 'With Best compliments from')}</h2>
             
             <div class="compliments-container">
