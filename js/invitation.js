@@ -169,7 +169,10 @@
           <!-- Main Inner Plaque Card -->
           <div class="invitation-text-block reveal" id="names" tabindex="-1">
             <div class="invitation-preamble-group">
-              <p class="invitation-lead-line">With the blessings of God and the prayers of our elders,</p>
+              <p class="invitation-lead-line">
+                <span class="preamble-line">With the blessings of God</span>
+                <span class="preamble-line">and the prayers of our elders,</span>
+              </p>
               <p class="invitation-hosts-line">The Darjeeling–Nepal Jesuits,</p>
               <p class="invitation-families-line">together with the families of the ordinands,</p>
               <p class="invitation-invite-line">cordially invite you to the</p>
@@ -337,16 +340,22 @@
         <h2 class="script reveal" id="schedule-title">Ceremonial Sequence</h2>
         <div class="rule" aria-hidden="true"></div>
         <ol class="timeline liturgical-timeline">
-          ${data.schedule.map((item, idx) => `
-            <li class="reveal">
-              <time>${text(item.time)}</time>
-              <span class="event-marker" aria-hidden="true"></span>
-              <div class="event-body">
-                <span class="event-name">${text(item.title)}</span>
-                ${item.detail ? `<p class="event-detail">${text(item.detail)}</p>` : ''}
-              </div>
-            </li>
-          `).join('')}
+          ${data.schedule.map((item, idx) => {
+            const rawTime = String(item.time || '');
+            const formattedTime = rawTime.includes(' onwards')
+              ? `<span>${escape(rawTime.replace(' onwards', ''))}</span><span class="time-sub">onwards</span>`
+              : `<span>${escape(rawTime)}</span>`;
+            return `
+              <li class="reveal">
+                <time>${formattedTime}</time>
+                <span class="event-marker" aria-hidden="true"></span>
+                <div class="event-body">
+                  <span class="event-name">${text(item.title)}</span>
+                  ${item.detail ? `<p class="event-detail">${text(item.detail)}</p>` : ''}
+                </div>
+              </li>
+            `;
+          }).join('')}
         </ol>
         <p class="schedule-note reveal">
           All are warmly welcomed to unite in the Eucharistic banquet and join in the fraternal fellowship thereafter.

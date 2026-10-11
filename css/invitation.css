@@ -1202,19 +1202,37 @@ button:disabled { cursor: wait; opacity: 0.7; }
 }
 
 .liturgical-timeline {
+  --time-col: 88px;
+  --marker-col: 24px;
+  --pad-x: 14px;
   list-style: none;
-  padding: 20px 0 0;
-  margin: 0 auto;
-  max-width: 440px;
+  padding: 26px var(--pad-x);
+  margin: 24px auto;
+  max-width: 490px;
   position: relative;
+  border: 2px solid var(--metal);
+  outline: 1px solid rgba(197, 153, 62, 0.4);
+  outline-offset: -6px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.05), 0 0 16px rgba(197, 153, 62, 0.12);
+}
+
+@media (min-width: 440px) {
+  .liturgical-timeline {
+    --time-col: 100px;
+    --marker-col: 26px;
+    --pad-x: 20px;
+  }
 }
 
 .liturgical-timeline:before {
   content: '';
   position: absolute;
-  left: 28%;
-  top: 15px;
-  bottom: 25px;
+  left: calc(var(--pad-x) + var(--time-col) + (var(--marker-col) / 2));
+  transform: translateX(-50%);
+  top: 28px;
+  bottom: 34px;
   width: 2px;
   background: linear-gradient(180deg, var(--metal) 0%, var(--accent) 50%, var(--metal) 100%);
   opacity: 0.45;
@@ -1222,22 +1240,37 @@ button:disabled { cursor: wait; opacity: 0.7; }
 
 .liturgical-timeline li {
   display: grid;
-  grid-template-columns: 26% 8% 66%;
+  grid-template-columns: var(--time-col) var(--marker-col) 1fr;
   align-items: flex-start;
-  min-height: 90px;
+  min-height: 85px;
   text-align: left;
   position: relative;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .liturgical-timeline time {
-  font-size: 21px;
-  font-weight: 800;
+  font-size: clamp(14.5px, 3.8vw, 17px);
+  font-weight: 700;
   color: var(--accent);
   text-align: right;
-  padding-right: 6px;
+  padding-right: 8px;
   padding-top: 2px;
-  line-height: 1.3;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  word-break: normal;
+  white-space: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.liturgical-timeline time .time-sub {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--metal-dark);
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+  margin-top: 2px;
 }
 
 .liturgical-timeline .event-marker {
@@ -1262,19 +1295,19 @@ button:disabled { cursor: wait; opacity: 0.7; }
 }
 
 .event-body {
-  padding-left: 14px;
+  padding-left: 12px;
 }
 
 .event-name {
   display: block;
-  font-size: 20px;
+  font-size: clamp(17px, 4.4vw, 20px);
   font-weight: 700;
   color: var(--ink);
   line-height: 1.3;
 }
 
 .event-detail {
-  font-size: 15px;
+  font-size: clamp(13.5px, 3.4vw, 15px);
   color: var(--ink-muted);
   margin: 4px 0 0;
   line-height: 1.45;
@@ -2594,6 +2627,10 @@ body.motion-paused .falling-petal {
   color: var(--ink);
 }
 
+.invitation-lead-line .preamble-line {
+  display: block;
+}
+
 .invitation-hosts-line {
   font-weight: 600;
   color: var(--accent);
@@ -3058,17 +3095,6 @@ body.motion-paused .falling-petal {
   box-shadow: 0 2px 8px rgba(197, 153, 62, 0.14);
 }
 
-.liturgical-timeline {
-  border: 2px solid var(--metal);
-  outline: 1px solid rgba(197, 153, 62, 0.4);
-  outline-offset: -6px;
-  border-radius: 12px;
-  background: #ffffff;
-  padding: 26px 20px;
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.05), 0 0 16px rgba(197, 153, 62, 0.12);
-  max-width: 490px;
-  margin: 24px auto;
-}
 
 .satellite-feature-card {
   border: 2px solid var(--metal);
