@@ -106,11 +106,11 @@
           <!-- Double Door Panels Splitting From Center -->
           <div class="door-panels-portal">
             <div class="door-panel door-panel-left" id="doorLeft" aria-hidden="true">
-              <img class="door-panel-leaf" src="./assets/door-panel-left.jpg" alt="Sanctuary Door Left Leaf">
+              <img class="door-panel-leaf" src="./assets/door-panel-left.png" alt="Sanctuary Door Left Leaf">
               <div class="door-panel-shadow" aria-hidden="true"></div>
             </div>
             <div class="door-panel door-panel-right" id="doorRight" aria-hidden="true">
-              <img class="door-panel-leaf" src="./assets/door-panel-right.jpg" alt="Sanctuary Door Right Leaf">
+              <img class="door-panel-leaf" src="./assets/door-panel-right.png" alt="Sanctuary Door Right Leaf">
               <div class="door-panel-shadow" aria-hidden="true"></div>
             </div>
           </div>

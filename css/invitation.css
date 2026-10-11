@@ -213,18 +213,14 @@ button:disabled { cursor: wait; opacity: 0.7; }
   align-items: center;
   justify-content: center;
   opacity: 0.96;
-  border: 2px solid var(--metal-light);
-  box-shadow:
-    inset 0 0 15px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(255, 255, 255, 0.5);
-  transition: opacity 2.4s ease 0.12s, box-shadow 2.4s ease;
+  border: none !important;
+  box-shadow: none !important;
+  transition: opacity 2.4s ease 0.12s;
 }
 
 .door-opening .door-interior-glow {
   opacity: 1;
-  box-shadow:
-    inset 0 0 20px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(255, 255, 255, 0.7);
+  box-shadow: none !important;
 }
 
 .door-reveal-content {
@@ -336,17 +332,8 @@ button:disabled { cursor: wait; opacity: 0.7; }
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  /* Seamlessly feather the outer perimeter of the white door panel into the ambient gold halo and backdrop */
-  -webkit-mask-image:
-    linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%),
-    linear-gradient(180deg, transparent 0%, #000 5%, #000 95%, transparent 100%),
-    radial-gradient(ellipse 92% 90% at 50% 50%, #000 75%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%),
-    linear-gradient(180deg, transparent 0%, #000 5%, #000 95%, transparent 100%),
-    radial-gradient(ellipse 92% 90% at 50% 50%, #000 75%, transparent 100%);
-  mask-composite: intersect;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
 }
 
 .door-panel {
@@ -376,16 +363,7 @@ button:disabled { cursor: wait; opacity: 0.7; }
 }
 
 .door-panel-shadow {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0.15) 100%);
-  pointer-events: none;
-  opacity: 0.4;
-  transition: opacity 1s ease;
-}
-
-.door-panel-right .door-panel-shadow {
-  background: linear-gradient(270deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0.15) 100%);
+  display: none !important;
 }
 
 /* Center Latch & IHS Logo Button — concentric with the door's own sunburst
@@ -2578,25 +2556,26 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
 
 .ordinand-staggered-row {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 12px;
   width: 100%;
 }
 
 .ordinand-name-card-box {
-  flex: 1 1 55%;
+  flex: 1 1 50%;
   background: #ffffff;
   border: 1.5px solid var(--metal);
   outline: 1px solid rgba(197, 153, 62, 0.45);
   outline-offset: -4px;
   border-radius: 12px;
-  padding: 16px 12px;
+  padding: 18px 14px;
   text-align: center;
   box-shadow: 0 4px 14px rgba(123, 14, 30, 0.05), 0 0 10px rgba(197, 153, 62, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 14px;
 }
 
 .ordinand-box-title {
