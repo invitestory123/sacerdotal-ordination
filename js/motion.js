@@ -19,14 +19,17 @@ window.initInvitationMotion = function ({ theme, reduced }) {
         const petal = document.createElement('span');
         const type = types[i % types.length];
         petal.className = `falling-petal ${type}`;
-        // Small size here and there: 8px to 14px
-        const size = 8 + Math.round(Math.random() * 6);
+        // Increased petal size: 15px to 24px for single petals, 18px to 28px for full blossoms
+        const isFlower = type.startsWith('flower');
+        const size = isFlower
+          ? 18 + Math.round(Math.random() * 10)
+          : 15 + Math.round(Math.random() * 9);
         petal.style.setProperty('--size', `${size}px`);
         petal.style.setProperty('--x', `${Math.round(Math.random() * 94) + 3}%`);
-        petal.style.setProperty('--dur', `${15 + Math.round(Math.random() * 15)}s`);
-        petal.style.setProperty('--delay', `${-Math.round(Math.random() * 30)}s`);
-        petal.style.setProperty('--drift', `${Math.round(Math.random() * 70 - 35)}px`);
-        petal.style.setProperty('--op', (0.65 + Math.random() * 0.3).toFixed(2));
+        petal.style.setProperty('--dur', `${14 + Math.round(Math.random() * 14)}s`);
+        petal.style.setProperty('--delay', `${-Math.round(Math.random() * 28)}s`);
+        petal.style.setProperty('--drift', `${Math.round(Math.random() * 80 - 40)}px`);
+        petal.style.setProperty('--op', (0.7 + Math.random() * 0.28).toFixed(2));
         petal.style.setProperty('--spin', `${Math.round(Math.random() * 360)}deg`);
         layer.append(petal);
       }
