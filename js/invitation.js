@@ -492,7 +492,7 @@
 
   function syncMotion() {
     const stopped = motionPaused || reduced.matches;
-    if (ambience && ambience.setPaused) ambience.setPaused(stopped || !opened);
+    if (ambience && ambience.setPaused) ambience.setPaused(stopped);
     $('motion').hidden = false;
     $('motion').disabled = reduced.matches;
     $('motion').textContent = reduced.matches ? 'Reduced motion' : (motionPaused ? 'Play motion' : 'Pause motion');

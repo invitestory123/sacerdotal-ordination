@@ -1,30 +1,34 @@
 /* Scroll work is event-driven; only visible scenes are measured and animated. */
 window.initInvitationMotion = function ({ theme, reduced }) {
-  const scenes = [...document.querySelectorAll('.hero,.paper-section,.closing')];
+  const scenes = [...document.querySelectorAll('.door-scene-wrapper,.hero,.paper-section,.closing')];
   const visible = new Set();
   const depth = { 'aubergine-magnolia': 30, 'petrol-dahlia': 24, 'cobalt-iris': 36, 'cinnamon-camellia': 26 }[theme] || 26;
-  let paused = true, frame = 0;
+  let paused = false, frame = 0;
 
   scenes.forEach((scene) => {
     scene.classList.add('motion-scene');
-    // Church-based falling watermark: faint gold crosses drifting down like petals.
+    // Falling flowers: small blue and white petals scattered here and there
     // Decorative layers never intercept gestures or enter the accessibility tree.
-    if (scene.matches('.paper-section,.closing')) {
+    if (scene.matches('.door-scene-wrapper,.paper-section,.closing')) {
       const layer = document.createElement('div');
       layer.className = 'motion-decor';
       layer.setAttribute('aria-hidden', 'true');
-      const count = 14;
+      const types = ['petal-blue', 'petal-white', 'flower-blue', 'flower-white'];
+      const count = 18;
       for (let i = 0; i < count; i++) {
-        const cross = document.createElement('span');
-        cross.className = 'falling-cross';
-        cross.style.setProperty('--size', `${9 + Math.round(Math.random() * 12)}px`);
-        cross.style.setProperty('--x', `${Math.round(Math.random() * 100)}%`);
-        cross.style.setProperty('--dur', `${17 + Math.round(Math.random() * 20)}s`);
-        cross.style.setProperty('--delay', `${-Math.round(Math.random() * 34)}s`);
-        cross.style.setProperty('--drift', `${Math.round(Math.random() * 80 - 40)}px`);
-        cross.style.setProperty('--op', (0.07 + Math.random() * 0.11).toFixed(2));
-        cross.style.setProperty('--spin', `${Math.round(Math.random() * 360)}deg`);
-        layer.append(cross);
+        const petal = document.createElement('span');
+        const type = types[i % types.length];
+        petal.className = `falling-petal ${type}`;
+        // Small size here and there: 8px to 14px
+        const size = 8 + Math.round(Math.random() * 6);
+        petal.style.setProperty('--size', `${size}px`);
+        petal.style.setProperty('--x', `${Math.round(Math.random() * 94) + 3}%`);
+        petal.style.setProperty('--dur', `${15 + Math.round(Math.random() * 15)}s`);
+        petal.style.setProperty('--delay', `${-Math.round(Math.random() * 30)}s`);
+        petal.style.setProperty('--drift', `${Math.round(Math.random() * 70 - 35)}px`);
+        petal.style.setProperty('--op', (0.65 + Math.random() * 0.3).toFixed(2));
+        petal.style.setProperty('--spin', `${Math.round(Math.random() * 360)}deg`);
+        layer.append(petal);
       }
       scene.append(layer);
     }
