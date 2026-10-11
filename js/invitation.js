@@ -179,7 +179,7 @@
               <!-- Row 1: Name Box on Left, Deacon Reuell on Right (hands pointing left towards his name) -->
               <div class="ordinand-staggered-row reuell-row">
                 <div class="ordinand-name-card-box">
-                  <h4 class="ordinand-box-title">DEACON REUELL PAUL<br><span class="sj-pill">SJ</span></h4>
+                  <h4 class="ordinand-box-title"><span class="name-line">DEACON REUELL</span><span class="name-line">PAUL <span class="sj-pill">SJ</span></span></h4>
                 </div>
                 <div class="ordinand-staggered-photo-wrap">
                   <img class="ordinand-staggered-img" src="./assets/deacon-reuell-hd.png" alt="Deacon Reuell Paul SJ" loading="lazy">
@@ -194,7 +194,7 @@
                   <img class="ordinand-staggered-img" src="./assets/deacon-rajan-hd.png" alt="Deacon Christ Rajan Minj SJ" loading="lazy">
                 </div>
                 <div class="ordinand-name-card-box">
-                  <h4 class="ordinand-box-title">DEACON CHRIST<br>RAJAN MINJ <span class="sj-pill">SJ</span></h4>
+                  <h4 class="ordinand-box-title"><span class="name-line">DEACON CHRIST</span><span class="name-line">RAJAN MINJ <span class="sj-pill">SJ</span></span></h4>
                 </div>
               </div>
             </div>

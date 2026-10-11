@@ -208,18 +208,21 @@ button:disabled { cursor: wait; opacity: 0.7; }
   z-index: 1;
   border-radius: 10px;
   overflow: hidden;
-  background: #ffffff;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.96;
+  opacity: 0;
+  visibility: hidden;
   border: none !important;
   box-shadow: none !important;
-  transition: opacity 2.4s ease 0.12s;
+  transition: opacity 1.6s ease 0.2s, visibility 1.6s ease 0.2s;
 }
 
 .door-opening .door-interior-glow {
   opacity: 1;
+  visibility: visible;
+  background: #ffffff;
   box-shadow: none !important;
 }
 
@@ -2580,7 +2583,7 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
 
 .ordinand-box-title {
   font-family: "Cinzel", "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(13.5px, 3.6vw, 16.5px);
+  font-size: clamp(12.5px, 3.3vw, 15px);
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--crimson-deep, #6B101C);
@@ -2589,10 +2592,14 @@ body.motion-paused .falling-cross { animation-play-state: paused; }
   text-transform: uppercase;
 }
 
+.ordinand-box-title .name-line {
+  display: block;
+  white-space: nowrap;
+}
+
 .ordinand-box-title .sj-pill {
   display: inline-block;
   letter-spacing: 0.1em;
-  margin-top: 2px;
 }
 
 .ordinand-staggered-photo-wrap {
