@@ -2031,7 +2031,7 @@ button:disabled { cursor: wait; opacity: 0.7; }
 ---------------------------------------------------- */
 .media-controls {
   position: fixed;
-  top: 14px;
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
   right: 14px;
   z-index: 90;
   display: flex;
