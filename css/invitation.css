@@ -1800,27 +1800,128 @@ button:disabled { cursor: wait; opacity: 0.7; }
   outline: none;
 }
 
-/* Compliments Section */
+/* Compliments Section (Two Columns & Communion of Saints Base) */
 .compliments-container {
-  max-width: 440px;
-  margin: 18px auto 20px;
-  padding: 0 12px;
+  width: 100%;
+  margin: 14px auto 0;
+  padding: 0 4px;
+  box-sizing: border-box;
 }
 
-.compliments-list {
+.compliments-two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+  align-items: start;
+  text-align: center;
+}
+
+.compliments-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.compliments-subgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.compliments-section-heading {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(12.5px, 2.7vw, 14px);
+  font-weight: 700;
+  color: #8daed8;
+  letter-spacing: 0.04em;
+  margin: 6px 0 3px;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.compliments-names-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 3.5px;
+  text-align: center;
 }
 
-.compliments-list li {
-  font-size: clamp(17px, 4.4vw, 21px);
-  font-weight: 600;
-  color: var(--accent-dark);
-  letter-spacing: 0.06em;
+.compliments-names-list li {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(10.5px, 2.35vw, 12.5px);
+  font-weight: 500;
+  color: #f2ede6;
+  line-height: 1.34;
+  letter-spacing: 0.015em;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.compliments-base-divider {
+  width: 96%;
+  height: 1.5px;
+  background: #b58739;
+  margin: 18px auto 16px;
+  border: none;
+  opacity: 0.85;
+  box-shadow: 0 0 6px rgba(181, 135, 57, 0.4);
+}
+
+.compliments-base-section {
+  text-align: center;
+  padding: 0 4px;
+}
+
+.compliments-communion-heading {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(12.5px, 2.8vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8daed8;
+  margin: 0 0 3px;
+  line-height: 1.3;
+}
+
+.compliments-communion-sub {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(11px, 2.4vw, 12.5px);
+  font-style: italic;
+  color: #d8cebe;
+  margin: 0 0 8px;
+}
+
+.communion-departed-list {
+  margin-bottom: 6px;
+}
+
+.communion-jesuits-block {
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+}
+
+.communion-jesuit-line {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(10px, 2.2vw, 11.5px);
+  color: #f2ede6;
+  line-height: 1.35;
+  margin: 0;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.communion-blessing {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(11px, 2.4vw, 12.5px);
+  font-style: italic;
+  color: #d8cebe;
+  margin: 10px 0 0;
   line-height: 1.4;
 }
 
@@ -1870,21 +1971,24 @@ button:disabled { cursor: wait; opacity: 0.7; }
 }
 
 .closing-copy {
-  max-width: 440px;
+  width: min(100%, 540px);
+  max-width: 540px;
   margin: auto;
+  box-sizing: border-box;
 }
 
 .closing-seal-wrap {
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 
 .closing-seal-img {
-  width: 100px;
-  height: 100px;
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
-  padding: 3px;
+  padding: 2.5px;
   background: radial-gradient(circle, #f9f0df 0%, #deb872 70%, #99702a 100%);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  display: inline-block;
 }
 
 .closing-eyebrow {
@@ -1898,12 +2002,13 @@ button:disabled { cursor: wait; opacity: 0.7; }
 
 .closing-title {
   font-family: "Great Vibes", "Parisienne", cursive;
-  font-size: clamp(42px, 10vw, 58px);
-  color: var(--accent);
-  margin: 0;
-  line-height: 1.1;
+  font-size: clamp(34px, 7.5vw, 46px);
+  color: #eed59b;
+  margin: 0 0 14px;
+  line-height: 1.15;
   font-weight: 400;
   font-style: normal;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .closing-title em {
@@ -2002,6 +2107,16 @@ button:disabled { cursor: wait; opacity: 0.7; }
 
 .jesuit-signature {
   margin-top: 24px;
+}
+
+.ad-multos-annos {
+  font-family: "Great Vibes", "Parisienne", cursive;
+  font-size: clamp(28px, 6.5vw, 36px);
+  color: var(--accent);
+  margin: 0 0 10px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .jesuit-signature span {
@@ -2646,11 +2761,11 @@ body.motion-paused .falling-petal {
   margin-top: 4px !important;
 }
 
-/* Staggered Ordinands Duo (Name at Side, Image at Side) */
+/* Ordinands Duo: Single Line Name Box under Photo (matching red box) */
 .ordinands-staggered-duo {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   margin: 18px auto 16px;
   width: 100%;
   max-width: 480px;
@@ -2658,59 +2773,24 @@ body.motion-paused .falling-petal {
 
 .ordinand-staggered-row {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 12px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   width: 100%;
 }
 
-.ordinand-name-card-box {
-  flex: 1 1 50%;
-  background: #ffffff;
-  border: 1.5px solid var(--metal);
-  outline: 1px solid rgba(197, 153, 62, 0.45);
-  outline-offset: -4px;
-  border-radius: 12px;
-  padding: 18px 14px;
-  text-align: center;
-  box-shadow: 0 4px 14px rgba(123, 14, 30, 0.05), 0 0 10px rgba(197, 153, 62, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-}
-
-.ordinand-box-title {
-  font-family: "Cinzel", "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(12.5px, 3.3vw, 15px);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--crimson-deep, #6B101C);
-  line-height: 1.35;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.ordinand-box-title .name-line {
-  display: block;
-  white-space: nowrap;
-}
-
-.ordinand-box-title .sj-pill {
-  display: inline-block;
-  letter-spacing: 0.1em;
-}
-
 .ordinand-staggered-photo-wrap {
-  flex: 0 0 48%;
+  width: 100%;
   max-width: 220px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .ordinand-staggered-img {
-  width: 100%;
+  width: auto;
   max-width: 210px;
   height: auto;
   max-height: 275px;
@@ -2719,12 +2799,47 @@ body.motion-paused .falling-petal {
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.16));
 }
 
+.ordinand-name-card-box {
+  width: fit-content;
+  max-width: 96%;
+  background: #ffffff;
+  border: 1.5px solid var(--metal);
+  outline: 1px solid rgba(197, 153, 62, 0.45);
+  outline-offset: -4px;
+  border-radius: 10px;
+  padding: 10px 18px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(123, 14, 30, 0.05), 0 0 10px rgba(197, 153, 62, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.ordinand-box-title {
+  font-family: "Cinzel", "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(12px, 3.4vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--crimson-deep, #6B101C);
+  line-height: 1.25;
+  margin: 0;
+  text-transform: uppercase;
+  white-space: nowrap !important;
+}
+
+.ordinand-box-title .name-line {
+  display: inline;
+  white-space: nowrap;
+}
+
 .ordinands-staggered-amp {
   font-family: "Great Vibes", "Playfair Display", Georgia, serif;
   font-size: clamp(28px, 6.5vw, 36px);
   color: var(--accent);
   text-align: center;
-  margin: -6px 0;
+  margin: 4px 0;
   line-height: 1;
 }
 
@@ -3167,11 +3282,48 @@ body.motion-paused .falling-petal {
 
 .closing-card {
   border: 2px solid var(--metal);
-  outline: 1px solid rgba(197, 153, 62, 0.4);
+  outline: 1px solid rgba(197, 153, 62, 0.45);
   outline-offset: -5px;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #1f1a1d 0%, #151013 100%) !important;
+  color: #f7f3ee;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.42), 0 0 25px rgba(181, 135, 57, 0.22);
+  padding: 26px 14px 24px;
+}
+
+@media (max-width: 420px) {
+  .closing-card {
+    padding: 22px 10px 20px;
+  }
+  .compliments-two-cols {
+    gap: 10px 10px;
+  }
+  .compliments-names-list li {
+    font-size: 11px;
+    line-height: 1.32;
+  }
+  .compliments-section-heading {
+    font-size: 12.5px;
+  }
+  .compliments-communion-heading {
+    font-size: 12.5px;
+  }
+  .communion-jesuit-line {
+    font-size: 10.5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .closing-card {
+    padding: 18px 8px 18px;
+  }
+  .compliments-two-cols {
+    gap: 8px 8px;
+  }
+  .compliments-names-list li {
+    font-size: 10px;
+    line-height: 1.28;
+  }
 }
 
 .media-button {

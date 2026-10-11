@@ -49,8 +49,9 @@ All event details, timings, location, and streaming links are configured in:
 
 ### 7. With Best Compliments From (Closing Section)
 - `compliments.title`: "With Best compliments from" (in script calligraphy).
-- `compliments.items`: Array of names or placeholder lines (`- - - - -`).
-- `compliments.endingLine`: "Sacerdotal Ordination to the Priesthood of Jesus Christ".
+- `compliments.leftColumn`: Clergy / Jesuits, followed by `Family and Well-Wishers` list.
+- `compliments.rightColumn`: `Families and Well-Wishers (cont.)`, followed by `Institutions` list.
+- `compliments.base`: `REMEMBERED IN THE COMMUNION OF SAINTS` with subtitle `With gratitude for their life`, departed names, deceased Jesuit fathers, and final blessing.
 
 ### 8. Prayer for Priests & Attire
 - `details.prayerForPriests`: "Almighty God, pour out Your grace on the priests You have chosen for yourself. Strengthen them with the gifts of the Holy Spirit, so that they become All things to All People, and through them, may Your Word be truly proclaimed, Your Sacraments, be faithfully administered and devoutly received. Through Christ the Eternal High Priest we pray. Amen."

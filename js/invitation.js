@@ -181,27 +181,27 @@
             <h3 class="ordination-callout">SACERDOTAL ORDINATION</h3>
             <p class="of-label">of</p>
 
-            <!-- Staggered Ordinands Layout: Name at side & Image at side (matching folded hands pose) -->
+            <!-- Ordinands Layout: Name Box in a Single Line (like red box) -->
             <div class="ordinands-staggered-duo">
-              <!-- Row 1: Name Box on Left, Deacon Reuell on Right (hands pointing left towards his name) -->
+              <!-- Row 1: Deacon Reuell Paul SJ -->
               <div class="ordinand-staggered-row reuell-row">
-                <div class="ordinand-name-card-box">
-                  <h4 class="ordinand-box-title"><span class="name-line">DEACON REUELL</span><span class="name-line">PAUL <span class="sj-pill">SJ</span></span></h4>
-                </div>
                 <div class="ordinand-staggered-photo-wrap">
                   <img class="ordinand-staggered-img" src="./assets/deacon-reuell-hd.png" alt="Deacon Reuell Paul SJ" loading="lazy">
+                </div>
+                <div class="ordinand-name-card-box">
+                  <h4 class="ordinand-box-title">DEACON REUELL PAUL SJ</h4>
                 </div>
               </div>
 
               <div class="ordinands-staggered-amp" aria-hidden="true">&amp;</div>
 
-              <!-- Row 2: Deacon Christ Rajan on Left (hands pointing right towards his name), Name Box on Right -->
+              <!-- Row 2: Deacon Christ Rajan Minj SJ -->
               <div class="ordinand-staggered-row rajan-row">
                 <div class="ordinand-staggered-photo-wrap">
                   <img class="ordinand-staggered-img" src="./assets/deacon-rajan-hd.png" alt="Deacon Christ Rajan Minj SJ" loading="lazy">
                 </div>
                 <div class="ordinand-name-card-box">
-                  <h4 class="ordinand-box-title"><span class="name-line">DEACON CHRIST</span><span class="name-line">RAJAN MINJ <span class="sj-pill">SJ</span></span></h4>
+                  <h4 class="ordinand-box-title">DEACON CHRIST RAJAN MINJ SJ</h4>
                 </div>
               </div>
             </div>
@@ -451,29 +451,88 @@
       <footer class="closing" aria-labelledby="closing-title">
         <div class="closing-scene">
           <img class="closing-art" src="./assets/ordination-altar.jpg" alt="" width="720" height="1280" loading="lazy" decoding="async">
-          <div class="closing-copy reveal">
+          <div class="closing-copy closing-card reveal">
             <div class="closing-seal-wrap">
-              <img src="./assets/jesuit-seal.jpg" alt="Society of Jesus Seal" width="110" height="110" class="closing-seal-img">
+              <img src="./assets/jesuit-seal.jpg" alt="Society of Jesus Seal" width="84" height="84" class="closing-seal-img">
             </div>
-            <p class="closing-eyebrow">Society of Jesus · Darjeeling–Nepal Province</p>
             <h2 class="closing-title script" id="closing-title">${text(data.compliments?.title || 'With Best compliments from')}</h2>
-            <div class="closing-rule" aria-hidden="true"></div>
             
             <div class="compliments-container">
-              <ul class="compliments-list">
-                ${(data.compliments?.items && data.compliments.items.length ? data.compliments.items : ['- - - - -', '- - - - -']).map(item => `<li>${text(item)}</li>`).join('')}
-              </ul>
-            </div>
+              <!-- Two Columns -->
+              <div class="compliments-two-cols">
+                <!-- Left Column -->
+                <div class="compliments-col">
+                  ${(data.compliments?.leftColumn?.clergy || []).length ? `
+                    <div class="compliments-subgroup">
+                      <ul class="compliments-names-list">
+                        ${data.compliments.leftColumn.clergy.map(item => `<li>${text(item)}</li>`).join('')}
+                      </ul>
+                    </div>
+                  ` : ''}
 
-            <div class="closing-rule" aria-hidden="true"></div>
-            <p class="closing-caption">${text(data.compliments?.endingLine || 'Sacerdotal Ordination to the Priesthood of Jesus Christ')}</p>
+                  ${(data.compliments?.leftColumn?.family || []).length ? `
+                    <div class="compliments-subgroup">
+                      <h3 class="compliments-section-heading">${text(data.compliments.leftColumn.familyHeading || 'Family and Well-Wishers')}</h3>
+                      <ul class="compliments-names-list">
+                        ${data.compliments.leftColumn.family.map(item => `<li>${text(item)}</li>`).join('')}
+                      </ul>
+                    </div>
+                  ` : ''}
+                </div>
+
+                <!-- Right Column -->
+                <div class="compliments-col">
+                  ${(data.compliments?.rightColumn?.family || []).length ? `
+                    <div class="compliments-subgroup">
+                      <h3 class="compliments-section-heading">${text(data.compliments.rightColumn.familyHeading || 'Families and Well-Wishers (cont.)')}</h3>
+                      <ul class="compliments-names-list">
+                        ${data.compliments.rightColumn.family.map(item => `<li>${text(item)}</li>`).join('')}
+                      </ul>
+                    </div>
+                  ` : ''}
+
+                  ${(data.compliments?.rightColumn?.institutions || []).length ? `
+                    <div class="compliments-subgroup">
+                      <h3 class="compliments-section-heading">${text(data.compliments.rightColumn.institutionsHeading || 'Institutions')}</h3>
+                      <ul class="compliments-names-list">
+                        ${data.compliments.rightColumn.institutions.map(item => `<li>${text(item)}</li>`).join('')}
+                      </ul>
+                    </div>
+                  ` : ''}
+                </div>
+              </div>
+
+              <!-- Base Divider -->
+              <div class="compliments-base-divider" aria-hidden="true"></div>
+
+              <!-- Base Section (Communion of Saints) -->
+              ${data.compliments?.base ? `
+                <div class="compliments-base-section">
+                  <h3 class="compliments-communion-heading">${text(data.compliments.base.title || 'REMEMBERED IN THE COMMUNION OF SAINTS')}</h3>
+                  <p class="compliments-communion-sub">${text(data.compliments.base.subtitle || 'With gratitude for their life')}</p>
+                  
+                  <ul class="compliments-names-list communion-departed-list">
+                    ${(data.compliments.base.departed || []).map(item => `<li>${text(item)}</li>`).join('')}
+                  </ul>
+
+                  ${(data.compliments.base.jesuits || []).length ? `
+                    <div class="communion-jesuits-block">
+                      ${data.compliments.base.jesuits.map(line => `<p class="communion-jesuit-line">${text(line)}</p>`).join('')}
+                    </div>
+                  ` : ''}
+
+                  <p class="communion-blessing">${text(data.compliments.base.blessing || 'May they rest in the peace of Christ and share in the joy of eternal life.')}</p>
+                </div>
+              ` : ''}
+            </div>
           </div>
         </div>
         <div class="closing-colophon">
           <button class="reopen" id="reopen">Open invitation again <span aria-hidden="true">↺</span></button>
           <div class="jesuit-signature">
+            <p class="ad-multos-annos script">Ad multos Annos</p>
             <span>SOCIETAS IESU</span>
-            <small>Darjeeling–Nepal Jesuit Province</small>
+            <small>Darjeeling - Nepal Jesuit Province</small>
           </div>
           ${data.media.music && data.media.musicTitle ? `
             <p class="music-credit">

@@ -116,11 +116,83 @@ window.WEDDING_DATA = {
   },
   "compliments": {
     "title": "With Best compliments from",
-    "items": [
-      "- - - - -",
-      "- - - - -"
-    ],
-    "endingLine": "Sacerdotal Ordination to the Priesthood of Jesus Christ"
+    "leftColumn": {
+      "clergy": [
+        "Fr. Shajumon Chakkalakal, SJ (DAN Provincial) and the Darjeeling–Nepal Jesuits",
+        "Fr. Kinley Tshering - Apostolic Vicar of Bhutan",
+        "Fr. Sebastian Minj Province coordinator for Formation",
+        "Fr. Brian Pereira, SJ (KAR Provincial)",
+        "Fr. Clarence D’souza",
+        "Fr. Maxim Dias",
+        "Fr. Anil D’Almeida",
+        "Parish Priest: Fr. Pradip Rai",
+        "Assistant: Fr. Prakash Rai"
+      ],
+      "familyHeading": "Family and Well-Wishers",
+      "family": [
+        "Mrs. Lily Paul",
+        "Mr. Hansel Paul",
+        "Mr. Eric Sharma and Mrs. Ratna Sharma",
+        "Mr. Bhakta Tamang and Mrs. Francisca Anima Tamang",
+        "Mr. Peter Kerr and Mrs. Mala Kerr",
+        "Mrs. Monica Kerr",
+        "Mr. Gabriel Sharma and Mrs. Uma Sharma",
+        "Mr. Reynold Sharma & Mrs. Gita Sharma",
+        "Ms. Mary Brahman",
+        "Mr. Timothy Sharma and family",
+        "Mr. Cyprian Minj",
+        "Mrs. Sarita Beck",
+        "Mr. Vivek Minj",
+        "Mr. Pincal Minj",
+        "Ms. Mary Roshni Minj"
+      ]
+    },
+    "rightColumn": {
+      "familyHeading": "Families and Well-Wishers (cont.)",
+      "family": [
+        "Mrs. Anjali Tamang and Family",
+        "Mr. Dave and Mrs. Lily T. Laemmle and Family",
+        "Ms. Belinda Kerr",
+        "Mr. Gareth Kerr and Family",
+        "Mr. Brian Kerr and Family",
+        "Mr. Bona Venture Sharma and Family",
+        "Mrs. Angela Sharma and Family",
+        "Mr. Norbu Tamang and Family",
+        "Ms. Carina Sharma",
+        "Mr. Samim Sharma and Family",
+        "Mr. Suman Sharma and Family",
+        "Mrs. Friziya Tamang",
+        "Mr. Caron Sharma",
+        "Ms. Naina Rose Sharma"
+      ],
+      "institutionsHeading": "Institutions",
+      "institutions": [
+        "St. Joseph’s School, North Point",
+        "Arrupe House St Joseph’s College Darjeeling",
+        "St. Anthony’s School, Kurseong",
+        "Sweet Angels’ School, Kurseong"
+      ]
+    },
+    "base": {
+      "title": "REMEMBERED IN THE COMMUNION OF SAINTS",
+      "subtitle": "With gratitude for their life",
+      "departed": [
+        "Lt. Mr. Hilarius Paul",
+        "Lt. Mr. George David Kerr",
+        "Lt. Mr. Paul Joseph Brahmin",
+        "Lt. Mrs. Helen Sharma",
+        "Lt. Mrs. Lucy Kerr",
+        "Mr. Steven Chettri",
+        "Lt. Mrs. Elizabeth Sharma"
+      ],
+      "jesuits": [
+        "Lt. Fr. Gerard Van Walleghem, Fr. Ambrose Pinto, Fr. Swebert D’Silva,",
+        "Fr. Giles Goluckmu, Fr. Leo Cachet, Fr. Casper Miller",
+        "Fr. Edu Gurung, Fr. Leslie Prabhu, Fr. Murray Abraham,",
+        "Fr. Alphonse Lingdamoo, Fr. Marian Rodriguez, Fr. Elias Pinto."
+      ],
+      "blessing": "May they rest in the peace of Christ and share in the joy of eternal life."
+    }
   },
   "media": {
     "openingPoster": "./assets/ordination-altar.jpg",
