@@ -16,6 +16,7 @@ window.WEDDING_DATA = {
   "ordinands": {
     "first": "DEACON REUELL PAUL SJ",
     "second": "DEACON CHRIST RAJAN MINJ SJ",
+    "chalicePhoto": "./assets/ordinands-chalice-together.png",
     "firstPhoto": "./assets/deacon-reuell-hd.png",
     "secondPhoto": "./assets/deacon-rajan-hd.png",
     "hosts": "The Darjeeling–Nepal Jesuits",
@@ -88,7 +89,7 @@ window.WEDDING_DATA = {
     "subname": "St. John Berchman's Parish",
     "address": "St. Mary's Hill Kurseong Darjeeling District West Bengal 734220",
     "mapsUrl": "https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw",
-    "satelliteUrl": "https://www.google.com/maps/place/St.+Mary's+Hill+Church,+Kurseong/@26.8837,88.2762,700m/data=!3m1!1e3",
+    "satelliteUrl": "https://maps.app.goo.gl/onmGYCHSL7iwgBrUA",
     "satelliteImage": "./assets/st-marys-satellite-map.jpg",
     "watermarkImage": "./assets/st-marys-hill-historic.jpg",
     "timeLabel": "Friday 20 November 2026 · 10:30 AM",
@@ -182,7 +183,7 @@ window.WEDDING_DATA = {
         "Lt. Mr. Paul Joseph Brahmin",
         "Lt. Mrs. Helen Sharma",
         "Lt. Mrs. Lucy Kerr",
-        "Mr. Steven Chettri",
+        "Lt. Mr. Steven Chettri",
         "Lt. Mrs. Elizabeth Sharma"
       ],
       "jesuits": [
@@ -207,6 +208,7 @@ window.WEDDING_DATA = {
     "themeTopCanopy": "./assets/theme-top-canopy.jpg",
     "themeBottomChalice": "./assets/theme-bottom-chalice.jpg",
     "music": "./media/music.mp3",
+    "musicStartTime": 91,
     "musicTitle": "Way Maker (Instrumental) · Maranatha!",
     "musicSource": "https://open.spotify.com/track/5oNBMaMlw7gu3zzA6F3M5O"
   }

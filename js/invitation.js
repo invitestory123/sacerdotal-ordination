@@ -181,37 +181,18 @@
             <h3 class="ordination-callout">SACERDOTAL ORDINATION</h3>
             <p class="of-label">of</p>
 
-            <!-- Sacred Sanctuary Shrines: Both Ordinands in Gothic Arched Shrines with Golden Backlight & Single Line Plaques -->
-            <div class="ordinands-shrine-stage">
-              <!-- Shrine 1: Deacon Reuell Paul SJ -->
-              <div class="ordinand-sanctuary-shrine reuell-shrine">
-                <div class="shrine-arch-halo" aria-hidden="true"></div>
-                <div class="shrine-apex-cross" aria-hidden="true">☩</div>
-                <div class="shrine-photo-stage">
-                  <img class="shrine-deacon-img" src="./assets/deacon-reuell-hd.png" alt="Deacon Reuell Paul SJ" loading="lazy">
-                </div>
-                <div class="shrine-name-plaque">
-                  <h4 class="shrine-name-text">DEACON REUELL PAUL SJ</h4>
-                </div>
+            <!-- Ordinands United around Sacred Golden Chalice & Host -->
+            <div class="ordinands-chalice-stage reveal">
+              <div class="ordinands-chalice-halo" aria-hidden="true"></div>
+              <div class="ordinands-chalice-frame">
+                <img class="ordinands-chalice-img" src="./assets/ordinands-chalice-together.png" alt="Deacon Christ Rajan Minj SJ &amp; Deacon Reuell Paul SJ" loading="lazy">
               </div>
-
-              <!-- Sacred Ampersand Ribbon Divider -->
-              <div class="shrine-amp-divider" aria-hidden="true">
-                <span class="shrine-amp-line"></span>
-                <span class="shrine-amp-glyph">☩ &amp; ☩</span>
-                <span class="shrine-amp-line"></span>
-              </div>
-
-              <!-- Shrine 2: Deacon Christ Rajan Minj SJ -->
-              <div class="ordinand-sanctuary-shrine rajan-shrine">
-                <div class="shrine-arch-halo" aria-hidden="true"></div>
-                <div class="shrine-apex-cross" aria-hidden="true">☩</div>
-                <div class="shrine-photo-stage">
-                  <img class="shrine-deacon-img" src="./assets/deacon-rajan-hd.png" alt="Deacon Christ Rajan Minj SJ" loading="lazy">
-                </div>
-                <div class="shrine-name-plaque">
-                  <h4 class="shrine-name-text">DEACON CHRIST RAJAN MINJ SJ</h4>
-                </div>
+              <div class="ordinands-chalice-names-plaque">
+                <h4 class="chalice-names-heading">
+                  <span class="chalice-name-item">DEACON CHRIST RAJAN MINJ SJ</span>
+                  <span class="chalice-names-amp">&amp;</span>
+                  <span class="chalice-name-item">DEACON REUELL PAUL SJ</span>
+                </h4>
               </div>
             </div>
 
@@ -271,7 +252,7 @@
                 <a class="action" id="maps" href="${safeURL(data.venue.mapsUrl || 'https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw')}" target="_blank" rel="noopener noreferrer">
                   <span>📍 Open in Google Maps</span>
                 </a>
-                <a class="action secondary" id="satellite-link" href="${safeURL(data.venue.satelliteUrl || 'https://www.google.com/maps/place/St.+Mary\'s+Hill+Church,+Kurseong/@26.8837,88.2762,700m/data=!3m1!1e3')}" target="_blank" rel="noopener noreferrer">
+                <a class="action secondary" id="satellite-link" href="${safeURL(data.venue.satelliteUrl || 'https://maps.app.goo.gl/onmGYCHSL7iwgBrUA')}" target="_blank" rel="noopener noreferrer">
                   <span>🛰️ View Satellite Link</span>
                 </a>
                 <button class="action secondary" id="calendar">
@@ -564,16 +545,25 @@
       <button class="media-button" id="motion" aria-pressed="false" hidden>Pause motion</button>
       <button class="media-button" id="music" aria-pressed="false" hidden>Play hymn</button>
     </div>
-    <audio id="audio" loop preload="none"></audio>
+    <audio id="audio" preload="auto"></audio>
     <p id="status" class="status" role="status" hidden></p>
   `;
 
   const $ = id => document.getElementById(id);
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const audio = $('audio');
+  const MUSIC_START_SECONDS = Number(data.media?.musicStartTime) || 91;
   let musicAttempted = false;
   let opened = false, openingTimer, fadeTimer, statusTimer, observersStarted = false;
   let motionPaused = reduced.matches;
+
+  function ensureAudioStartTime() {
+    try {
+      if (audio.currentTime < MUSIC_START_SECONDS) {
+        audio.currentTime = MUSIC_START_SECONDS;
+      }
+    } catch (_) {}
+  }
 
   const ambience = window.initInvitationMotion ? window.initInvitationMotion({ theme: data.theme, reduced }) : { setPaused: () => {} };
 
@@ -598,6 +588,18 @@
   if (source('music')) {
     audio.src = source('music');
     audio.volume = 0.45;
+    audio.addEventListener('loadedmetadata', ensureAudioStartTime);
+    audio.addEventListener('canplay', () => {
+      if (audio.currentTime < MUSIC_START_SECONDS) {
+        ensureAudioStartTime();
+      }
+    });
+    audio.addEventListener('ended', () => {
+      try {
+        audio.currentTime = MUSIC_START_SECONDS;
+      } catch (_) {}
+      audio.play().catch(() => {});
+    });
   }
 
   audio.addEventListener('error', () => {
@@ -781,7 +783,9 @@
       $('music').hidden = false;
       if (!musicAttempted) {
         musicAttempted = true;
+        ensureAudioStartTime();
         audio.play().then(() => {
+          ensureAudioStartTime();
           $('music').textContent = 'Pause hymn';
           $('music').setAttribute('aria-pressed', 'true');
         }).catch(() => {});
@@ -817,6 +821,9 @@
   $('music').addEventListener('click', async () => {
     if (audio.paused) {
       try {
+        if (audio.currentTime < MUSIC_START_SECONDS) {
+          ensureAudioStartTime();
+        }
         await audio.play();
         $('music').textContent = 'Pause hymn';
         $('music').setAttribute('aria-pressed', 'true');

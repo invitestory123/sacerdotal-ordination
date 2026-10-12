@@ -27,7 +27,7 @@ All event details, timings, location, and streaming links are configured in:
 - Replaces the redundant intermediate date-venue card and sits directly after the first page announcement.
 - `venue.name`: ST. MARY'S HILL KURSEONG (St. John Berchman's Parish)
 - `venue.mapsUrl`: Google Maps navigation link (`https://maps.app.goo.gl/DyYy9wbV89KhnKnr7?g_st=aw`)
-- `venue.satelliteUrl`: Google Maps direct satellite view link (`https://www.google.com/maps/place/St.+Mary's+Hill+Church,+Kurseong/@26.8837,88.2762,700m/data=!3m1!1e3`)
+- `venue.satelliteUrl`: Google Maps direct satellite view link (`https://maps.app.goo.gl/onmGYCHSL7iwgBrUA`)
 - `venue.satelliteImage`: Enhanced aerial satellite photography of St. Mary's Hill (`./assets/st-marys-satellite-map.jpg`)
 - `venue.watermarkImage`: Historic St. Mary's Hill photograph used as the location watermark background (`./assets/st-marys-hill-historic.jpg`)
 - Floral canopy positioned with negative top offset (`top -60px center`) and `padding-top: 88px` so the "ORDINATION VENUE" kicker is never obscured.
