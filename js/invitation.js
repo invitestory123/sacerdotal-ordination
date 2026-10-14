@@ -513,7 +513,7 @@
 
                   ${(data.compliments.base.jesuits || []).length ? `
                     <div class="communion-jesuits-block">
-                      ${data.compliments.base.jesuits.map(line => `<p class="communion-jesuit-line">${text(line).replace(/Fr\.\s+Swebert\s+D[’']Silva/g, '<span class="nobr">Fr. Swebert D’Silva</span>')}</p>`).join('')}
+                      ${data.compliments.base.jesuits.map(line => `<p class="communion-jesuit-line">${text(line).replace(/Fr\.\s+Swebert\s+D[’']Silva/g, '<span class="nobr">Fr. Swebert D’Silva</span>').replace(/Fr\.\s+/g, 'Fr.&nbsp;')}</p>`).join('')}
                     </div>
                   ` : ''}
 
@@ -585,6 +585,16 @@
 
   const source = name => data.media[name] ? safeURL(data.media[name]) : '';
 
+  const enforceAudioStart = () => {
+    if (audio.currentTime < MUSIC_START_SECONDS - 0.5) {
+      try {
+        audio.currentTime = MUSIC_START_SECONDS;
+      } catch (_) {}
+    } else {
+      audio.removeEventListener('timeupdate', enforceAudioStart);
+    }
+  };
+
   if (source('music')) {
     audio.src = source('music');
     audio.volume = 0.45;
@@ -594,10 +604,22 @@
         ensureAudioStartTime();
       }
     });
+    audio.addEventListener('play', () => {
+      if (audio.currentTime < MUSIC_START_SECONDS) {
+        ensureAudioStartTime();
+      }
+      audio.addEventListener('timeupdate', enforceAudioStart);
+    });
+    audio.addEventListener('playing', () => {
+      if (audio.currentTime < MUSIC_START_SECONDS) {
+        ensureAudioStartTime();
+      }
+    });
     audio.addEventListener('ended', () => {
       try {
         audio.currentTime = MUSIC_START_SECONDS;
       } catch (_) {}
+      audio.addEventListener('timeupdate', enforceAudioStart);
       audio.play().catch(() => {});
     });
   }

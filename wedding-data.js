@@ -190,7 +190,8 @@ window.WEDDING_DATA = {
         "Lt. Fr. Gerard Van Walleghem, Fr. Ambrose Pinto,",
         "Fr. Swebert D’Silva, Fr. Giles Goluckmu, Fr. Leo Cachet,",
         "Fr. Casper Miller, Fr. Edu Gurung, Fr. Leslie Prabhu,",
-        "Fr. Murray Abraham, Fr. Alphonse Lingdamoo, Fr. Marian Rodriguez, Fr. Elias Pinto."
+        "Fr. Murray Abraham, Fr. Alphonse Lingdamoo, Fr. Marian Rodriguez,",
+        "Fr. Elias Pinto, Fr. Lawrence Maniyar."
       ],
       "blessing": "May they rest in the peace of Christ and share in the joy of eternal life."
     }
