@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Society of Jesus//Sacerdotal Ordination//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ordination-jesuit-20261120@darjeeling-nepal.jesuits
+DTSTAMP:20261015T180000Z
+DTSTART:20261120T050000Z
+DTEND:20261120T093000Z
+SUMMARY:Sacerdotal Ordination: Deacon Reuell Paul SJ & Deacon Christ Rajan Minj SJ
+LOCATION:St. Mary's Hill Kurseong, St. John Berchman's Parish, Darjeeling District, West Bengal 734220
+DESCRIPTION:Sacerdotal Ordination to the Sacred Order of Priesthood conferred upon Deacon Reuell Paul SJ & Deacon Christ Rajan Minj SJ by Rt. Rev. Stephen Lepcha, Bishop of Darjeeling at St. Mary's Hill, Kurseong.\nDarjeeling–Nepal Jesuits.
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR

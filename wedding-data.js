@@ -209,7 +209,7 @@ window.WEDDING_DATA = {
     "themeTopCanopy": "./assets/theme-top-canopy.jpg",
     "themeBottomChalice": "./assets/theme-bottom-chalice.jpg",
     "music": "./media/music.mp3",
-    "musicStartTime": 91,
+    "musicStartTime": 0,
     "musicTitle": "Way Maker (Instrumental) · Maranatha!",
     "musicSource": "https://open.spotify.com/track/5oNBMaMlw7gu3zzA6F3M5O"
   }
