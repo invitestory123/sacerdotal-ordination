@@ -547,6 +547,46 @@
     </div>
     <audio id="audio" preload="auto"></audio>
     <p id="status" class="status" role="status" hidden></p>
+
+    <!-- Add to Calendar Modal Sheet -->
+    <div class="calendar-modal" id="calendar-modal" role="dialog" aria-modal="true" aria-labelledby="calendar-modal-title" hidden>
+      <div class="calendar-modal-backdrop" id="calendar-modal-backdrop"></div>
+      <div class="calendar-modal-card">
+        <button class="calendar-modal-close" id="calendar-modal-close" aria-label="Close calendar options">&times;</button>
+        <div class="calendar-modal-header">
+          <span class="cal-modal-cross" aria-hidden="true">☩</span>
+          <h3 class="calendar-modal-title" id="calendar-modal-title">Add to Calendar</h3>
+          <p class="calendar-modal-subtitle">Friday 20 November 2026 · 10:30 AM IST</p>
+          <p class="calendar-modal-venue">St. Mary’s Hill Kurseong · St. John Berchman’s Parish</p>
+        </div>
+        <div class="calendar-modal-actions">
+          <a class="cal-modal-btn cal-btn-google" id="cal-opt-google" href="#" target="_blank" rel="noopener noreferrer">
+            <span class="cal-btn-icon" aria-hidden="true">🗓️</span>
+            <span class="cal-btn-info">
+              <span class="cal-btn-label">Google Calendar</span>
+              <span class="cal-btn-hint">Android · Gmail · Chrome · Web</span>
+            </span>
+            <span class="cal-btn-arrow" aria-hidden="true">↗</span>
+          </a>
+          <button class="cal-modal-btn cal-btn-apple" id="cal-opt-apple" type="button">
+            <span class="cal-btn-icon" aria-hidden="true">🍎</span>
+            <span class="cal-btn-info">
+              <span class="cal-btn-label">Apple Calendar</span>
+              <span class="cal-btn-hint">iPhone · iPad · Mac</span>
+            </span>
+            <span class="cal-btn-arrow" aria-hidden="true">↓</span>
+          </button>
+          <button class="cal-modal-btn cal-btn-outlook" id="cal-opt-outlook" type="button">
+            <span class="cal-btn-icon" aria-hidden="true">💻</span>
+            <span class="cal-btn-info">
+              <span class="cal-btn-label">Outlook / Other (.ics)</span>
+              <span class="cal-btn-hint">Universal calendar invite file</span>
+            </span>
+            <span class="cal-btn-arrow" aria-hidden="true">↓</span>
+          </button>
+        </div>
+      </div>
+    </div>
   `;
 
   const $ = id => document.getElementById(id);
@@ -556,14 +596,30 @@
   let musicAttempted = false;
   let opened = false, openingTimer, fadeTimer, statusTimer, observersStarted = false;
   let motionPaused = reduced.matches;
+  let initialSeekDone = false;
 
   function ensureAudioStartTime() {
     try {
-      if (audio.currentTime < MUSIC_START_SECONDS) {
+      if (audio.currentTime < MUSIC_START_SECONDS - 0.5) {
         audio.currentTime = MUSIC_START_SECONDS;
       }
     } catch (_) {}
   }
+
+  const enforceInitialStartTime = () => {
+    if (initialSeekDone) {
+      audio.removeEventListener('timeupdate', enforceInitialStartTime);
+      return;
+    }
+    if (audio.currentTime < MUSIC_START_SECONDS - 0.5) {
+      try {
+        audio.currentTime = MUSIC_START_SECONDS;
+      } catch (_) {}
+    } else {
+      initialSeekDone = true;
+      audio.removeEventListener('timeupdate', enforceInitialStartTime);
+    }
+  };
 
   const ambience = window.initInvitationMotion ? window.initInvitationMotion({ theme: data.theme, reduced }) : { setPaused: () => {} };
 
@@ -590,9 +646,13 @@
     audio.volume = 0.45;
     audio.addEventListener('loadedmetadata', ensureAudioStartTime);
     audio.addEventListener('canplay', () => {
-      if (audio.currentTime < MUSIC_START_SECONDS) {
+      if (audio.currentTime < MUSIC_START_SECONDS - 0.5) {
         ensureAudioStartTime();
       }
+    });
+    audio.addEventListener('playing', () => {
+      ensureAudioStartTime();
+      audio.addEventListener('timeupdate', enforceInitialStartTime);
     });
     audio.addEventListener('ended', () => {
       try {
@@ -783,12 +843,20 @@
       $('music').hidden = false;
       if (!musicAttempted) {
         musicAttempted = true;
-        ensureAudioStartTime();
-        audio.play().then(() => {
+        // Start muted playback synchronously within user click to satisfy browser autoplay
+        audio.volume = 0;
+        audio.play().catch(() => {});
+
+        // Latch click & knock finish at ~450ms. As the door click finishes, seek to 1:31 (91s), restore volume and begin hymn
+        setTimeout(() => {
           ensureAudioStartTime();
+          audio.volume = 0.45;
+          if (audio.paused) {
+            audio.play().catch(() => {});
+          }
           $('music').textContent = 'Pause hymn';
           $('music').setAttribute('aria-pressed', 'true');
-        }).catch(() => {});
+        }, 460);
       }
     }
 
@@ -807,6 +875,16 @@
     clearTimeout(openingTimer);
     window.scrollTo({ top: 0, behavior: 'instant' });
     opened = false;
+    musicAttempted = false;
+    initialSeekDone = false;
+    try {
+      audio.pause();
+      audio.currentTime = MUSIC_START_SECONDS;
+    } catch (_) {}
+    if ($('music')) {
+      $('music').textContent = 'Play hymn';
+      $('music').setAttribute('aria-pressed', 'false');
+    }
     if (ambience && ambience.setPaused) ambience.setPaused(true);
     $('entrance').hidden = false;
     $('entrance').classList.remove('leaving', 'opening', 'door-opening');
@@ -821,9 +899,10 @@
   $('music').addEventListener('click', async () => {
     if (audio.paused) {
       try {
-        if (audio.currentTime < MUSIC_START_SECONDS) {
+        if (audio.currentTime < MUSIC_START_SECONDS - 0.5) {
           ensureAudioStartTime();
         }
+        audio.volume = 0.45;
         await audio.play();
         $('music').textContent = 'Pause hymn';
         $('music').setAttribute('aria-pressed', 'true');
@@ -879,47 +958,143 @@
   tick();
   setInterval(tick, 1000);
 
-  // ICS Calendar generation
+  // Calendar Event Integration (Google Calendar + Apple Calendar & Outlook .ics)
   const icsEscape = value => String(value).replace(/\\/g, '\\\\').replace(/\r?\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;');
   const stamp = value => value.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
 
-  function downloadCalendar() {
-    if (!validDate) return;
+  const calTitle = 'Sacerdotal Ordination: Deacon Reuell Paul SJ & Deacon Christ Rajan Minj SJ';
+  const calLocation = (data.venue.name || '') + ', ' + (data.venue.address || '');
+  const calDesc = 'Sacerdotal Ordination to the Priesthood of Jesus Christ, conferred by Rt. Rev. Stephen Lepcha, Bishop of Darjeeling upon Deacon Reuell Paul SJ & Deacon Christ Rajan Minj SJ at St. Mary’s Hill, Kurseong.';
+
+  function getEndDateTime() {
     const configuredEnd = new Date(data.wedding.endISO);
-    const end = Number.isFinite(configuredEnd.getTime()) && configuredEnd > date ? configuredEnd : new Date(date.getTime() + 4 * 3600000);
+    return Number.isFinite(configuredEnd.getTime()) && configuredEnd > date ? configuredEnd : new Date(date.getTime() + 4.5 * 3600000);
+  }
+
+  function setupGoogleCalendarLink() {
+    if (!validDate) return;
+    const end = getEndDateTime();
+    const gCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(calTitle)}&dates=${stamp(date)}/${stamp(end)}&details=${encodeURIComponent(calDesc)}&location=${encodeURIComponent(calLocation)}`;
+    if ($('cal-opt-google')) {
+      $('cal-opt-google').href = gCalUrl;
+    }
+  }
+  setupGoogleCalendarLink();
+
+  function downloadCalendar(targetPlatform) {
+    if (!validDate) return;
+    const end = getEndDateTime();
     const lines = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
       'PRODID:-//Society of Jesus//Sacerdotal Ordination//EN',
       'CALSCALE:GREGORIAN',
+      'METHOD:PUBLISH',
       'BEGIN:VEVENT',
       `UID:ordination-jesuit-${date.getTime()}@darjeeling-nepal.jesuits`,
       `DTSTAMP:${stamp(new Date())}`,
       `DTSTART:${stamp(date)}`,
       `DTEND:${stamp(end)}`,
-      `SUMMARY:${icsEscape('Sacerdotal Ordination of Deacon Reuell Paul SJ & Deacon Christ Rajan Minj SJ')}`,
-      `LOCATION:${icsEscape(data.venue.name + ', ' + data.venue.address)}`,
-      `DESCRIPTION:${icsEscape('Sacerdotal Ordination to the Priesthood of Jesus Christ, conferred by Rt. Rev. Bishop Stephen Lepcha, Bishop of Darjeeling at St. Mary’s Hill, Kurseong.')}`,
+      `SUMMARY:${icsEscape(calTitle)}`,
+      `LOCATION:${icsEscape(calLocation)}`,
+      `DESCRIPTION:${icsEscape(calDesc)}`,
+      'STATUS:CONFIRMED',
       'END:VEVENT',
       'END:VCALENDAR'
     ];
-    const url = URL.createObjectURL(new Blob([lines.join('\r\n') + '\r\n'], { type: 'text/calendar;charset=utf-8' }));
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `sacerdotal-ordination-kurseong.ics`;
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-    notify('Calendar invitation has been downloaded.');
+    const icsContent = lines.join('\r\n') + '\r\n';
+
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (isIOS || targetPlatform === 'apple') {
+      try {
+        window.location.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(icsContent);
+        notify('Opening in Apple Calendar...');
+        closeCalendarModal();
+        return;
+      } catch (_) {}
+    }
+
+    try {
+      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = url;
+      a.download = 'sacerdotal-ordination-kurseong.ics';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 2000);
+      notify('Calendar invite downloaded.');
+      closeCalendarModal();
+    } catch (_) {
+      window.open('data:text/calendar;charset=utf-8,' + encodeURIComponent(icsContent));
+      closeCalendarModal();
+    }
+  }
+
+  function openCalendarModal() {
+    const modal = $('calendar-modal');
+    if (!modal) return;
+    modal.hidden = false;
+    modal.classList.add('is-open');
+    document.body.classList.add('modal-open');
+    if ($('cal-opt-google')) $('cal-opt-google').focus();
+  }
+
+  function closeCalendarModal() {
+    const modal = $('calendar-modal');
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    modal.hidden = true;
+    document.body.classList.remove('modal-open');
+    if ($('calendar')) $('calendar').focus();
   }
 
   if ($('calendar')) {
     $('calendar').disabled = !validDate;
-    $('calendar').addEventListener('click', downloadCalendar);
+    $('calendar').addEventListener('click', e => {
+      e.preventDefault();
+      openCalendarModal();
+    });
   }
   if ($('calendar-inline')) {
     $('calendar-inline').disabled = !validDate;
-    $('calendar-inline').addEventListener('click', downloadCalendar);
+    $('calendar-inline').addEventListener('click', e => {
+      e.preventDefault();
+      openCalendarModal();
+    });
   }
+  if ($('cal-opt-apple')) {
+    $('cal-opt-apple').addEventListener('click', e => {
+      e.preventDefault();
+      downloadCalendar('apple');
+    });
+  }
+  if ($('cal-opt-outlook')) {
+    $('cal-opt-outlook').addEventListener('click', e => {
+      e.preventDefault();
+      downloadCalendar('outlook');
+    });
+  }
+  if ($('cal-opt-google')) {
+    $('cal-opt-google').addEventListener('click', () => {
+      closeCalendarModal();
+    });
+  }
+  if ($('calendar-modal-close')) {
+    $('calendar-modal-close').addEventListener('click', closeCalendarModal);
+  }
+  if ($('calendar-modal-backdrop')) {
+    $('calendar-modal-backdrop').addEventListener('click', closeCalendarModal);
+  }
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && $('calendar-modal') && !$('calendar-modal').hidden) {
+      closeCalendarModal();
+    }
+  });
 
   // Preview / QA aid: index.html?open renders the invitation with the doors
   // already open (add #section-id to jump straight to a section).
